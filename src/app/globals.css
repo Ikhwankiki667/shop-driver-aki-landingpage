@@ -14,6 +14,16 @@
   }
 }
 
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Custom Scrollbar for Industrial Emergency Red Feel */
 ::-webkit-scrollbar {
   width: 8px;
@@ -26,9 +36,9 @@
 ::-webkit-scrollbar-thumb {
   background: #1A1A1D;
   border-radius: 4px;
-  border: 1px solid rgba(230, 57, 70, 0.4);
+  border: 1px solid rgba(217, 30, 43, 0.4);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #E63946;
+  background: #D91E2B;
 }

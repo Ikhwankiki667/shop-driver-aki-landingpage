@@ -14,6 +14,8 @@ export interface IBatteryProduct {
   capacityAh: number;
   voltage: number;
   price: number;
+  minPrice?: number;
+  maxPrice?: number;
   originalPrice?: number;
   image: string;
   compatibleCars: string[];
@@ -44,11 +46,13 @@ export interface ITestimonial {
   verifiedPurchase: boolean;
 }
 
+export type FAQCategory = 'WAKTU TUNGGU' | 'LAYANAN 24H' | 'PEMBAYARAN' | 'KLAIM GARANSI' | 'CAKUPAN MOBIL' | 'PEMESANAN' | 'GARANSI' | 'TEKNIS';
+
 export interface IFAQItem {
   id: string;
   question: string;
   answer: string;
-  category: 'PEMESANAN' | 'GARANSI' | 'TEKNIS' | 'PEMBAYARAN';
+  category: FAQCategory;
 }
 
 export interface IHowItWorksStep {

@@ -20,17 +20,20 @@ export class WhatsAppService {
   }
 
   /**
+   * Build targeted battery price & availability inquiry link (Marketplace model)
+   */
+  public static buildPriceCheckUrl(product: IBatteryProduct, userLocation?: string): string {
+    const locationText = userLocation ? ` untuk lokasi ${userLocation}` : '';
+    const message = `Halo ${siteConfig.brand.name}, saya ingin cek harga & ketersediaan stok aki *${product.name}* (${product.category} - ${product.capacityAh}Ah)${locationText}. Mohon infokan penawaran teknisi mitra terdekat.`;
+    return `${this.BASE_URL}${this.PHONE}?text=${encodeURIComponent(message)}`;
+  }
+
+  /**
    * Build targeted battery purchase & installation order link
    */
   public static buildBatteryOrderUrl(product: IBatteryProduct, carModel?: string): string {
-    const formattedPrice = new Intl.NumberFormat('id-ID', {
-      style: 'currency',
-      currency: 'IDR',
-      maximumFractionDigits: 0,
-    }).format(product.price);
-
     const carText = carModel ? ` untuk mobil ${carModel}` : '';
-    const message = `Halo ${siteConfig.brand.name}, saya ingin pesan aki *${product.name}* (${product.capacityAh}Ah - ${product.technology}) harga ${formattedPrice}${carText}. Mohon konfirmasi stok dan pengiriman ke lokasi.`;
+    const message = `Halo ${siteConfig.brand.name}, saya ingin tanya ketersediaan & harga aki *${product.name}* (${product.capacityAh}Ah - ${product.technology})${carText}. Mohon hubungkan dengan teknisi terdekat.`;
     return `${this.BASE_URL}${this.PHONE}?text=${encodeURIComponent(message)}`;
   }
 

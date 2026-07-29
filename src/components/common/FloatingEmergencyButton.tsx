@@ -11,7 +11,7 @@ export const FloatingEmergencyButton: React.FC = () => {
         href={WhatsAppService.buildEmergencyCallUrl()}
         target="_blank"
         rel="noopener noreferrer"
-        className="group relative flex items-center gap-3 bg-[#E63946] hover:bg-[#DC2626] text-white font-black text-sm uppercase tracking-wider py-4 px-6 rounded-full shadow-[0_0_25px_rgba(230,57,70,0.6)] hover:shadow-[0_0_35px_rgba(230,57,70,0.8)] transition-all duration-300 hover:scale-105 border border-white/20"
+        className="group relative flex items-center gap-3 bg-[#D91E2B] hover:bg-[#C01824] text-white font-black text-sm uppercase tracking-wider py-4 px-6 rounded-full shadow-[0_0_25px_rgba(217,30,43,0.6)] hover:shadow-[0_0_35px_rgba(217,30,43,0.8)] transition-all duration-300 hover:scale-105 border border-white/20"
       >
         <span className="relative flex h-3 w-3">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />

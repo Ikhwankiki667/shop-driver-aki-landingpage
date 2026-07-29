@@ -18,23 +18,24 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: `${siteConfig.brand.name} | ${siteConfig.brand.tagline}`,
+  title: siteConfig.brand.name + ' - Solusi Cepat Ganti Aki Mobil 24 Jam',
   description:
-    'Layanan antar & pasang aki mobil 24 Jam darurat ke lokasi Anda. Respon teknisi <10 menit, 100% Bebas Ongkir & Pemasangan, Garansi Resmi 24 Bulan GS Astra & Amaron.',
+    'Mobil mogok karena aki tekor? Tim ShopDrive meluncur ke lokasi Anda dalam kurang dari 10 menit, membawa aki GS Astra original. Garansi resmi hingga 2 tahun, harga transparan, bayar setelah terpasang.',
   keywords: [
     'ShopDrive',
-    'shopdriveaki.com',
     'ganti aki mobil 24 jam',
-    'layanan aki mogok',
-    'aki gs astra',
+    'solusi cepat ganti aki mobil',
+    'aki mogok 24 jam',
+    'aki gs astra original',
     'aki amaron',
     'antar pasang aki lokasi',
-    'aki mobil terdekat',
+    'tukar tambah aki',
   ],
   authors: [{ name: 'ShopDrive Indonesia' }],
   openGraph: {
-    title: `ShopDrive - Solusi Cepat Ganti Aki Mobil 24 Jam`,
-    description: `Mobil mogok aki tekor? Teknisi ShopDrive siaga meluncur ke posisi Anda dalam <10 menit. Garansi resmi 24 bulan!`,
+    title: 'ShopDrive - Solusi Cepat Ganti Aki Mobil 24 Jam',
+    description:
+      'Tim ShopDrive meluncur ke lokasi Anda dalam kurang dari 10 menit, membawa aki GS Astra original. Garansi resmi hingga 2 tahun, harga transparan, bayar setelah terpasang.',
     url: `https://${siteConfig.brand.domain}`,
     siteName: siteConfig.brand.name,
     locale: 'id_ID',

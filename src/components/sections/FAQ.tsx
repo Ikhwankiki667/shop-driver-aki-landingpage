@@ -12,12 +12,12 @@ export const FAQ: React.FC = () => {
         
         {/* Header */}
         <div className="text-center space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E63946]/10 border border-[#E63946]/30 text-[#E63946] text-xs font-bold uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#D91E2B]/15 border border-[#D91E2B]/40 text-[#D91E2B] text-xs font-bold uppercase tracking-widest">
             <HelpCircle className="w-3.5 h-3.5" />
             <span>PERTANYAAN POPULER</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-white tracking-wide font-display">
-            Pertanyaan Sering <span className="text-[#E63946]">Diajukan</span>
+            Pertanyaan Sering <span className="text-[#D91E2B]">Diajukan</span>
           </h2>
           <p className="text-zinc-400 text-base sm:text-lg">
             Segala hal yang perlu Anda ketahui mengenai pemesanan, layanan darurat 24 jam, dan klaim garansi resmi ShopDrive.

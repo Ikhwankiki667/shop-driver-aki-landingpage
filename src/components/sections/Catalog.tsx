@@ -22,11 +22,10 @@ export const Catalog: React.FC = () => {
   ];
 
   const vehicleTabs: { label: string; value: VehicleCategory }[] = [
-    { label: 'Semua Tipe Mobil', value: 'ALL' },
-    { label: 'City Car / Avanza / Brio', value: 'City Car' },
-    { label: 'Sedan / Hatchback', value: 'Sedan/Hatchback' },
-    { label: 'SUV / MPV / Innova', value: 'SUV/MPV' },
-    { label: 'Diesel / Heavy Duty', value: 'Diesel/Commercial' },
+    { label: 'Semua Kategori', value: 'ALL' },
+    { label: '1. City Car / Hatchback', value: 'City Car' },
+    { label: '2. SUV / MPV', value: 'SUV/MPV' },
+    { label: '3. Commercial / Diesel', value: 'Diesel/Commercial' },
   ];
 
   const filteredProducts = CatalogService.filterProducts(
@@ -42,30 +41,30 @@ export const Catalog: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E63946]/10 border border-[#E63946]/30 text-[#E63946] text-xs font-bold uppercase tracking-widest">
-            <Zap className="w-3.5 h-3.5 fill-[#E63946]" />
-            <span>KATALOG AKI RESMI 100% GARANSI</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#D91E2B]/15 border border-[#D91E2B]/40 text-[#D91E2B] text-xs font-bold uppercase tracking-widest">
+            <Zap className="w-3.5 h-3.5 fill-[#D91E2B]" />
+            <span>KATALOG AKI MOBIL RESMI</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-white tracking-wide font-display">
-            Pilih Aki Resmi <span className="text-[#E63946]">Siap Antar Pasang</span>
+            Pilihan Aki &amp; <span className="text-[#D91E2B]">Kategori Mobil</span>
           </h2>
           <p className="text-zinc-400 text-base sm:text-lg">
-            Semua produk 100% Baru dengan segel resmi &amp; garansi hingga 24 bulan. Gratis tes kelistrikan sebelum pemasangan!
+            Aki GS Astra &amp; Amaron Original 100% baru dengan segel resmi. Bebas Ongkir &amp; Pemasangan di tempat Anda!
           </p>
         </div>
 
-        {/* Search Bar & Filters */}
+        {/* Filter Controls Bar */}
         <div className="bg-[#1A1A1D] p-6 rounded-2xl border border-zinc-800 mb-12 space-y-6">
           
-          {/* Real-time Search Input */}
+          {/* Search Bar Input */}
           <div className="relative">
             <Search className="w-5 h-5 text-zinc-400 absolute left-4 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Ketik tipe mobil Anda (contoh: Avanza, HR-V, Innova) atau kode aki (NS60LS)..."
-              className="w-full bg-[#0D0D0F] border border-zinc-700 rounded-xl pl-12 pr-4 py-4 text-white placeholder-zinc-500 focus:outline-none focus:border-[#E63946] focus:ring-1 focus:ring-[#E63946] transition-colors text-sm sm:text-base font-medium"
+              placeholder="Cari tipe mobil Anda (contoh: Brio, Avanza, Innova, Fortuner) atau tipe aki (NS60, NS40)..."
+              className="w-full bg-[#0D0D0F] border border-zinc-700 rounded-xl pl-12 pr-4 py-3.5 text-white placeholder-zinc-500 focus:outline-none focus:border-[#D91E2B] transition-colors text-sm sm:text-base font-medium"
             />
             {searchQuery && (
               <button
@@ -77,19 +76,19 @@ export const Catalog: React.FC = () => {
             )}
           </div>
 
-          {/* Brand Filter Tabs */}
+          {/* Vehicle Category Main Tabs */}
           <div className="space-y-2">
             <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 block">
-              Filter Merk Aki:
+              Pilih Kategori Mobil:
             </label>
             <div className="flex flex-wrap gap-2">
-              {brandTabs.map((tab) => (
+              {vehicleTabs.map((tab) => (
                 <button
                   key={tab.value}
-                  onClick={() => setSelectedBrand(tab.value)}
-                  className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
-                    selectedBrand === tab.value
-                      ? 'bg-[#E63946] text-white shadow-[0_0_15px_rgba(230,57,70,0.4)]'
+                  onClick={() => setSelectedVehicle(tab.value)}
+                  className={`px-4 py-2.5 rounded-lg text-xs font-extrabold uppercase tracking-wider transition-all cursor-pointer ${
+                    selectedVehicle === tab.value
+                      ? 'bg-[#D91E2B] text-white shadow-[0_0_15px_rgba(217,30,43,0.4)]'
                       : 'bg-[#0D0D0F] text-zinc-400 border border-zinc-800 hover:border-zinc-700 hover:text-white'
                   }`}
                 >
@@ -99,19 +98,19 @@ export const Catalog: React.FC = () => {
             </div>
           </div>
 
-          {/* Vehicle Category Filter Tabs */}
-          <div className="space-y-2 pt-2 border-t border-zinc-800/60">
+          {/* Brand Filter Tabs */}
+          <div className="space-y-2 pt-2 border-t border-zinc-800/80">
             <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 block">
-              Filter Jenis Mobil:
+              Filter Merk Aki:
             </label>
             <div className="flex flex-wrap gap-2">
-              {vehicleTabs.map((tab) => (
+              {brandTabs.map((tab) => (
                 <button
                   key={tab.value}
-                  onClick={() => setSelectedVehicle(tab.value)}
-                  className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
-                    selectedVehicle === tab.value
-                      ? 'bg-[#E63946] text-white shadow-[0_0_15px_rgba(230,57,70,0.3)]'
+                  onClick={() => setSelectedBrand(tab.value)}
+                  className={`px-3.5 py-1.5 rounded-md text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                    selectedBrand === tab.value
+                      ? 'bg-[#FF9500] text-black shadow-[0_0_15px_rgba(255,149,0,0.3)]'
                       : 'bg-[#0D0D0F] text-zinc-400 border border-zinc-800 hover:border-zinc-700 hover:text-white'
                   }`}
                 >
@@ -123,50 +122,61 @@ export const Catalog: React.FC = () => {
 
         </div>
 
-        {/* Product Grid */}
+        {/* Product Cards Grid */}
         {filteredProducts.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProducts.map((product) => (
               <div
                 key={product.id}
-                className="rounded-2xl bg-[#1A1A1D] border border-zinc-800 hover:border-[#E63946]/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group hover:shadow-[0_0_30px_rgba(230,57,70,0.15)]"
+                className="rounded-2xl bg-[#1A1A1D] border-2 border-zinc-800 hover:border-[#D91E2B] transition-all duration-300 flex flex-col justify-between overflow-hidden group hover:shadow-[0_0_30px_rgba(217,30,43,0.2)]"
               >
                 {/* Card Header & Badges */}
-                <div className="p-6 relative border-b border-zinc-800/80">
+                <div className="p-6 relative border-b border-zinc-800">
                   <div className="flex items-center justify-between gap-2 mb-3">
-                    <Badge variant="red" leftIcon={<Zap className="w-3 h-3 fill-[#E63946]" />}>
+                    <Badge variant="red" leftIcon={<Zap className="w-3 h-3 fill-[#D91E2B]" />}>
                       {product.category}
                     </Badge>
-                    {product.isBestSeller && (
-                      <Badge variant="emergency">PALING LARIS</Badge>
-                    )}
+                    <Badge variant="amber">
+                      Garansi {product.warrantyMonths} Bulan
+                    </Badge>
                   </div>
 
-                  <h3 className="font-extrabold text-xl text-white font-display uppercase tracking-wide group-hover:text-[#E63946] transition-colors leading-snug">
+                  <h3 className="font-extrabold text-xl text-white font-display uppercase tracking-wide group-hover:text-[#D91E2B] transition-colors leading-snug">
                     {product.name}
                   </h3>
 
-                  <div className="mt-2 inline-flex items-center gap-2 text-xs text-zinc-400 font-mono">
-                    <span>Kapasitas: <strong className="text-white">{product.capacityAh} Ah</strong></span>
-                    <span>•</span>
-                    <span>Garansi: <strong className="text-[#E63946]">{product.warrantyMonths} Bulan</strong></span>
+                  <div className="mt-2 text-xs text-zinc-400 font-mono">
+                    Tipe Kendaraan: <strong className="text-white uppercase">{product.vehicleType}</strong>
                   </div>
                 </div>
 
-                {/* Battery Specs & Compatible Cars */}
-                <div className="p-6 space-y-4 flex-grow bg-[#131315]/50">
+                {/* Battery Specs & Feature List */}
+                <div className="p-6 space-y-4 flex-grow bg-[#131315]/60">
                   
-                  {/* Technology badge */}
-                  <div className="text-xs px-3 py-1.5 rounded-md bg-[#0D0D0F] border border-zinc-800 text-zinc-300 font-mono flex items-center gap-2">
+                  {/* Technology spec badge */}
+                  <div className="text-xs px-3 py-2 rounded-lg bg-[#0D0D0F] border border-zinc-800 text-zinc-300 font-mono flex items-center gap-2">
                     <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
                     <span>{product.technology}</span>
                   </div>
 
+                  {/* Feature Checklist */}
+                  <div className="space-y-1.5 text-xs text-zinc-300 font-medium">
+                    <div className="flex items-center gap-2 text-emerald-400">
+                      <span>✓</span> <span>100% Gratis Ongkir &amp; Pemasangan Lokasi</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-emerald-400">
+                      <span>✓</span> <span>Gratis Pengecekan Alternator &amp; Kelistrikan</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-zinc-300">
+                      <span>✓</span> <span>Tukar Tambah Aki Bekas Dihargai Tinggi</span>
+                    </div>
+                  </div>
+
                   {/* Compatible Cars List */}
-                  <div className="space-y-2">
+                  <div className="space-y-2 pt-2 border-t border-zinc-800/60">
                     <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-zinc-400">
-                      <Car className="w-3.5 h-3.5 text-[#E63946]" />
-                      <span>Kecocokan Mobil:</span>
+                      <Car className="w-3.5 h-3.5 text-[#D91E2B]" />
+                      <span>Cocok Untuk Mobil:</span>
                     </div>
                     <div className="flex flex-wrap gap-1.5">
                       {product.compatibleCars.map((car, idx) => (
@@ -182,15 +192,25 @@ export const Catalog: React.FC = () => {
 
                 </div>
 
-                {/* Pricing Badge (No Hardcoded Nominal) & WA Button */}
+                {/* Pricing & Inquiry Action (Marketplace Partner Model) */}
                 <div className="p-6 bg-[#0D0D0F] border-t border-zinc-800 space-y-4">
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#E63946]/10 border border-[#E63946]/30 text-[#E63946] text-xs font-bold uppercase tracking-wider">
-                    <Tag className="w-3.5 h-3.5" />
-                    <span>🏷️ Cek Harga Terbaik &amp; Promo WA</span>
+                  <div className="space-y-1">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[11px] text-zinc-400 uppercase font-mono block">Kisaran Harga Pasaran:</span>
+                      <span className="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30 font-bold">
+                        TUKAR TAMBAH OK
+                      </span>
+                    </div>
+                    <span className="font-extrabold text-base sm:text-lg text-white font-display block">
+                      Estimasi Rp {(product.minPrice || 800000).toLocaleString('id-ID')} - {(product.maxPrice || 950000).toLocaleString('id-ID')}
+                    </span>
+                    <p className="text-[10px] text-zinc-400 leading-tight pt-1">
+                      *Harga bervariasi tergantung lokasi &amp; partner teknisi terdekat
+                    </p>
                   </div>
 
                   <a
-                    href={WhatsAppService.buildBatteryOrderUrl(product)}
+                    href={WhatsAppService.buildPriceCheckUrl(product)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block"
@@ -199,9 +219,10 @@ export const Catalog: React.FC = () => {
                       variant="primary"
                       size="md"
                       fullWidth
-                      leftIcon={<MessageSquare className="w-4 h-4" />}
+                      className="rounded-xl font-extrabold"
+                      leftIcon={<MessageSquare className="w-4 h-4 fill-white text-white" />}
                     >
-                      Tanya Harga &amp; Stok via WA
+                      Cek Harga &amp; Ketersediaan
                     </Button>
                   </a>
                 </div>
@@ -211,16 +232,16 @@ export const Catalog: React.FC = () => {
           </div>
         ) : (
           <div className="text-center py-16 bg-[#1A1A1D] rounded-2xl border border-zinc-800 space-y-4">
-            <Zap className="w-12 h-12 text-[#E63946] mx-auto opacity-50" />
+            <Zap className="w-12 h-12 text-[#D91E2B] mx-auto opacity-50" />
             <h3 className="text-xl font-bold text-white font-display uppercase">
-              Tipe Aki Atau Mobil Tidak Ditemukan
+              Aki Untuk Mobil Anda Tidak Ditemukan
             </h3>
             <p className="text-zinc-400 text-sm max-w-md mx-auto">
-              Jangan khawatir! Tim teknisi kami punya stok lengkap semua merk dan tipe aki. Hubungi via WA untuk konsultasi gratis.
+              Konsultasikan merk dan tipe mobil Anda langsung ke customer support 24 jam kami via WhatsApp.
             </p>
             <a href={WhatsAppService.buildConsultationUrl()} target="_blank" rel="noopener noreferrer">
-              <Button variant="primary" size="md">
-                Tanyakan Aki Mobil Anda via WA
+              <Button variant="primary" size="md" className="rounded-xl font-bold">
+                Tanyakan Aki via WA 24H
               </Button>
             </a>
           </div>
