@@ -236,7 +236,7 @@ export const ServiceArea: React.FC = () => {
             </p>
           </div>
           <a
-            href={`https://wa.me/${siteConfig.brand.whatsAppNumber}?text=${encodeURIComponent('Halo CS ShopDrive, saya mau tanya apakah ada mitra teknisi di area lokasi saya berikut: [Kirim Share Loc]')}`}
+            href={WhatsAppService.buildEmergencyCallUrl('lokasi saya [Kirim Share Loc]')}
             target="_blank"
             rel="noopener noreferrer"
             className="shrink-0 w-full sm:w-auto"

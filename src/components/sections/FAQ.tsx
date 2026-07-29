@@ -36,7 +36,7 @@ export const FAQ: React.FC = () => {
             Tim customer support dan konsultan teknis ShopDrive siap membantu melayani pertanyaan Anda 24 jam nonstop.
           </p>
           <a
-            href={WhatsAppService.buildConsultationUrl('Pertanyaan Layanan ShopDrive')}
+            href={WhatsAppService.buildEmergencyCallUrl()}
             target="_blank"
             rel="noopener noreferrer"
           >
