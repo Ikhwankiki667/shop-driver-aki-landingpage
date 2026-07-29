@@ -110,7 +110,7 @@ export const Catalog: React.FC = () => {
                   onClick={() => setSelectedBrand(tab.value)}
                   className={`px-3.5 py-1.5 rounded-md text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                     selectedBrand === tab.value
-                      ? 'bg-[#FF9500] text-black shadow-[0_0_15px_rgba(255,149,0,0.3)]'
+                      ? 'bg-[#D91E2B] text-white shadow-[0_0_15px_rgba(217,30,43,0.4)]'
                       : 'bg-[#0D0D0F] text-zinc-400 border border-zinc-800 hover:border-zinc-700 hover:text-white'
                   }`}
                 >
@@ -136,7 +136,7 @@ export const Catalog: React.FC = () => {
                     <Badge variant="red" leftIcon={<Zap className="w-3 h-3 fill-[#D91E2B]" />}>
                       {product.category}
                     </Badge>
-                    <Badge variant="amber">
+                    <Badge variant="red">
                       Garansi {product.warrantyMonths} Bulan
                     </Badge>
                   </div>

@@ -170,6 +170,12 @@ export const mockTestimonials: ITestimonial[] = [
 
 export const mockFAQs: IFAQItem[] = [
   {
+    id: 'faq-0',
+    question: 'ShopDrive itu sebenarnya berperan sebagai apa?',
+    answer: 'ShopDrive adalah platform perantara (marketplace) layanan darurat aki yang menghubungkan Anda dengan jaringan teknisi partner independen bersertifikat di berbagai kota. Karena ditangani oleh partner lokal terdekat, harga dan ketersediaan stok dapat menyesuaikan dengan ketentuan partner di masing-masing area.',
+    category: 'PEMESANAN',
+  },
+  {
     id: 'faq-1',
     question: 'Berapa lama estimasi waktu tunggu kedatangan teknisi ke lokasi saya?',
     answer: 'Rata-rata kedatangan teknisi ShopDrive adalah kurang dari 10 hingga 15 menit untuk seluruh wilayah perkotaan utama. Armada teknisi siaga kami disebar di berbagai titik strategis agar respon sangat cepat.',

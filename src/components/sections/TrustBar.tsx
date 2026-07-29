@@ -15,8 +15,8 @@ export const TrustBar: React.FC = () => {
     },
     {
       icon: <ShieldCheck className="w-7 h-7 text-[#D91E2B]" />,
-      title: "Harga Transparan, Tanpa Biaya Tersembunyi",
-      description: "Bebas ongkir & pasang. Bayar sesuai harga resmi setelah aki terpasang.",
+      title: "Harga Transparan Disepakati di Awal",
+      description: "Harga transparan disepakati di awal sebelum teknisi meluncur. Tanpa biaya tersembunyi, bayar setelah terpasang.",
     },
     {
       icon: <Wrench className="w-7 h-7 text-[#D91E2B]" />,
