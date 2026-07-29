@@ -150,10 +150,10 @@ export const Hero: React.FC = () => {
                     <Zap className="w-8 h-8 fill-[#D91E2B]" />
                   </div>
                   <h3 className="font-extrabold text-xl text-white font-display uppercase tracking-wide">
-                    GS ASTRA &amp; AMARON
+                    GS ASTRA ORIGINAL
                   </h3>
                   <p className="text-zinc-400 text-xs mt-1 font-mono">
-                    Ready Stock Semua Tipe (NS40, NS60, 55D23L, DIN 74)
+                    Ready Stock Semua Tipe (NS40, NS60, 55D23L, DIN 74, dll)
                   </p>
                 </div>
               </div>
@@ -162,7 +162,7 @@ export const Hero: React.FC = () => {
               <div className="space-y-2.5 text-xs sm:text-sm text-zinc-200">
                 <div className="flex items-center gap-2.5 py-1.5 border-b border-zinc-800/60">
                   <span className="text-emerald-400 font-bold">✓</span>
-                  <span className="font-semibold text-white">Aki GS Astra &amp; Amaron Original (100% Segel)</span>
+                  <span className="font-semibold text-white">Aki GS Astra Original 100% Segel Pabrik</span>
                 </div>
                 <div className="flex items-center gap-2.5 py-1.5 border-b border-zinc-800/60">
                   <span className="text-emerald-400 font-bold">✓</span>

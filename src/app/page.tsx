@@ -3,7 +3,7 @@ import { Navbar } from '../components/sections/Navbar';
 import { Hero } from '../components/sections/Hero';
 import { TrustBar } from '../components/sections/TrustBar';
 import { HowItWorks } from '../components/sections/HowItWorks';
-import { Catalog } from '../components/sections/Catalog';
+import { BrandLogos } from '../components/sections/BrandLogos';
 import { ServiceArea } from '../components/sections/ServiceArea';
 import { Testimonials } from '../components/sections/Testimonials';
 import { FAQ } from '../components/sections/FAQ';
@@ -26,8 +26,8 @@ export default function Home() {
       {/* How It Works (4-Step Mechanical Process) */}
       <HowItWorks />
 
-      {/* GS Astra & Amaron Battery Catalog */}
-      <Catalog />
+      {/* Available Battery Brands Grid */}
+      <BrandLogos />
 
       {/* Service Coverage Area Search */}
       <ServiceArea />

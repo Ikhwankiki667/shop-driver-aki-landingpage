@@ -5,7 +5,7 @@
 
 export type BatteryCategory = 'GS ASTRA' | 'AMARON' | 'ROCKET' | 'VARTA' | 'ALL';
 export type VehicleCategory = 'SUV/MPV' | 'Sedan/Hatchback' | 'City Car' | 'Diesel/Commercial' | 'ALL';
-export type RegionCategory = 'JABODETABEK' | 'JAWA_BALI' | 'LUAR_JAWA' | 'ALL';
+export type RegionCategory = 'JABODETABEK' | 'JAWA_BALI' | 'SUMATERA' | 'KALIMANTAN_SULAWESI' | 'PAPUA_NUSA' | 'ALL';
 
 export interface IBatteryProduct {
   id: string;

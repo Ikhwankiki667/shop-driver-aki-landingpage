@@ -106,33 +106,64 @@ export const mockBatteryProducts: IBatteryProduct[] = [
 ];
 
 export const mockServiceAreas: IServiceArea[] = [
-  // JABODETABEK
+  // JABODETABEK & JAWA BARAT
   { id: 'jkt-sel', city: 'Jakarta Selatan', province: 'DKI Jakarta', region: 'JABODETABEK', status: 'ACTIVE_24H', estimatedTimeMinutes: 8, techniciansCount: 28 },
   { id: 'jkt-bar', city: 'Jakarta Barat', province: 'DKI Jakarta', region: 'JABODETABEK', status: 'ACTIVE_24H', estimatedTimeMinutes: 10, techniciansCount: 24 },
   { id: 'jkt-pus', city: 'Jakarta Pusat', province: 'DKI Jakarta', region: 'JABODETABEK', status: 'ACTIVE_24H', estimatedTimeMinutes: 9, techniciansCount: 20 },
   { id: 'jkt-utr', city: 'Jakarta Utara', province: 'DKI Jakarta', region: 'JABODETABEK', status: 'ACTIVE_24H', estimatedTimeMinutes: 12, techniciansCount: 18 },
   { id: 'jkt-tim', city: 'Jakarta Timur', province: 'DKI Jakarta', region: 'JABODETABEK', status: 'ACTIVE_24H', estimatedTimeMinutes: 10, techniciansCount: 26 },
+  { id: 'bgr', city: 'Bogor & Sentul', province: 'Jawa Barat', region: 'JABODETABEK', status: 'ACTIVE_24H', estimatedTimeMinutes: 15, techniciansCount: 16 },
+  { id: 'dpk', city: 'Depok & Margonda', province: 'Jawa Barat', region: 'JABODETABEK', status: 'ACTIVE_24H', estimatedTimeMinutes: 10, techniciansCount: 18 },
   { id: 'tng-kota', city: 'Tangerang Kota & BSD', province: 'Banten', region: 'JABODETABEK', status: 'ACTIVE_24H', estimatedTimeMinutes: 10, techniciansCount: 22 },
   { id: 'tng-sel', city: 'Tangerang Selatan & Bintaro', province: 'Banten', region: 'JABODETABEK', status: 'ACTIVE_24H', estimatedTimeMinutes: 8, techniciansCount: 25 },
   { id: 'bks', city: 'Bekasi Kota & Cikarang', province: 'Jawa Barat', region: 'JABODETABEK', status: 'ACTIVE_24H', estimatedTimeMinutes: 12, techniciansCount: 24 },
-  { id: 'bgr', city: 'Bogor & Sentul', province: 'Jawa Barat', region: 'JABODETABEK', status: 'ACTIVE_24H', estimatedTimeMinutes: 15, techniciansCount: 16 },
-  { id: 'dpk', city: 'Depok & Margonda', province: 'Jawa Barat', region: 'JABODETABEK', status: 'ACTIVE_24H', estimatedTimeMinutes: 10, techniciansCount: 18 },
+  { id: 'bdg', city: 'Bandung Kota & Cimahi', province: 'Jawa Barat', region: 'JABODETABEK', status: 'ACTIVE_24H', estimatedTimeMinutes: 10, techniciansCount: 30 },
+  { id: 'crb', city: 'Cirebon', province: 'Jawa Barat', region: 'JABODETABEK', status: 'ACTIVE_24H', estimatedTimeMinutes: 12, techniciansCount: 14 },
+  { id: 'srg', city: 'Serang & Cilegon', province: 'Banten', region: 'JABODETABEK', status: 'ACTIVE_24H', estimatedTimeMinutes: 12, techniciansCount: 15 },
 
-  // JAWA & BALI
-  { id: 'bdg', city: 'Bandung Kota & Cimahi', province: 'Jawa Barat', region: 'JAWA_BALI', status: 'ACTIVE_24H', estimatedTimeMinutes: 10, techniciansCount: 30 },
+  // JAWA TENGAH, DIY & JAWA TIMUR
   { id: 'smg', city: 'Semarang & Ungaran', province: 'Jawa Tengah', region: 'JAWA_BALI', status: 'ACTIVE_24H', estimatedTimeMinutes: 12, techniciansCount: 18 },
   { id: 'solo', city: 'Solo & Sukoharjo', province: 'Jawa Tengah', region: 'JAWA_BALI', status: 'ACTIVE_24H', estimatedTimeMinutes: 10, techniciansCount: 15 },
   { id: 'jog', city: 'Yogyakarta & Sleman', province: 'DI Yogyakarta', region: 'JAWA_BALI', status: 'ACTIVE_24H', estimatedTimeMinutes: 10, techniciansCount: 20 },
   { id: 'sby', city: 'Surabaya & Sidoarjo', province: 'Jawa Timur', region: 'JAWA_BALI', status: 'ACTIVE_24H', estimatedTimeMinutes: 9, techniciansCount: 35 },
   { id: 'mlg', city: 'Malang Kota', province: 'Jawa Timur', region: 'JAWA_BALI', status: 'ACTIVE_24H', estimatedTimeMinutes: 12, techniciansCount: 16 },
-  { id: 'dps', city: 'Denpasar & Badung (Bali)', province: 'Bali', region: 'JAWA_BALI', status: 'ACTIVE_24H', estimatedTimeMinutes: 10, techniciansCount: 20 },
+  { id: 'kdr', city: 'Kediri', province: 'Jawa Timur', region: 'JAWA_BALI', status: 'ACTIVE_24H', estimatedTimeMinutes: 12, techniciansCount: 12 },
+  { id: 'bny', city: 'Banyuwangi', province: 'Jawa Timur', region: 'JAWA_BALI', status: 'ACTIVE_24H', estimatedTimeMinutes: 15, techniciansCount: 10 },
 
-  // LUAR JAWA
-  { id: 'mdn', city: 'Medan Kota', province: 'Sumatera Utara', region: 'LUAR_JAWA', status: 'ACTIVE_24H', estimatedTimeMinutes: 12, techniciansCount: 22 },
-  { id: 'pbm', city: 'Palembang Kota', province: 'Sumatera Selatan', region: 'LUAR_JAWA', status: 'ACTIVE_24H', estimatedTimeMinutes: 15, techniciansCount: 16 },
-  { id: 'pkn', city: 'Pekanbaru', province: 'Riau', region: 'LUAR_JAWA', status: 'ACTIVE_24H', estimatedTimeMinutes: 12, techniciansCount: 14 },
-  { id: 'mks', city: 'Makassar Kota', province: 'Sulawesi Selatan', region: 'LUAR_JAWA', status: 'ACTIVE_24H', estimatedTimeMinutes: 12, techniciansCount: 18 },
-  { id: 'bpn', city: 'Balikpapan & Samarinda', province: 'Kalimantan Timur', region: 'LUAR_JAWA', status: 'ACTIVE_24H', estimatedTimeMinutes: 15, techniciansCount: 15 },
+  // SUMATERA
+  { id: 'sbg', city: 'Sabang', province: 'Aceh', region: 'SUMATERA', status: 'ACTIVE_24H', estimatedTimeMinutes: 15, techniciansCount: 8 },
+  { id: 'btj', city: 'Banda Aceh', province: 'Aceh', region: 'SUMATERA', status: 'ACTIVE_24H', estimatedTimeMinutes: 12, techniciansCount: 14 },
+  { id: 'mdn', city: 'Medan Kota', province: 'Sumatera Utara', region: 'SUMATERA', status: 'ACTIVE_24H', estimatedTimeMinutes: 12, techniciansCount: 22 },
+  { id: 'pkn', city: 'Pekanbaru', province: 'Riau', region: 'SUMATERA', status: 'ACTIVE_24H', estimatedTimeMinutes: 12, techniciansCount: 14 },
+  { id: 'btm', city: 'Batam', province: 'Kepulauan Riau', region: 'SUMATERA', status: 'ACTIVE_24H', estimatedTimeMinutes: 10, techniciansCount: 16 },
+  { id: 'pdg', city: 'Padang', province: 'Sumatera Barat', region: 'SUMATERA', status: 'ACTIVE_24H', estimatedTimeMinutes: 12, techniciansCount: 15 },
+  { id: 'pbm', city: 'Palembang Kota', province: 'Sumatera Selatan', region: 'SUMATERA', status: 'ACTIVE_24H', estimatedTimeMinutes: 15, techniciansCount: 16 },
+  { id: 'jmb', city: 'Jambi', province: 'Jambi', region: 'SUMATERA', status: 'ACTIVE_24H', estimatedTimeMinutes: 12, techniciansCount: 12 },
+  { id: 'bgl', city: 'Bengkulu', province: 'Bengkulu', region: 'SUMATERA', status: 'ACTIVE_24H', estimatedTimeMinutes: 15, techniciansCount: 10 },
+  { id: 'bdl', city: 'Bandar Lampung', province: 'Lampung', region: 'SUMATERA', status: 'ACTIVE_24H', estimatedTimeMinutes: 12, techniciansCount: 18 },
+
+  // KALIMANTAN & SULAWESI
+  { id: 'bpn', city: 'Balikpapan & Samarinda', province: 'Kalimantan Timur', region: 'KALIMANTAN_SULAWESI', status: 'ACTIVE_24H', estimatedTimeMinutes: 15, techniciansCount: 15 },
+  { id: 'bjm', city: 'Banjarmasin', province: 'Kalimantan Selatan', region: 'KALIMANTAN_SULAWESI', status: 'ACTIVE_24H', estimatedTimeMinutes: 12, techniciansCount: 14 },
+  { id: 'pnk', city: 'Pontianak', province: 'Kalimantan Barat', region: 'KALIMANTAN_SULAWESI', status: 'ACTIVE_24H', estimatedTimeMinutes: 12, techniciansCount: 12 },
+  { id: 'pky', city: 'Palangkaraya', province: 'Kalimantan Tengah', region: 'KALIMANTAN_SULAWESI', status: 'ACTIVE_24H', estimatedTimeMinutes: 15, techniciansCount: 10 },
+  { id: 'trk', city: 'Tarakan', province: 'Kalimantan Utara', region: 'KALIMANTAN_SULAWESI', status: 'ACTIVE_24H', estimatedTimeMinutes: 15, techniciansCount: 8 },
+  { id: 'mks', city: 'Makassar Kota', province: 'Sulawesi Selatan', region: 'KALIMANTAN_SULAWESI', status: 'ACTIVE_24H', estimatedTimeMinutes: 12, techniciansCount: 18 },
+  { id: 'mnd', city: 'Manado', province: 'Sulawesi Utara', region: 'KALIMANTAN_SULAWESI', status: 'ACTIVE_24H', estimatedTimeMinutes: 12, techniciansCount: 14 },
+  { id: 'plu', city: 'Palu', province: 'Sulawesi Tengah', region: 'KALIMANTAN_SULAWESI', status: 'ACTIVE_24H', estimatedTimeMinutes: 15, techniciansCount: 10 },
+  { id: 'kdr-sul', city: 'Kendari', province: 'Sulawesi Tenggara', region: 'KALIMANTAN_SULAWESI', status: 'ACTIVE_24H', estimatedTimeMinutes: 15, techniciansCount: 10 },
+  { id: 'gto', city: 'Gorontalo', province: 'Gorontalo', region: 'KALIMANTAN_SULAWESI', status: 'ACTIVE_24H', estimatedTimeMinutes: 15, techniciansCount: 8 },
+
+  // MALUKU, PAPUA & NUSA TENGGARA
+  { id: 'dps', city: 'Denpasar & Badung (Bali)', province: 'Bali', region: 'PAPUA_NUSA', status: 'ACTIVE_24H', estimatedTimeMinutes: 10, techniciansCount: 20 },
+  { id: 'mtr', city: 'Mataram (Lombok)', province: 'Nusa Tenggara Barat', region: 'PAPUA_NUSA', status: 'ACTIVE_24H', estimatedTimeMinutes: 12, techniciansCount: 12 },
+  { id: 'kpg', city: 'Kupang', province: 'Nusa Tenggara Timur', region: 'PAPUA_NUSA', status: 'ACTIVE_24H', estimatedTimeMinutes: 15, techniciansCount: 10 },
+  { id: 'amb', city: 'Ambon', province: 'Maluku', region: 'PAPUA_NUSA', status: 'ACTIVE_24H', estimatedTimeMinutes: 15, techniciansCount: 10 },
+  { id: 'tnt', city: 'Ternate', province: 'Maluku Utara', region: 'PAPUA_NUSA', status: 'ACTIVE_24H', estimatedTimeMinutes: 15, techniciansCount: 8 },
+  { id: 'jyp', city: 'Jayapura', province: 'Papua', region: 'PAPUA_NUSA', status: 'ACTIVE_24H', estimatedTimeMinutes: 15, techniciansCount: 12 },
+  { id: 'srg-pap', city: 'Sorong', province: 'Papua Barat', region: 'PAPUA_NUSA', status: 'ACTIVE_24H', estimatedTimeMinutes: 15, techniciansCount: 10 },
+  { id: 'tmk', city: 'Timika', province: 'Papua Tengah', region: 'PAPUA_NUSA', status: 'ACTIVE_24H', estimatedTimeMinutes: 15, techniciansCount: 8 },
+  { id: 'mrk', city: 'Merauke', province: 'Papua Selatan', region: 'PAPUA_NUSA', status: 'ACTIVE_24H', estimatedTimeMinutes: 15, techniciansCount: 8 },
 ];
 
 export const mockTestimonials: ITestimonial[] = [

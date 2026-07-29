@@ -14,7 +14,6 @@ export const Navbar: React.FC = () => {
     { label: 'BERANDA', href: '#hero', sectionId: 'hero' },
     { label: 'CARA KERJA', href: '#how-it-works', sectionId: 'how-it-works' },
     { label: 'AREA LAYANAN', href: '#coverage', sectionId: 'coverage' },
-    { label: 'PILIHAN AKI', href: '#catalog', sectionId: 'catalog' },
     { label: 'TESTIMONI', href: '#testimonials', sectionId: 'testimonials' },
     { label: 'FAQ', href: '#faq', sectionId: 'faq' },
   ];
@@ -67,8 +66,6 @@ export const Navbar: React.FC = () => {
         return 'bg-[#0D0D0F]/95 backdrop-blur-md border-b border-[#D91E2B]/50 shadow-[0_10px_30px_rgba(217,30,43,0.15)]';
       case 'coverage':
         return 'bg-[#131315]/95 backdrop-blur-md border-b border-[#FF9500]/40 shadow-[0_10px_30px_rgba(255,149,0,0.15)]';
-      case 'catalog':
-        return 'bg-[#1A1A1D]/95 backdrop-blur-md border-b border-[#D91E2B]/50 shadow-[0_10px_30px_rgba(217,30,43,0.2)]';
       case 'testimonials':
         return 'bg-[#131315]/95 backdrop-blur-md border-b border-[#D91E2B]/30 shadow-[0_10px_30px_rgba(0,0,0,0.9)]';
       case 'faq':

@@ -8,6 +8,7 @@ import { LocationService } from '../../services/LocationService';
 import { WhatsAppService } from '../../services/WhatsAppService';
 import { Badge } from '../ui/Badge';
 import { Button } from '../ui/Button';
+import { siteConfig } from '../../config/siteConfig';
 
 interface IMapCity {
   id: string;
@@ -21,42 +22,29 @@ const mapCities: IMapCity[] = [
   { id: 'jabodetabek', name: 'Jabodetabek', query: 'Jakarta, Indonesia', label: '📍 Jabodetabek' },
   { id: 'jawa-bali', name: 'Jawa & Bali', query: 'Surabaya, Indonesia', label: '📍 Jawa & Bali' },
   { id: 'sumatera', name: 'Sumatera', query: 'Medan, Indonesia', label: '📍 Sumatera' },
-  { id: 'kalimantan-sulawesi', name: 'Kalimantan & Sulawesi', query: 'Balikpapan, Indonesia', label: '📍 Kalimantan & Sulawesi' },
+  { id: 'kalimantan-sulawesi', name: 'Kalimantan & Sulawesi', query: 'Makassar, Indonesia', label: '📍 Kalimantan & Sulawesi' },
+  { id: 'papua-nusa', name: 'Papua & Nusa Tenggara', query: 'Jayapura, Indonesia', label: '📍 Papua & Nusa' },
 ];
 
 export const ServiceArea: React.FC = () => {
   const [activeMapCity, setActiveMapCity] = useState<IMapCity>(mapCities[0]);
-  const [selectedRegion, setSelectedRegion] = useState<RegionCategory>('JABODETABEK');
+  const [selectedRegion, setSelectedRegion] = useState<RegionCategory>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
 
-  const regionTabs: { label: string; value: RegionCategory; count: number }[] = [
-    {
-      label: 'Jabodetabek',
-      value: 'JABODETABEK',
-      count: mockServiceAreas.filter((a) => a.region === 'JABODETABEK').length,
-    },
-    {
-      label: 'Jawa & Bali',
-      value: 'JAWA_BALI',
-      count: mockServiceAreas.filter((a) => a.region === 'JAWA_BALI').length,
-    },
-    {
-      label: 'Luar Jawa',
-      value: 'LUAR_JAWA',
-      count: mockServiceAreas.filter((a) => a.region === 'LUAR_JAWA').length,
-    },
-    {
-      label: 'Semua Kota',
-      value: 'ALL',
-      count: mockServiceAreas.length,
-    },
+  const regionTabs: { label: string; value: RegionCategory }[] = [
+    { label: '🇮🇩 Semua Kota', value: 'ALL' },
+    { label: '📍 Jabodetabek', value: 'JABODETABEK' },
+    { label: '📍 Jawa & Bali', value: 'JAWA_BALI' },
+    { label: '📍 Sumatera', value: 'SUMATERA' },
+    { label: '📍 Kalimantan & Sulawesi', value: 'KALIMANTAN_SULAWESI' },
+    { label: '📍 Nusa Tenggara & Papua', value: 'PAPUA_NUSA' },
   ];
 
   const filteredAreas = LocationService.filterAreas(mockServiceAreas, selectedRegion, searchQuery);
 
   const handleCallArea = (cityName: string) => {
-    const customMessage = `Halo ShopDrive, saya butuh bantuan aki mobil darurat di area ${cityName}.`;
-    const phone = '6281234567890';
+    const customMessage = `Halo CS ShopDrive, saya butuh bantuan aki mobil darurat di area ${cityName}.`;
+    const phone = siteConfig.brand.whatsAppNumber;
     const waUrl = `https://wa.me/${phone}?text=${encodeURIComponent(customMessage)}`;
     window.open(waUrl, '_blank', 'noopener,noreferrer');
   };
@@ -89,11 +77,19 @@ export const ServiceArea: React.FC = () => {
           <div className="lg:col-span-7 flex flex-col">
             <div className="relative flex-1 min-h-[420px] lg:min-h-[500px] w-full rounded-2xl overflow-hidden border border-[#D91E2B]/40 shadow-[0_0_30px_rgba(217,30,43,0.2)] bg-[#1A1A1D] group">
               
-              {/* Top Floating Badge */}
-              <div className="absolute top-4 left-4 right-4 z-20 flex items-center justify-between pointer-events-none">
-                <div className="px-3.5 py-1.5 rounded-lg bg-[#0D0D0F]/90 backdrop-blur-md border border-emerald-500/40 text-emerald-400 text-xs font-mono font-bold shadow-lg flex items-center gap-2 pointer-events-auto">
+              {/* Top Floating Badges */}
+              <div className="absolute top-4 left-4 right-4 z-20 flex flex-wrap items-center justify-between gap-2 pointer-events-none">
+                <div className="px-3.5 py-1.5 rounded-lg bg-[#0D0D0F]/90 backdrop-blur-md border border-emerald-500/40 text-emerald-400 text-xs font-bold shadow-lg flex items-center gap-2 pointer-events-auto">
                   <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
                   <span>🟢 LIVE DISPATCH NETWORK • SELURUH INDONESIA</span>
+                </div>
+                <div className="flex items-center gap-2 pointer-events-auto">
+                  <div className="bg-zinc-900/90 backdrop-blur-md border border-zinc-800 text-zinc-200 text-xs font-semibold px-3 py-1.5 rounded-lg flex items-center gap-1.5 shadow-lg">
+                    <span>⚡ 350+ Armada Siaga</span>
+                  </div>
+                  <div className="bg-zinc-900/90 backdrop-blur-md border border-zinc-800 text-zinc-200 text-xs font-semibold px-3 py-1.5 rounded-lg flex items-center gap-1.5 shadow-lg">
+                    <span>📍 45+ Kota Terdaftar</span>
+                  </div>
                 </div>
               </div>
 
@@ -181,9 +177,9 @@ export const ServiceArea: React.FC = () => {
               </div>
 
               {/* Quick List: Interactive City Chips */}
-              <div className="flex-1 min-h-[220px] max-h-[280px] overflow-y-auto pr-1 space-y-2 scrollbar-thin scrollbar-thumb-zinc-800">
+              <div className="flex-1 min-h-[220px] max-h-[300px] overflow-y-auto pr-1 space-y-2 scrollbar-thin scrollbar-thumb-zinc-800">
                 {filteredAreas.length > 0 ? (
-                  filteredAreas.map((area) => (
+                  (searchQuery ? filteredAreas : filteredAreas.slice(0, 10)).map((area) => (
                     <div
                       key={area.id}
                       onClick={() => {
@@ -240,7 +236,7 @@ export const ServiceArea: React.FC = () => {
             </p>
           </div>
           <a
-            href={`https://wa.me/6281234567890?text=${encodeURIComponent('Halo CS ShopDrive, saya mau tanya apakah ada mitra teknisi di area lokasi saya berikut: [Kirim Share Loc]')}`}
+            href={`https://wa.me/${siteConfig.brand.whatsAppNumber}?text=${encodeURIComponent('Halo CS ShopDrive, saya mau tanya apakah ada mitra teknisi di area lokasi saya berikut: [Kirim Share Loc]')}`}
             target="_blank"
             rel="noopener noreferrer"
             className="shrink-0 w-full sm:w-auto"

@@ -65,11 +65,10 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-xs">
               <li><a href="#hero" className="hover:text-[#D91E2B] transition-colors">Ganti Aki Mobil 24 Jam</a></li>
-              <li><a href="#catalog" className="hover:text-[#D91E2B] transition-colors">Aki GS Astra Maintenance Free</a></li>
-              <li><a href="#catalog" className="hover:text-[#D91E2B] transition-colors">Aki Amaron Silver Long Life</a></li>
-              <li><a href="#catalog" className="hover:text-[#D91E2B] transition-colors">Aki Varta European Start-Stop</a></li>
+              <li><a href="#coverage" className="hover:text-[#D91E2B] transition-colors">Layanan Antar Pasang Lokasi</a></li>
+              <li><a href="#how-it-works" className="hover:text-[#D91E2B] transition-colors">Tes Pengecekan Kelistrikan</a></li>
               <li><a href="#coverage" className="hover:text-[#D91E2B] transition-colors">Layanan Jumpstart / Jamper Aki</a></li>
-              <li><a href="#catalog" className="hover:text-[#D91E2B] transition-colors">Tukar Tambah Aki Bekas</a></li>
+              <li><a href="#hero" className="hover:text-[#D91E2B] transition-colors">Tukar Tambah Aki Bekas</a></li>
             </ul>
           </div>
 
