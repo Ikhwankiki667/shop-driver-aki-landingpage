@@ -16,19 +16,19 @@ export const Testimonials: React.FC = () => {
   };
 
   return (
-    <section id="testimonials" className="py-20 bg-slate-100/70 relative overflow-hidden border-b border-gray-200">
+    <section id="testimonials" className="py-10 sm:py-20 bg-slate-100/70 relative overflow-hidden border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-200 text-red-600 text-xs font-bold uppercase tracking-wider shadow-sm">
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-16 space-y-2 sm:space-y-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-red-50 border border-red-200 text-red-600 text-[10px] sm:text-xs font-bold uppercase tracking-wider shadow-sm">
             <Star className="w-3.5 h-3.5 fill-red-600" />
             <span>KATA PENGENDARA</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-slate-900 tracking-wide font-display">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase text-slate-900 tracking-wide font-display">
             Pengalaman Pengendara <span className="text-red-600">ShopDrive</span>
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg">
+          <p className="text-slate-600 text-xs sm:text-lg">
             Dipercaya oleh 150.000+ pengendara mobil yang terselamatkan saat situasi darurat di jalan.
           </p>
         </div>

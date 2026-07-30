@@ -64,34 +64,34 @@ const documentationList: DocumentationItem[] = [
 
 export const Documentation: React.FC = () => {
   return (
-    <section id="documentation" className="bg-slate-50 border-b border-gray-200 py-20">
+    <section id="documentation" className="bg-slate-50 border-b border-gray-200 py-10 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}
-        <div className="text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 text-red-600 border border-red-200 text-xs font-bold uppercase tracking-wider shadow-sm">
+        <div className="text-center max-w-3xl mx-auto space-y-2 sm:space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-red-50 text-red-600 border border-red-200 text-[10px] sm:text-xs font-bold uppercase tracking-wider shadow-sm">
             <Camera className="w-3.5 h-3.5" />
             <span>DOKUMENTASI LAPANGAN</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 mt-3 uppercase tracking-wide font-display leading-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-slate-900 uppercase tracking-wide font-display leading-tight">
             Bukti Nyata <span className="text-red-600">Pemasangan Aki</span> di Lokasi
           </h2>
 
-          <p className="text-slate-600 max-w-2xl mx-auto mt-2 text-base sm:text-lg leading-relaxed">
+          <p className="text-slate-600 max-w-2xl mx-auto text-xs sm:text-lg leading-relaxed">
             Dokumentasi pengerjaan langsung oleh teknisi profesional ShopDrive di rumah, kantor, parkiran, hingga darurat di jalanan.
           </p>
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6 max-w-7xl mx-auto mt-6 sm:mt-12">
           {documentationList.map((item) => (
             <div
               key={item.id}
               className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-red-400 transition-all duration-300 group flex flex-col justify-between"
             >
-              {/* Image Container with Aspect Ratio */}
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
+              {/* Image Container with Responsive Height (Compact h-44 in mobile) */}
+              <div className="relative h-44 sm:h-64 w-full overflow-hidden bg-slate-100">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -103,25 +103,25 @@ export const Documentation: React.FC = () => {
                 />
                 
                 {/* Photo Badge Overlay */}
-                <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-slate-900/90 text-white text-[11px] font-bold flex items-center gap-1 shadow-md pointer-events-none border border-slate-700">
+                <div className="absolute top-2.5 right-2.5 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full bg-slate-900/90 text-white text-[10px] sm:text-[11px] font-bold flex items-center gap-1 shadow-md pointer-events-none border border-slate-700">
                   <Camera className="w-3 h-3 text-red-400" />
                   <span>Foto Asli</span>
                 </div>
               </div>
 
               {/* Card Body */}
-              <div className="p-5 flex flex-col gap-1.5 flex-1 justify-between">
+              <div className="p-3.5 sm:p-5 flex flex-col gap-1 sm:gap-1.5 flex-1 justify-between">
                 <div>
-                  <h3 className="text-slate-900 font-extrabold text-lg leading-snug font-display">
+                  <h3 className="text-slate-900 font-extrabold text-base sm:text-lg leading-snug font-display">
                     {item.title}
                   </h3>
-                  <div className="text-sm text-red-600 font-bold mt-0.5">
+                  <div className="text-xs sm:text-sm text-red-600 font-bold mt-0.5">
                     {item.battery}
                   </div>
                 </div>
 
-                <div className="pt-2">
-                  <span className="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-lg border border-gray-200/80 font-medium inline-flex items-center gap-1.5">
+                <div className="pt-1.5 sm:pt-2">
+                  <span className="bg-slate-100 text-slate-700 text-[10px] sm:text-xs px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg border border-gray-200/80 font-medium inline-flex items-center gap-1 sm:gap-1.5">
                     <MapPin className="w-3 h-3 text-red-600 shrink-0" />
                     <span>{item.tag}</span>
                   </span>

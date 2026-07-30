@@ -45,22 +45,22 @@ export const ServiceArea: React.FC = () => {
   };
 
   return (
-    <section id="coverage" className="py-20 bg-white relative overflow-hidden border-b border-gray-200">
+    <section id="coverage" className="py-10 sm:py-20 bg-white relative overflow-hidden border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-10 space-y-2 sm:space-y-4">
           <div className="inline-flex items-center gap-2">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 text-red-600 border border-red-200 text-xs font-bold uppercase tracking-wider shadow-sm">
+            <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-red-50 text-red-600 border border-red-200 text-[10px] sm:text-xs font-bold uppercase tracking-wider shadow-sm">
               <Zap className="w-3.5 h-3.5 fill-red-600 text-red-600" />
               <span>JARINGAN TEKNISI NASIONAL 24/7</span>
             </div>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-slate-900 tracking-wide font-display leading-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase text-slate-900 tracking-wide font-display leading-tight">
             Hadir di Seluruh Indonesia <br className="hidden sm:block" />
             <span className="text-red-600">Di Mana Pun Anda Mogok, Kami Siap Meluncur</span>
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+          <p className="text-slate-600 text-xs sm:text-lg leading-relaxed max-w-2xl mx-auto">
             Jaringan mitra &amp; teknisi partner ShopDrive tersebar di pulau Jawa, Sumatera, Kalimantan, Sulawesi, Bali, hingga wilayah lainnya di seluruh Indonesia.
           </p>
         </div>

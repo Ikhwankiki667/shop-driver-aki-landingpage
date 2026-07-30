@@ -36,25 +36,25 @@ export const Catalog: React.FC = () => {
   );
 
   return (
-    <section id="catalog" className="py-24 bg-white relative overflow-hidden border-b border-gray-200">
+    <section id="catalog" className="py-10 sm:py-24 bg-white relative overflow-hidden border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-200 text-[#DC2626] text-xs font-bold uppercase tracking-widest shadow-sm">
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-12 space-y-2 sm:space-y-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-red-50 border border-red-200 text-[#DC2626] text-[10px] sm:text-xs font-bold uppercase tracking-widest shadow-sm">
             <Zap className="w-3.5 h-3.5 fill-[#DC2626]" />
             <span>KATALOG AKI MOBIL RESMI</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-slate-900 tracking-wide font-display">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase text-slate-900 tracking-wide font-display">
             Pilihan Aki &amp; <span className="text-[#DC2626]">Kategori Mobil</span>
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg">
+          <p className="text-slate-600 text-xs sm:text-lg">
             Aki GS Astra &amp; Amaron Original 100% baru dengan segel resmi. Bebas Ongkir &amp; Pemasangan di tempat Anda!
           </p>
         </div>
 
         {/* Filter Controls Bar */}
-        <div className="bg-slate-50 p-6 rounded-2xl border border-gray-200 shadow-sm mb-12 space-y-6">
+        <div className="bg-slate-50 p-3.5 sm:p-6 rounded-2xl border border-gray-200 shadow-sm mb-6 sm:mb-12 space-y-4 sm:space-y-6">
           
           {/* Search Bar Input */}
           <div className="relative">

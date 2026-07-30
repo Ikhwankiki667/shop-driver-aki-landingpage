@@ -21,37 +21,37 @@ const brandList: BrandItem[] = [
 
 export const BrandLogos: React.FC = () => {
   return (
-    <section id="brands" className="py-20 bg-slate-100/70 relative overflow-hidden border-b border-gray-200">
+    <section id="brands" className="py-10 sm:py-20 bg-slate-100/70 relative overflow-hidden border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Centered Header Section */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 text-red-600 border border-red-200 text-xs font-bold uppercase tracking-wider shadow-sm">
+        <div className="text-center max-w-3xl mx-auto space-y-2 sm:space-y-3 mb-6 sm:mb-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-red-50 text-red-600 border border-red-200 text-[10px] sm:text-xs font-bold uppercase tracking-wider shadow-sm">
             <ShieldCheck className="w-3.5 h-3.5" />
             <span>PRODUK LENGKAP</span>
           </div>
           
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-slate-900 tracking-wide font-display leading-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase text-slate-900 tracking-wide font-display leading-tight">
             Semua <span className="text-red-600">Merk Aki</span> Tersedia
           </h2>
           
-          <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+          <p className="text-slate-600 text-xs sm:text-base leading-relaxed max-w-2xl mx-auto">
             Kami menyediakan berbagai merk aki terkemuka untuk semua jenis kendaraan.
           </p>
         </div>
 
         {/* Responsive 4-Column Brand Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto mt-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-4 max-w-5xl mx-auto">
           {brandList.map((brand, index) => (
             <div
               key={index}
-              className="p-5 rounded-2xl bg-white border border-gray-200 shadow-sm hover:border-red-400 transition-all duration-300 flex items-center justify-center sm:justify-start gap-3.5 group hover:shadow-md cursor-pointer text-slate-900"
+              className="p-3 sm:p-5 rounded-2xl bg-white border border-gray-200 shadow-sm hover:border-red-400 transition-all duration-300 flex items-center justify-center sm:justify-start gap-2.5 sm:gap-3.5 group hover:shadow-md cursor-pointer text-slate-900"
             >
-              <div className="p-2.5 rounded-xl bg-red-50 border border-red-200 group-hover:border-red-400 transition-colors shrink-0">
-                <BatteryCharging className="w-6 h-6 text-red-600 group-hover:scale-110 transition-transform" />
+              <div className="p-2 sm:p-2.5 rounded-xl bg-red-50 border border-red-200 group-hover:border-red-400 transition-colors shrink-0">
+                <BatteryCharging className="w-4 h-4 sm:w-6 sm:h-6 text-red-600 group-hover:scale-110 transition-transform" />
               </div>
               <div className="min-w-0 text-center sm:text-left">
-                <h3 className="font-bold text-slate-900 text-base sm:text-lg tracking-wide group-hover:text-red-600 transition-colors truncate">
+                <h3 className="font-bold text-slate-900 text-xs sm:text-lg tracking-wide group-hover:text-red-600 transition-colors truncate">
                   {brand.name}
                 </h3>
                 <p className="text-[11px] text-slate-500 truncate hidden sm:block">

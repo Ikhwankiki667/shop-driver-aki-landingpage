@@ -10,11 +10,11 @@ import { WhatsAppIcon } from '../ui/WhatsAppIcon';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-900 border-t border-slate-800 text-slate-300 text-sm py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <footer className="bg-slate-900 border-t border-slate-800 text-slate-300 text-sm py-8 sm:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-12">
         
         {/* Top Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-10">
           
           {/* Brand Info with Logo Container */}
           <div className="space-y-4">
