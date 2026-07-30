@@ -15,7 +15,7 @@ export class WhatsAppService {
    */
   public static buildEmergencyCallUrl(userLocation?: string): string {
     const areaText = userLocation ? ` di area ${userLocation}` : '';
-    const message = `Halo ShopDrive Aki 24 Jam, mobil saya mogok/aki tekor${areaText}. Lokasi GPS saya: [Isi Lokasi Manual]. Mohon kirim teknisi ganti aki terdekat`;
+    const message = `Halo ShopDriveAki, saya butuh ganti aki${areaText}. Lokasi GPS saya : (share loc)\n\nApakah ada teknisi yang bisa meluncur sekarang?`;
     return `${this.BASE_URL}${this.PHONE}?text=${encodeURIComponent(message)}`;
   }
 
@@ -30,12 +30,12 @@ export class WhatsAppService {
 
     const launchUrl = (locationData?: string) => {
       let message = '';
-      const gpsLocationStr = locationData ? `${locationData} .` : '[Isi Lokasi Manual]';
+      const gpsLocationStr = locationData || '(share loc)';
       
       if (locationName) {
-        message = `Halo ShopDrive Aki 24 Jam, mobil saya mogok/aki tekor di area ${locationName}. Lokasi GPS saya: ${gpsLocationStr} Mohon kirim teknisi ganti aki terdekat`;
+        message = `Halo ShopDriveAki, saya butuh ganti aki di area ${locationName}. Lokasi GPS saya : ${gpsLocationStr}\n\nApakah ada teknisi yang bisa meluncur sekarang?`;
       } else {
-        message = `Halo ShopDrive Aki 24 Jam, mobil saya mogok/aki tekor. Lokasi GPS saya: ${gpsLocationStr} Mohon kirim teknisi ganti aki terdekat`;
+        message = `Halo ShopDriveAki, saya butuh ganti aki. Lokasi GPS saya : ${gpsLocationStr}\n\nApakah ada teknisi yang bisa meluncur sekarang?`;
       }
 
       const finalUrl = `${this.BASE_URL}${phone}?text=${encodeURIComponent(message)}`;

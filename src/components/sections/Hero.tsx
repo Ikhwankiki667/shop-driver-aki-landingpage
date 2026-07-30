@@ -35,8 +35,8 @@ export const Hero: React.FC = () => {
   };
 
   const getEmergencyWaUrl = () => {
-    const locStr = detectedMapsUrl ? `${detectedMapsUrl} .` : '[Isi Lokasi Manual]';
-    const msg = `Halo ShopDrive Aki 24 Jam, mobil saya mogok/aki tekor. Lokasi GPS saya: ${locStr} Mohon kirim teknisi ganti aki terdekat`;
+    const locStr = detectedMapsUrl || '(share loc)';
+    const msg = `Halo ShopDriveAki, saya butuh ganti aki. Lokasi GPS saya : ${locStr}\n\nApakah ada teknisi yang bisa meluncur sekarang?`;
     return `https://wa.me/${siteConfig.brand.whatsAppNumber}?text=${encodeURIComponent(msg)}`;
   };
 

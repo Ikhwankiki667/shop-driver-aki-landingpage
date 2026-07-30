@@ -19,7 +19,7 @@ export const FAQ: React.FC = () => {
             <span>PERTANYAAN POPULER</span>
           </div>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold uppercase text-slate-900 tracking-tight font-display">
-            Pertanyaan Sering <span className="text-red-600">Diajukan</span>
+            Pertanyaan Yang Sering <span className="text-red-600">Diajukan</span>
           </h2>
           <p className="text-slate-600 text-xs sm:text-lg">
             Segala hal yang perlu Anda ketahui mengenai pemesanan, layanan darurat 24 jam, dan klaim garansi resmi ShopDrive Aki.
