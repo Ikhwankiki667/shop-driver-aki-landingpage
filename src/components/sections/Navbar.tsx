@@ -86,8 +86,8 @@ export const Navbar: React.FC = () => {
               <span className="font-extrabold text-xl sm:text-2xl tracking-wider text-slate-900 font-display uppercase leading-none">
                 SHOP<span className="text-[#DC2626]">DRIVE</span>
               </span>
-              <span className="bg-[#DC2626] text-white text-[10px] font-bold px-1.5 py-0.5 rounded animate-pulse">
-                24H
+              <span className="bg-[#DC2626] text-white text-[10px] font-bold px-1.5 py-0.5 rounded">
+                24 JAM
               </span>
             </div>
             <span className="text-[10px] text-slate-500 tracking-widest uppercase font-semibold mt-0.5 hidden sm:block">

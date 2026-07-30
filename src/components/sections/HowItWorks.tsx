@@ -80,7 +80,7 @@ export const HowItWorks: React.FC = () => {
 
               {/* Step Corner Accent */}
               <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-end text-[11px] font-mono">
-                <span className="bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded font-bold">READY 24H</span>
+                <span className="bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded font-bold">READY 24 JAM</span>
               </div>
             </div>
           ))}

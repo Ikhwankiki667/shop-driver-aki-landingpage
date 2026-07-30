@@ -46,7 +46,7 @@ export interface ITestimonial {
   verifiedPurchase: boolean;
 }
 
-export type FAQCategory = 'WAKTU TUNGGU' | 'LAYANAN 24H' | 'PEMBAYARAN' | 'KLAIM GARANSI' | 'CAKUPAN MOBIL' | 'PEMESANAN' | 'GARANSI' | 'TEKNIS';
+export type FAQCategory = 'WAKTU TUNGGU' | 'LAYANAN 24 JAM' | 'PEMBAYARAN' | 'KLAIM GARANSI' | 'CAKUPAN MOBIL' | 'PEMESANAN' | 'GARANSI' | 'TEKNIS';
 
 export interface IFAQItem {
   id: string;

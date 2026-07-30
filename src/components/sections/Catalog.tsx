@@ -241,7 +241,7 @@ export const Catalog: React.FC = () => {
             </p>
             <a href={WhatsAppService.buildConsultationUrl()} target="_blank" rel="noopener noreferrer">
               <Button variant="primary" size="md" className="rounded-xl font-bold">
-                Tanyakan Aki via WA 24H
+                Tanyakan Aki via WA 24 Jam
               </Button>
             </a>
           </div>

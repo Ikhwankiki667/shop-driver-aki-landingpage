@@ -178,14 +178,14 @@ export const mockFAQs: IFAQItem[] = [
   {
     id: 'faq-1',
     question: 'Berapa lama estimasi waktu tunggu kedatangan teknisi ke lokasi saya?',
-    answer: 'Rata-rata kedatangan teknisi ShopDrive adalah kurang dari 10 hingga 15 menit untuk seluruh wilayah perkotaan utama. Armada teknisi siaga kami disebar di berbagai titik strategis agar respon sangat cepat.',
+    answer: 'Rata-rata kedatangan teknisi ShopDrive adalah 20 hingga 25 menit untuk seluruh wilayah perkotaan utama. Armada teknisi siaga kami disebar di berbagai titik strategis agar respon sangat cepat.',
     category: 'WAKTU TUNGGU',
   },
   {
     id: 'faq-2',
     question: 'Apakah ShopDrive melayani panggilan penggantian aki di malam atau dini hari?',
     answer: 'YA, 100% SIAGA 24 JAM NONSTOP! Layanan darurat ShopDrive beroperasi 24 jam sehari, 7 hari seminggu, termasuk tengah malam, dini hari, dan hari libur nasional.',
-    category: 'LAYANAN 24H',
+    category: 'LAYANAN 24 JAM',
   },
   {
     id: 'faq-3',

@@ -14,29 +14,29 @@ export class WhatsAppService {
    * Build direct emergency help call link with pre-filled SOS message
    */
   public static buildEmergencyCallUrl(userLocation?: string): string {
-    const message = userLocation
-      ? `Halo ShopDrive 24H, saya butuh bantuan ganti aki di area ${userLocation}. Mohon infokan ketersediaan teknisi.`
-      : `Halo ShopDrive 24H, mobil saya mogok/aki tekor. Mohon kirim teknisi ganti aki terdekat.`;
+    const areaText = userLocation ? ` di area ${userLocation}` : '';
+    const message = `Halo ShopDriveAki 24 Jam, mobil saya mogok/aki tekor${areaText}. Lokasi GPS saya: [Ketik Alamat/Patokan Anda]. Mohon kirim teknisi ganti aki terdekat`;
     return `${this.BASE_URL}${this.PHONE}?text=${encodeURIComponent(message)}`;
   }
 
   /**
    * Seamlessly triggers GPS Geolocation detection on click before launching WhatsApp.
    * If GPS is granted within 3 seconds, appends Google Maps link automatically.
-   * If denied/failed/timed out, launches WhatsApp with an explicit notice so the user knows location was not auto-filled.
+   * If denied/failed/timed out, launches WhatsApp with explicit fallback prompt message.
    */
   public static async openEmergencyWhatsAppWithGPS(locationName?: string): Promise<void> {
     const phone = this.PHONE;
 
     const launchUrl = (locationData?: string) => {
       let message = '';
-      if (locationData) {
-        message = `Halo ShopDrive 24H, mobil saya mogok/aki tekor. Lokasi GPS saya: ${locationData}. Mohon kirim teknisi ganti aki terdekat.`;
-      } else if (locationName) {
-        message = `Halo ShopDrive 24H, saya butuh bantuan ganti aki di area ${locationName}. (Catatan: GPS belum terdeteksi, mohon ketik alamat detail di sini). Mohon infokan ketersediaan teknisi.`;
+      const gpsLocationStr = locationData || '[Ketik Alamat/Patokan Anda]';
+      
+      if (locationName) {
+        message = `Halo ShopDriveAki 24 Jam, mobil saya mogok/aki tekor di area ${locationName}. Lokasi GPS saya: ${gpsLocationStr}. Mohon kirim teknisi ganti aki terdekat`;
       } else {
-        message = `Halo ShopDrive 24H, mobil saya mogok/aki tekor. (Catatan: Lokasi GPS belum terdeteksi, mohon ketik alamat/patokan Anda di sini). Mohon kirim teknisi ganti aki terdekat.`;
+        message = `Halo ShopDriveAki 24 Jam, mobil saya mogok/aki tekor. Lokasi GPS saya: ${gpsLocationStr}. Mohon kirim teknisi ganti aki terdekat`;
       }
+
       const finalUrl = `${this.BASE_URL}${phone}?text=${encodeURIComponent(message)}`;
       if (typeof window !== 'undefined') {
         window.open(finalUrl, '_blank', 'noopener,noreferrer');

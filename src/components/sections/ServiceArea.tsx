@@ -111,7 +111,7 @@ export const ServiceArea: React.FC = () => {
                   <MapPin className="w-4 h-4 text-[#DC2626] shrink-0" />
                   <span className="truncate">Menampilkan lokasi siaga di: <strong className="text-slate-900">{activeMapCity.name}</strong></span>
                 </div>
-                <span className="text-[11px] text-emerald-700 font-bold shrink-0">READY 24H</span>
+                <span className="text-[11px] text-emerald-700 font-bold shrink-0">READY 24 JAM</span>
               </div>
 
             </div>

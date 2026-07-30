@@ -35,11 +35,9 @@ export const Hero: React.FC = () => {
   };
 
   const getEmergencyWaUrl = () => {
-    if (detectedMapsUrl) {
-      const msg = `Halo ShopDrive 24H, mobil saya mogok/aki tekor. Lokasi GPS saya: ${detectedMapsUrl}. Mohon kirim teknisi terdekat.`;
-      return `https://wa.me/${siteConfig.brand.whatsAppNumber}?text=${encodeURIComponent(msg)}`;
-    }
-    return WhatsAppService.buildEmergencyCallUrl();
+    const locStr = detectedMapsUrl || '[Ketik Alamat/Patokan Anda]';
+    const msg = `Halo ShopDriveAki 24 Jam, mobil saya mogok/aki tekor. Lokasi GPS saya: ${locStr}. Mohon kirim teknisi ganti aki terdekat`;
+    return `https://wa.me/${siteConfig.brand.whatsAppNumber}?text=${encodeURIComponent(msg)}`;
   };
 
   return (
@@ -200,7 +198,7 @@ export const Hero: React.FC = () => {
                     TEKNISI PARTNER SIAGA LOKASI
                   </span>
                 </div>
-                <Badge variant="red">SIAGA 24H</Badge>
+                <Badge variant="red">SIAGA 24 JAM</Badge>
               </div>
 
               {/* Prominent Full-Opacity Real Field Photo Frame */}

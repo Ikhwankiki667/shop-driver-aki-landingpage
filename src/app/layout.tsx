@@ -18,7 +18,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'ShopDrive 24H - Bantuan Darurat Aki Mobil & Home Service Terdekat',
+  title: 'ShopDrive 24 Jam - Bantuan Darurat Aki Mobil & Home Service Terdekat',
   description:
     'Layanan ganti aki mobil darurat 24 jam terdekat. Antar & pasang di lokasi Anda, garansi resmi hingga 2 tahun, stok aki original GS Astra, Yuasa, Amaron, Bosch, FB & Incoe.',
   keywords: [
@@ -29,19 +29,19 @@ export const metadata: Metadata = {
     'home service aki mobil',
     'aki gs astra original',
   ],
-  authors: [{ name: 'ShopDrive 24H' }],
+  authors: [{ name: 'ShopDrive 24 Jam' }],
   openGraph: {
-    title: 'ShopDrive 24H - Bantuan Darurat Aki Mobil & Home Service Terdekat',
+    title: 'ShopDrive 24 Jam - Bantuan Darurat Aki Mobil & Home Service Terdekat',
     description:
       'Layanan ganti aki mobil darurat 24 jam terdekat. Antar & pasang di lokasi Anda, garansi resmi hingga 2 tahun, stok aki original GS Astra, Yuasa, Amaron, Bosch, FB & Incoe.',
     url: 'https://shopdriveaki.com',
-    siteName: 'ShopDrive 24H',
+    siteName: 'ShopDrive 24 Jam',
     locale: 'id_ID',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ShopDrive 24H - Bantuan Darurat Aki Mobil & Home Service Terdekat',
+    title: 'ShopDrive 24 Jam - Bantuan Darurat Aki Mobil & Home Service Terdekat',
     description:
       'Layanan ganti aki mobil darurat 24 jam terdekat. Antar & pasang di lokasi Anda, garansi resmi hingga 2 tahun, stok aki original GS Astra, Yuasa, Amaron, Bosch, FB & Incoe.',
   },

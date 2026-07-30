@@ -16,7 +16,7 @@ export default function Home() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'AutomotiveBusiness',
-    name: 'ShopDrive 24H Battery Rescue',
+    name: 'ShopDrive 24 Jam Battery Rescue',
     description: 'Layanan Antar Pasang Aki Mobil Darurat 24 Jam',
     url: 'https://shopdriveaki.com',
     priceRange: '$$',

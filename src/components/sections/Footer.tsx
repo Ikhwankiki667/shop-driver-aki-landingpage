@@ -101,7 +101,7 @@ export const Footer: React.FC = () => {
           <div className="space-y-4 bg-slate-800/90 p-5 rounded-xl border border-red-500/40 shadow-lg">
             <div className="flex items-center gap-2 text-[#DC2626] text-xs font-bold uppercase tracking-wider">
               <PhoneCall className="w-4 h-4 animate-bounce" />
-              <span>PANGGILAN EMERGENCY 24H</span>
+              <span>PANGGILAN EMERGENCY 24 JAM</span>
             </div>
             <a
               href={`tel:${siteConfig.brand.emergencyPhone}`}

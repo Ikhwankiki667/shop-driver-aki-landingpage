@@ -39,7 +39,7 @@ export const FAQ: React.FC = () => {
           </p>
           <button onClick={() => WhatsAppService.openEmergencyWhatsAppWithGPS()} className="inline-block cursor-pointer">
             <Button variant="outline" size="md">
-              Tanyakan via WhatsApp CS 24H
+              Tanyakan via WhatsApp CS 24 Jam
             </Button>
           </button>
         </div>

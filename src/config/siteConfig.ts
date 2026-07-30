@@ -13,7 +13,7 @@ export const siteConfig = {
     emergencyPhone: "+6281585564232",
     emergencyPhoneDisplay: "0815-8556-4232",
     whatsAppNumber: "6281585564232",
-    defaultWhatsAppMessage: "Halo ShopDrive 24H, mobil saya mogok/aki tekor. Mohon kirim teknisi ganti aki terdekat.",
+    defaultWhatsAppMessage: "Halo ShopDriveAki 24 Jam, mobil saya mogok/aki tekor. Lokasi GPS saya: [Ketik Alamat/Patokan Anda]. Mohon kirim teknisi ganti aki terdekat",
     operationalHours: "24 Jam Nonstop (365 Hari)",
     averageArrivalMinutes: 10,
     warrantyMonthsDefault: 24,
