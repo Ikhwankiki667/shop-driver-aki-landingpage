@@ -1,8 +1,11 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import { Zap, PhoneCall, ShieldCheck, Globe, Share2, MessageCircle } from 'lucide-react';
 import logoImg from '../../../public/Logo.svg';
 import { siteConfig } from '../../config/siteConfig';
+import { WhatsAppService } from '../../services/WhatsAppService';
 import { WhatsAppIcon } from '../ui/WhatsAppIcon';
 
 export const Footer: React.FC = () => {
@@ -106,15 +109,13 @@ export const Footer: React.FC = () => {
             >
               {siteConfig.brand.emergencyPhoneDisplay}
             </a>
-            <a
-              href={`https://wa.me/${siteConfig.brand.whatsAppNumber}?text=${encodeURIComponent(siteConfig.brand.defaultWhatsAppMessage)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full py-2.5 px-4 rounded-lg bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all"
+            <button
+              onClick={() => WhatsAppService.openEmergencyWhatsAppWithGPS()}
+              className="w-full py-2.5 px-4 rounded-lg bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer text-left"
             >
               <WhatsAppIcon className="w-4 h-4 text-white" />
               <span>Chat WhatsApp 24 Jam</span>
-            </a>
+            </button>
             <div className="pt-1">
               <span className="text-[11px] text-emerald-400 flex items-center gap-1 font-semibold">
                 <ShieldCheck className="w-3.5 h-3.5" /> Garansi Resmi hingga 2 Tahun

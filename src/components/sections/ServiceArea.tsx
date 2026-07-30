@@ -41,8 +41,7 @@ export const ServiceArea: React.FC = () => {
   const filteredAreas = LocationService.filterAreas(mockServiceAreas, selectedRegion, searchQuery);
 
   const handleCallArea = (cityName: string) => {
-    const waUrl = WhatsAppService.buildEmergencyCallUrl(cityName);
-    window.open(waUrl, '_blank', 'noopener,noreferrer');
+    WhatsAppService.openEmergencyWhatsAppWithGPS(cityName);
   };
 
   return (
@@ -231,16 +230,14 @@ export const ServiceArea: React.FC = () => {
               Kami punya jaringan partner independen di seluruh pelosok Indonesia. Cukup bagikan lokasi Anda.
             </p>
           </div>
-          <a
-            href={WhatsAppService.buildEmergencyCallUrl('lokasi saya [Kirim Share Loc]')}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="shrink-0 w-full sm:w-auto"
+          <button
+            onClick={() => WhatsAppService.openEmergencyWhatsAppWithGPS(activeMapCity.name)}
+            className="shrink-0 w-full sm:w-auto text-left cursor-pointer"
           >
             <Button variant="primary" size="md" className="px-5 py-2.5 text-xs sm:text-sm font-extrabold rounded-xl w-full sm:w-auto shadow-md" leftIcon={<WhatsAppIcon className="w-5 h-5 text-white" />}>
               SHARE LOCATION VIA WHATSAPP
             </Button>
-          </a>
+          </button>
         </div>
 
       </div>

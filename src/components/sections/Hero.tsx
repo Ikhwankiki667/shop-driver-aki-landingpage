@@ -85,11 +85,9 @@ export const Hero: React.FC = () => {
             {/* Two Action Buttons */}
             <div className="space-y-3 pt-2">
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                <a
-                  href={getEmergencyWaUrl()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full sm:w-auto"
+                <button
+                  onClick={() => WhatsAppService.openEmergencyWhatsAppWithGPS()}
+                  className="w-full sm:w-auto text-left cursor-pointer"
                 >
                   <Button
                     variant="primary"
@@ -101,7 +99,7 @@ export const Hero: React.FC = () => {
                   >
                     PANGGIL BANTUAN SEKARANG
                   </Button>
-                </a>
+                </button>
 
                 <a href="#coverage" className="w-full sm:w-auto">
                   <Button

@@ -21,16 +21,14 @@ export const MobileStickyCTA: React.FC = () => {
         </a>
 
         {/* Chat WhatsApp Button - 52px Touch Target */}
-        <a
-          href={WhatsAppService.buildEmergencyCallUrl()}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 min-h-[52px] py-3.5 px-3 rounded-xl bg-[#25D366] active:bg-[#20bd5a] text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-md active:scale-[0.98] transition-all"
+        <button
+          onClick={() => WhatsAppService.openEmergencyWhatsAppWithGPS()}
+          className="flex items-center justify-center gap-2 min-h-[52px] py-3.5 px-3 rounded-xl bg-[#25D366] active:bg-[#20bd5a] text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-md active:scale-[0.98] transition-all cursor-pointer"
           aria-label="Chat WhatsApp Darurat ShopDrive"
         >
           <WhatsAppIcon className="w-5 h-5 text-white shrink-0" />
           <span className="truncate font-display">CHAT WHATSAPP</span>
-        </a>
+        </button>
 
       </div>
     </div>

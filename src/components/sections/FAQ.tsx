@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { HelpCircle } from 'lucide-react';
 import { mockFAQs } from '../../data/mockData';
@@ -35,15 +37,11 @@ export const FAQ: React.FC = () => {
           <p className="text-slate-600 text-sm max-w-md mx-auto">
             Tim customer support dan konsultan teknis ShopDrive siap membantu melayani pertanyaan Anda 24 jam nonstop.
           </p>
-          <a
-            href={WhatsAppService.buildEmergencyCallUrl()}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <button onClick={() => WhatsAppService.openEmergencyWhatsAppWithGPS()} className="inline-block cursor-pointer">
             <Button variant="outline" size="md">
               Tanyakan via WhatsApp CS 24H
             </Button>
-          </a>
+          </button>
         </div>
 
       </div>
