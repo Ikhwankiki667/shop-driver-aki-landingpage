@@ -45,6 +45,11 @@ export const metadata: Metadata = {
     description:
       'Layanan ganti aki mobil darurat 24 jam terdekat. Antar & pasang di lokasi Anda, garansi resmi hingga 2 tahun, stok aki original GS Astra, Yuasa, Amaron, Bosch, FB & Incoe.',
   },
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/icon.png',
+    apple: '/icon.png',
+  },
 };
 
 export default function RootLayout({
