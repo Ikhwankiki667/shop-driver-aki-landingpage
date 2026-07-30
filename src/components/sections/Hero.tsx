@@ -1,30 +1,56 @@
 'use client';
 
 import React from 'react';
-import { PhoneCall, MapPin, Zap, ShieldCheck, Clock, Award, Star, MessageSquare } from 'lucide-react';
+import Image from 'next/image';
+import { PhoneCall, MapPin, Zap, ShieldCheck, Clock, Award, Star, MessageSquare, CreditCard } from 'lucide-react';
+import heroBg from '../../image/Dokumentasi/IMG_20260729_225759.jpg.webp';
 import { siteConfig } from '../../config/siteConfig';
 import { WhatsAppService } from '../../services/WhatsAppService';
 import { Button } from '../ui/Button';
 import { Badge } from '../ui/Badge';
 
 export const Hero: React.FC = () => {
+  const [locationStatus, setLocationStatus] = React.useState<'idle' | 'locating' | 'success' | 'denied'>('idle');
+  const [detectedMapsUrl, setDetectedMapsUrl] = React.useState<string | null>(null);
+
+  const handleDetectGPS = () => {
+    if (typeof window === 'undefined' || !navigator.geolocation) {
+      setLocationStatus('denied');
+      return;
+    }
+    setLocationStatus('locating');
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+        const mapsUrl = `https://maps.google.com/?q=${latitude.toFixed(5)},${longitude.toFixed(5)}`;
+        setDetectedMapsUrl(mapsUrl);
+        setLocationStatus('success');
+      },
+      (error) => {
+        console.warn('Geolocation denied or failed:', error);
+        setLocationStatus('denied');
+      },
+      { timeout: 8000, enableHighAccuracy: true }
+    );
+  };
+
+  const getEmergencyWaUrl = () => {
+    if (detectedMapsUrl) {
+      const msg = `Halo ShopDrive 24H, mobil saya mogok/aki tekor. Lokasi GPS saya: ${detectedMapsUrl}. Mohon kirim teknisi terdekat.`;
+      return `https://wa.me/${siteConfig.brand.whatsAppNumber}?text=${encodeURIComponent(msg)}`;
+    }
+    return WhatsAppService.buildEmergencyCallUrl();
+  };
+
   return (
-    <section id="hero" className="relative min-h-[90vh] flex items-center pt-28 pb-16 overflow-hidden bg-[#0D0D0F]">
-      {/* Background Hero Image with Hazard Light Glow & Dark Gradient Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-25 mix-blend-luminosity pointer-events-none" 
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1920&q=80')`
-        }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0D0D0F] via-[#0D0D0F]/90 to-[#0D0D0F]/80 pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(217,30,43,0.2),transparent_65%)] pointer-events-none" />
+    <section id="hero" className="relative min-h-[90vh] flex items-center pt-28 pb-16 overflow-hidden bg-gradient-to-b from-slate-100 via-slate-50 to-white">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(220,38,38,0.06),transparent_65%)] pointer-events-none" />
       
       {/* Diagonal Speed Lines Motif */}
       <div 
-        className="absolute inset-0 opacity-[0.04] pointer-events-none" 
+        className="absolute inset-0 opacity-[0.02] pointer-events-none" 
         style={{
-          backgroundImage: 'repeating-linear-gradient(45deg, #D91E2B 0, #D91E2B 2px, transparent 0, transparent 24px)'
+          backgroundImage: 'repeating-linear-gradient(45deg, #DC2626 0, #DC2626 2px, transparent 0, transparent 24px)'
         }}
       />
 
@@ -36,152 +62,202 @@ export const Hero: React.FC = () => {
             
             {/* Urgency Badge */}
             <div className="inline-flex items-center">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D91E2B]/15 border border-[#D91E2B]/50 text-white text-xs font-extrabold uppercase tracking-wider shadow-[0_0_15px_rgba(217,30,43,0.3)]">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#D91E2B] animate-ping" />
-                <span>🔴 SIAGA 24 JAM • BANTUAN DARURAT AKI MOBIL</span>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-50 border border-red-200 text-[#DC2626] text-xs font-extrabold uppercase tracking-wider shadow-sm">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#DC2626] shrink-0" />
+                <span>SIAGA 24 JAM • BANTUAN DARURAT AKI MOBIL</span>
               </div>
             </div>
 
             {/* Industrial Headline */}
             <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase text-white tracking-wide font-display leading-[1.1]">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase text-slate-900 tracking-wide font-display leading-[1.1]">
                 Mobil Mogok Karena <br />
-                <span className="text-[#D91E2B]">
+                <span className="text-[#DC2626]">
                   Aki Tekor?
                 </span>
               </h1>
 
-              <p className="text-zinc-300 text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl">
-                Solusi cepat saat mobil mogok karena aki tekor. Tim <strong className="text-white font-bold">ShopDrive</strong> siap menghubungkan Anda dengan jaringan teknisi partner terdekat untuk antar dan pasang aki original bergaransi resmi langsung di lokasi Anda.
+              <p className="text-slate-600 text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl">
+                Solusi cepat saat mobil mogok karena aki tekor. Tim <strong className="text-slate-900 font-bold">ShopDrive</strong> siap menghubungkan Anda dengan jaringan teknisi partner terdekat untuk antar dan pasang aki original bergaransi resmi langsung di lokasi Anda.
               </p>
             </div>
 
             {/* Two Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
-              <a
-                href={WhatsAppService.buildEmergencyCallUrl()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto"
-              >
-                <Button
-                  variant="primary"
-                  size="xl"
-                  fullWidth
-                  beaconGlow
-                  className="rounded-xl font-black"
-                  leftIcon={<PhoneCall className="w-6 h-6 fill-white text-white" />}
+            <div className="space-y-3 pt-2">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                <a
+                  href={getEmergencyWaUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto"
                 >
-                  PANGGIL BANTUAN SEKARANG
-                </Button>
-              </a>
+                  <Button
+                    variant="primary"
+                    size="xl"
+                    fullWidth
+                    beaconGlow
+                    className="rounded-xl font-black"
+                    leftIcon={<PhoneCall className="w-6 h-6 fill-white text-white" />}
+                  >
+                    PANGGIL BANTUAN SEKARANG
+                  </Button>
+                </a>
 
-              <a href="#coverage" className="w-full sm:w-auto">
-                <Button
-                  variant="amberOutline"
-                  size="xl"
-                  fullWidth
-                  className="rounded-xl font-bold"
-                  leftIcon={<MapPin className="w-5 h-5 text-[#FF9500]" />}
-                >
-                  CEK AREA LAYANAN
-                </Button>
-              </a>
+                <a href="#coverage" className="w-full sm:w-auto">
+                  <Button
+                    variant="amberOutline"
+                    size="xl"
+                    fullWidth
+                    className="rounded-xl font-bold"
+                    leftIcon={<MapPin className="w-5 h-5 text-amber-600" />}
+                  >
+                    CEK AREA LAYANAN
+                  </Button>
+                </a>
+              </div>
+
+              {/* GPS Auto-Location Feature & Low Bandwidth Direct Phone Fallback */}
+              <div className="p-3 bg-slate-100/80 rounded-xl border border-slate-200 space-y-2">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <button
+                    onClick={handleDetectGPS}
+                    disabled={locationStatus === 'locating'}
+                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white border border-gray-300 text-slate-800 text-xs font-bold shadow-sm hover:bg-slate-50 transition-colors disabled:opacity-50"
+                  >
+                    <MapPin className="w-4 h-4 text-[#DC2626] animate-bounce" />
+                    <span>
+                      {locationStatus === 'locating'
+                        ? 'Mendeteksi lokasi GPS Anda...'
+                        : locationStatus === 'success'
+                        ? '✓ Lokasi Terdeteksi! Panggil WA'
+                        : '📍 Auto-Detect Lokasi Saya (GPS)'}
+                    </span>
+                  </button>
+
+                  <div className="text-[11px] text-slate-500 font-mono">
+                    {locationStatus === 'success' && 'Tersambung dengan Google Maps'}
+                    {locationStatus === 'denied' && 'Izin lokasi ditolak, tetap bisa panggil WA'}
+                    {locationStatus === 'idle' && 'Bantu teknisi menemukan Anda cepat'}
+                  </div>
+                </div>
+
+                {/* Raw HTML Tap-to-Call Direct Link (Works even if JS is slow/fails) */}
+                <div className="flex items-center gap-2 text-xs text-slate-700 pt-1 border-t border-slate-200/80">
+                  <span className="font-semibold">Sinyal Lemah? Dial Langsung:</span>
+                  <a
+                    href={`tel:${siteConfig.brand.emergencyPhone}`}
+                    className="text-[#DC2626] font-extrabold hover:underline font-mono text-sm tracking-wider"
+                  >
+                    {siteConfig.brand.emergencyPhoneDisplay}
+                  </a>
+                </div>
+              </div>
+
             </div>
 
             {/* Trust Badges Row */}
-            <div className="pt-6 border-t border-zinc-800/80 grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
-              <div className="flex items-center gap-3 p-3 rounded-lg bg-[#1A1A1D]/60 border border-zinc-800">
-                <div className="w-9 h-9 rounded-lg bg-[#D91E2B]/15 border border-[#D91E2B]/40 flex items-center justify-center text-[#D91E2B] shrink-0">
-                  <Award className="w-5 h-5 text-[#D91E2B]" />
+            <div className="pt-6 border-t border-gray-200 grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+              <div className="flex items-center gap-3 p-3 rounded-lg bg-white border border-gray-200 shadow-sm">
+                <div className="w-9 h-9 rounded-lg bg-red-50 border border-red-200 flex items-center justify-center text-[#DC2626] shrink-0">
+                  <Award className="w-5 h-5 text-[#DC2626]" />
                 </div>
                 <div>
-                  <div className="text-white font-bold text-xs sm:text-sm font-display uppercase tracking-wider">Aki GS Astra Original</div>
-                  <div className="text-zinc-400 text-[11px]">100% Segel Pabrik</div>
+                  <div className="text-slate-900 font-bold text-xs sm:text-sm font-display uppercase tracking-wider">Aki GS Astra Original</div>
+                  <div className="text-slate-500 text-[11px]">100% Segel Pabrik</div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-3 rounded-lg bg-[#1A1A1D]/60 border border-zinc-800">
-                <div className="w-9 h-9 rounded-lg bg-[#D91E2B]/15 border border-[#D91E2B]/40 flex items-center justify-center text-[#D91E2B] shrink-0">
-                  <ShieldCheck className="w-5 h-5 text-[#D91E2B]" />
+              <div className="flex items-center gap-3 p-3 rounded-lg bg-white border border-gray-200 shadow-sm">
+                <div className="w-9 h-9 rounded-lg bg-red-50 border border-red-200 flex items-center justify-center text-[#DC2626] shrink-0">
+                  <ShieldCheck className="w-5 h-5 text-[#DC2626]" />
                 </div>
                 <div>
-                  <div className="text-white font-bold text-xs sm:text-sm font-display uppercase tracking-wider">Garansi Resmi s/d 2 Tahun</div>
-                  <div className="text-zinc-400 text-[11px]">Klaim Mudah 24H</div>
+                  <div className="text-slate-900 font-bold text-xs sm:text-sm font-display uppercase tracking-wider">Garansi Resmi s/d 2 Tahun</div>
+                  <div className="text-slate-500 text-[11px]">Claim Mudah 24 Jam</div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-3 rounded-lg bg-[#1A1A1D]/60 border border-zinc-800">
-                <div className="w-9 h-9 rounded-lg bg-[#D91E2B]/15 border border-[#D91E2B]/40 flex items-center justify-center text-[#D91E2B] shrink-0">
-                  <Clock className="w-5 h-5 text-[#D91E2B]" />
+              <div className="flex items-center gap-3 p-3 rounded-lg bg-white border border-gray-200 shadow-sm">
+                <div className="w-9 h-9 rounded-lg bg-red-50 border border-red-200 flex items-center justify-center text-[#DC2626] shrink-0">
+                  <Clock className="w-5 h-5 text-[#DC2626]" />
                 </div>
                 <div>
-                  <div className="text-white font-bold text-xs sm:text-sm font-display uppercase tracking-wider">Bayar Setelah Terpasang</div>
-                  <div className="text-zinc-400 text-[11px]">Cash / QRIS / Transfer</div>
+                  <div className="text-slate-900 font-bold text-xs sm:text-sm font-display uppercase tracking-wider">Bayar Setelah Terpasang</div>
+                  <div className="text-slate-500 text-[11px]">Cash / QRIS / Transfer</div>
                 </div>
               </div>
             </div>
 
           </div>
 
-          {/* Right Column: Industrial Visual Card / Battery Rescue Unit */}
+          {/* Right Column: Prominent Real Field Photo Card */}
           <div className="lg:col-span-5 relative">
-            <div className="relative rounded-2xl bg-gradient-to-b from-[#1A1A1D] to-[#131315] p-6 sm:p-8 border border-[#D91E2B]/40 shadow-[0_0_40px_rgba(217,30,43,0.25)]">
+            <div className="relative rounded-2xl bg-white p-5 sm:p-6 border border-gray-200 shadow-xl">
               
               {/* Card Header Status */}
-              <div className="flex items-center justify-between pb-4 mb-5 border-b border-zinc-800">
+              <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-gray-100">
                 <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-emerald-500 animate-ping" />
-                  <span className="text-xs font-bold font-mono uppercase tracking-wider text-emerald-400">
-                    🟢 TEKNISI PARTNER SIAGA LOKASI
+                  <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0" />
+                  <span className="text-xs font-bold font-mono uppercase tracking-wider text-emerald-700">
+                    TEKNISI PARTNER SIAGA LOKASI
                   </span>
                 </div>
                 <Badge variant="red">SIAGA 24H</Badge>
               </div>
 
-              {/* Central Graphic Box */}
-              <div className="relative rounded-xl bg-[#0D0D0F] p-5 border border-zinc-800 text-center mb-5 overflow-hidden">
-                <div className="absolute top-2 right-2 opacity-10 pointer-events-none">
-                  <Zap className="w-32 h-32 text-[#D91E2B]" />
-                </div>
+              {/* Prominent Full-Opacity Real Field Photo Frame */}
+              <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden border-2 border-red-500/20 shadow-md group mb-4">
+                <Image
+                  src={heroBg}
+                  alt="ShopDrive Real Field Rescue"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, 450px"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
                 
-                <div className="relative z-10">
-                  <div className="inline-block p-3 rounded-full bg-[#D91E2B]/15 border border-[#D91E2B]/40 mb-2 text-[#D91E2B]">
-                    <Zap className="w-8 h-8 fill-[#D91E2B]" />
+                {/* Photo Badge Overlay */}
+                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-md text-white text-xs font-extrabold flex items-center gap-1.5 shadow-md pointer-events-none border border-white/20">
+                  <span className="w-2 h-2 rounded-full bg-red-500 shrink-0" />
+                  <span>DOKUMENTASI ASLI ON-SITE</span>
+                </div>
+
+                {/* Bottom Photo Caption Banner */}
+                <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-slate-900/90 via-slate-900/60 to-transparent text-white">
+                  <div className="text-xs font-bold font-display uppercase tracking-wide">
+                    Jeep Wrangler Rubicon
                   </div>
-                  <h3 className="font-extrabold text-xl text-white font-display uppercase tracking-wide">
-                    GS ASTRA ORIGINAL
-                  </h3>
-                  <p className="text-zinc-400 text-xs mt-1 font-mono">
-                    Ready Stock Semua Tipe (NS40, NS60, 55D23L, DIN 74, dll)
-                  </p>
+                  <div className="text-[11px] text-red-300 font-mono">
+                    Pemasangan Aki Bosch Mega Power di Lokasi Kustomer
+                  </div>
                 </div>
               </div>
 
               {/* Quick Value Proposition Features List */}
-              <div className="space-y-2.5 text-xs sm:text-sm text-zinc-200">
-                <div className="flex items-center gap-2.5 py-1.5 border-b border-zinc-800/60">
-                  <span className="text-emerald-400 font-bold">✓</span>
-                  <span className="font-semibold text-white">Aki GS Astra Original 100% Segel Pabrik</span>
+              <div className="space-y-2.5 text-xs sm:text-sm text-slate-700">
+                <div className="flex items-center gap-2.5 py-1.5 border-b border-gray-100">
+                  <span className="text-emerald-600 font-bold">✓</span>
+                  <span className="font-semibold text-slate-900">Aki GS Astra Original 100% Segel Pabrik</span>
                 </div>
-                <div className="flex items-center gap-2.5 py-1.5 border-b border-zinc-800/60">
-                  <span className="text-emerald-400 font-bold">✓</span>
-                  <span className="font-semibold text-white">Bebas Biaya Antar &amp; Pasang di Tempat</span>
+                <div className="flex items-center gap-2.5 py-1.5 border-b border-gray-100">
+                  <span className="text-emerald-600 font-bold">✓</span>
+                  <span className="font-semibold text-slate-900">Bebas Biaya Antar &amp; Pasang di Tempat</span>
                 </div>
-                <div className="flex items-center gap-2.5 py-1.5 border-b border-zinc-800/60">
-                  <span className="text-emerald-400 font-bold">✓</span>
-                  <span className="font-semibold text-white">Gratis Pengecekan Kelistrikan &amp; Alternator</span>
+                <div className="flex items-center gap-2.5 py-1.5 border-b border-gray-100">
+                  <span className="text-emerald-600 font-bold">✓</span>
+                  <span className="font-semibold text-slate-900">Gratis Pengecekan Kelistrikan &amp; Alternator</span>
                 </div>
                 <div className="flex items-center gap-2.5 py-1.5">
-                  <span className="text-emerald-400 font-bold">✓</span>
-                  <span className="font-semibold text-white">Garansi Resmi Hingga 2 Tahun</span>
+                  <span className="text-emerald-600 font-bold">✓</span>
+                  <span className="font-semibold text-slate-900">Garansi Resmi Hingga 2 Tahun</span>
                 </div>
               </div>
 
-              {/* Payment Assurance Banner (Single CTA Focus on Left) */}
-              <div className="mt-5 p-3.5 rounded-xl bg-[#0D0D0F] border border-zinc-800 text-center shadow-inner">
-                <span className="text-xs font-mono font-bold text-zinc-300 flex items-center justify-center gap-1.5">
-                  💳 Bayar di Tempat (Cash / QRIS / Transfer) Setelah Terpasang
+              {/* Payment Assurance Banner */}
+              <div className="mt-5 p-3 rounded-xl bg-slate-50 border border-gray-200 shadow-sm flex items-center justify-center gap-2 text-center">
+                <CreditCard className="w-4 h-4 text-red-600 shrink-0" />
+                <span className="text-xs font-bold text-slate-700 leading-snug">
+                  Bayar di Tempat (Cash / QRIS / Transfer) Setelah Terpasang
                 </span>
               </div>
 

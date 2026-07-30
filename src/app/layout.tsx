@@ -18,28 +18,32 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: siteConfig.brand.name + ' - Solusi Cepat Ganti Aki Mobil 24 Jam',
+  title: 'ShopDrive 24H - Bantuan Darurat Aki Mobil & Home Service Terdekat',
   description:
-    'Mobil mogok karena aki tekor? Tim ShopDrive meluncur ke lokasi Anda dalam kurang dari 10 menit, membawa aki GS Astra original. Garansi resmi hingga 2 tahun, harga transparan, bayar setelah terpasang.',
+    'Layanan ganti aki mobil darurat 24 jam terdekat. Antar & pasang di lokasi Anda, garansi resmi hingga 2 tahun, stok aki original GS Astra, Yuasa, Amaron, Bosch, FB & Incoe.',
   keywords: [
-    'ShopDrive',
     'ganti aki mobil 24 jam',
-    'solusi cepat ganti aki mobil',
-    'aki mogok 24 jam',
+    'aki mobil terdekat',
+    'shopdrive aki',
+    'bantuan aki tekor',
+    'home service aki mobil',
     'aki gs astra original',
-    'aki amaron',
-    'antar pasang aki lokasi',
-    'tukar tambah aki',
   ],
-  authors: [{ name: 'ShopDrive Indonesia' }],
+  authors: [{ name: 'ShopDrive 24H' }],
   openGraph: {
-    title: 'ShopDrive - Solusi Cepat Ganti Aki Mobil 24 Jam',
+    title: 'ShopDrive 24H - Bantuan Darurat Aki Mobil & Home Service Terdekat',
     description:
-      'Tim ShopDrive meluncur ke lokasi Anda dalam kurang dari 10 menit, membawa aki GS Astra original. Garansi resmi hingga 2 tahun, harga transparan, bayar setelah terpasang.',
-    url: `https://${siteConfig.brand.domain}`,
-    siteName: siteConfig.brand.name,
+      'Layanan ganti aki mobil darurat 24 jam terdekat. Antar & pasang di lokasi Anda, garansi resmi hingga 2 tahun, stok aki original GS Astra, Yuasa, Amaron, Bosch, FB & Incoe.',
+    url: 'https://shopdriveaki.com',
+    siteName: 'ShopDrive 24H',
     locale: 'id_ID',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ShopDrive 24H - Bantuan Darurat Aki Mobil & Home Service Terdekat',
+    description:
+      'Layanan ganti aki mobil darurat 24 jam terdekat. Antar & pasang di lokasi Anda, garansi resmi hingga 2 tahun, stok aki original GS Astra, Yuasa, Amaron, Bosch, FB & Incoe.',
   },
 };
 
@@ -50,7 +54,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className={`scroll-smooth ${barlowCondensed.variable} ${inter.variable}`}>
-      <body className="font-body bg-[#0D0D0F] text-[#E5E1E4] antialiased">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
+      <body className="font-body bg-slate-50 text-slate-900 antialiased">
         {children}
       </body>
     </html>

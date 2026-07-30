@@ -36,40 +36,40 @@ export const Catalog: React.FC = () => {
   );
 
   return (
-    <section id="catalog" className="py-24 bg-[#131315] relative overflow-hidden border-b border-zinc-800">
+    <section id="catalog" className="py-24 bg-white relative overflow-hidden border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#D91E2B]/15 border border-[#D91E2B]/40 text-[#D91E2B] text-xs font-bold uppercase tracking-widest">
-            <Zap className="w-3.5 h-3.5 fill-[#D91E2B]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-200 text-[#DC2626] text-xs font-bold uppercase tracking-widest shadow-sm">
+            <Zap className="w-3.5 h-3.5 fill-[#DC2626]" />
             <span>KATALOG AKI MOBIL RESMI</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-white tracking-wide font-display">
-            Pilihan Aki &amp; <span className="text-[#D91E2B]">Kategori Mobil</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-slate-900 tracking-wide font-display">
+            Pilihan Aki &amp; <span className="text-[#DC2626]">Kategori Mobil</span>
           </h2>
-          <p className="text-zinc-400 text-base sm:text-lg">
+          <p className="text-slate-600 text-base sm:text-lg">
             Aki GS Astra &amp; Amaron Original 100% baru dengan segel resmi. Bebas Ongkir &amp; Pemasangan di tempat Anda!
           </p>
         </div>
 
         {/* Filter Controls Bar */}
-        <div className="bg-[#1A1A1D] p-6 rounded-2xl border border-zinc-800 mb-12 space-y-6">
+        <div className="bg-slate-50 p-6 rounded-2xl border border-gray-200 shadow-sm mb-12 space-y-6">
           
           {/* Search Bar Input */}
           <div className="relative">
-            <Search className="w-5 h-5 text-zinc-400 absolute left-4 top-1/2 -translate-y-1/2" />
+            <Search className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Cari tipe mobil Anda (contoh: Brio, Avanza, Innova, Fortuner) atau tipe aki (NS60, NS40)..."
-              className="w-full bg-[#0D0D0F] border border-zinc-700 rounded-xl pl-12 pr-4 py-3.5 text-white placeholder-zinc-500 focus:outline-none focus:border-[#D91E2B] transition-colors text-sm sm:text-base font-medium"
+              className="w-full bg-white border border-gray-300 rounded-xl pl-12 pr-4 py-3.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#DC2626] transition-colors text-sm sm:text-base font-medium shadow-sm"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-zinc-400 hover:text-white"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-slate-500 hover:text-slate-900 font-bold"
               >
                 Clear
               </button>
@@ -78,7 +78,7 @@ export const Catalog: React.FC = () => {
 
           {/* Vehicle Category Main Tabs */}
           <div className="space-y-2">
-            <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 block">
+            <label className="text-xs font-bold uppercase tracking-wider text-slate-500 block">
               Pilih Kategori Mobil:
             </label>
             <div className="flex flex-wrap gap-2">
@@ -88,8 +88,8 @@ export const Catalog: React.FC = () => {
                   onClick={() => setSelectedVehicle(tab.value)}
                   className={`px-4 py-2.5 rounded-lg text-xs font-extrabold uppercase tracking-wider transition-all cursor-pointer ${
                     selectedVehicle === tab.value
-                      ? 'bg-[#D91E2B] text-white shadow-[0_0_15px_rgba(217,30,43,0.4)]'
-                      : 'bg-[#0D0D0F] text-zinc-400 border border-zinc-800 hover:border-zinc-700 hover:text-white'
+                      ? 'bg-[#DC2626] text-white shadow-md shadow-red-500/20'
+                      : 'bg-white text-slate-700 border border-gray-200 hover:border-gray-300 hover:text-slate-900 shadow-sm'
                   }`}
                 >
                   {tab.label}
@@ -99,8 +99,8 @@ export const Catalog: React.FC = () => {
           </div>
 
           {/* Brand Filter Tabs */}
-          <div className="space-y-2 pt-2 border-t border-zinc-800/80">
-            <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 block">
+          <div className="space-y-2 pt-2 border-t border-gray-200">
+            <label className="text-xs font-bold uppercase tracking-wider text-slate-500 block">
               Filter Merk Aki:
             </label>
             <div className="flex flex-wrap gap-2">
@@ -110,8 +110,8 @@ export const Catalog: React.FC = () => {
                   onClick={() => setSelectedBrand(tab.value)}
                   className={`px-3.5 py-1.5 rounded-md text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                     selectedBrand === tab.value
-                      ? 'bg-[#D91E2B] text-white shadow-[0_0_15px_rgba(217,30,43,0.4)]'
-                      : 'bg-[#0D0D0F] text-zinc-400 border border-zinc-800 hover:border-zinc-700 hover:text-white'
+                      ? 'bg-[#DC2626] text-white shadow-sm'
+                      : 'bg-white text-slate-700 border border-gray-200 hover:border-gray-300 hover:text-slate-900'
                   }`}
                 >
                   {tab.label}
@@ -128,12 +128,12 @@ export const Catalog: React.FC = () => {
             {filteredProducts.map((product) => (
               <div
                 key={product.id}
-                className="rounded-2xl bg-[#1A1A1D] border-2 border-zinc-800 hover:border-[#D91E2B] transition-all duration-300 flex flex-col justify-between overflow-hidden group hover:shadow-[0_0_30px_rgba(217,30,43,0.2)]"
+                className="rounded-2xl bg-white border border-gray-200 hover:border-[#DC2626] transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-sm hover:shadow-md"
               >
                 {/* Card Header & Badges */}
-                <div className="p-6 relative border-b border-zinc-800">
+                <div className="p-6 relative border-b border-gray-100">
                   <div className="flex items-center justify-between gap-2 mb-3">
-                    <Badge variant="red" leftIcon={<Zap className="w-3 h-3 fill-[#D91E2B]" />}>
+                    <Badge variant="red" leftIcon={<Zap className="w-3 h-3 fill-[#DC2626]" />}>
                       {product.category}
                     </Badge>
                     <Badge variant="red">
@@ -141,48 +141,48 @@ export const Catalog: React.FC = () => {
                     </Badge>
                   </div>
 
-                  <h3 className="font-extrabold text-xl text-white font-display uppercase tracking-wide group-hover:text-[#D91E2B] transition-colors leading-snug">
+                  <h3 className="font-extrabold text-xl text-slate-900 font-display uppercase tracking-wide group-hover:text-[#DC2626] transition-colors leading-snug">
                     {product.name}
                   </h3>
 
-                  <div className="mt-2 text-xs text-zinc-400 font-mono">
-                    Tipe Kendaraan: <strong className="text-white uppercase">{product.vehicleType}</strong>
+                  <div className="mt-2 text-xs text-slate-500 font-mono">
+                    Tipe Kendaraan: <strong className="text-slate-900 uppercase">{product.vehicleType}</strong>
                   </div>
                 </div>
 
                 {/* Battery Specs & Feature List */}
-                <div className="p-6 space-y-4 flex-grow bg-[#131315]/60">
+                <div className="p-6 space-y-4 flex-grow bg-slate-50/50">
                   
                   {/* Technology spec badge */}
-                  <div className="text-xs px-3 py-2 rounded-lg bg-[#0D0D0F] border border-zinc-800 text-zinc-300 font-mono flex items-center gap-2">
-                    <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <div className="text-xs px-3 py-2 rounded-lg bg-white border border-gray-200 text-slate-700 font-mono flex items-center gap-2 shadow-sm">
+                    <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
                     <span>{product.technology}</span>
                   </div>
 
                   {/* Feature Checklist */}
-                  <div className="space-y-1.5 text-xs text-zinc-300 font-medium">
-                    <div className="flex items-center gap-2 text-emerald-400">
+                  <div className="space-y-1.5 text-xs text-slate-700 font-medium">
+                    <div className="flex items-center gap-2 text-emerald-700 font-semibold">
                       <span>✓</span> <span>100% Gratis Ongkir &amp; Pemasangan Lokasi</span>
                     </div>
-                    <div className="flex items-center gap-2 text-emerald-400">
+                    <div className="flex items-center gap-2 text-emerald-700 font-semibold">
                       <span>✓</span> <span>Gratis Pengecekan Alternator &amp; Kelistrikan</span>
                     </div>
-                    <div className="flex items-center gap-2 text-zinc-300">
+                    <div className="flex items-center gap-2 text-slate-700">
                       <span>✓</span> <span>Tukar Tambah Aki Bekas Dihargai Tinggi</span>
                     </div>
                   </div>
 
                   {/* Compatible Cars List */}
-                  <div className="space-y-2 pt-2 border-t border-zinc-800/60">
-                    <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-zinc-400">
-                      <Car className="w-3.5 h-3.5 text-[#D91E2B]" />
+                  <div className="space-y-2 pt-2 border-t border-gray-200">
+                    <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-500">
+                      <Car className="w-3.5 h-3.5 text-[#DC2626]" />
                       <span>Cocok Untuk Mobil:</span>
                     </div>
                     <div className="flex flex-wrap gap-1.5">
                       {product.compatibleCars.map((car, idx) => (
                         <span
                           key={idx}
-                          className="text-[11px] px-2.5 py-1 rounded bg-[#1A1A1D] border border-zinc-800 text-zinc-300"
+                          className="text-[11px] px-2.5 py-1 rounded bg-slate-100 border border-gray-200 text-slate-700 font-medium"
                         >
                           {car}
                         </span>
@@ -192,19 +192,19 @@ export const Catalog: React.FC = () => {
 
                 </div>
 
-                {/* Pricing & Inquiry Action (Marketplace Partner Model) */}
-                <div className="p-6 bg-[#0D0D0F] border-t border-zinc-800 space-y-4">
+                {/* Pricing & Inquiry Action */}
+                <div className="p-6 bg-slate-50 border-t border-gray-200 space-y-4">
                   <div className="space-y-1">
                     <div className="flex items-center justify-between">
-                      <span className="text-[11px] text-zinc-400 uppercase font-mono block">Kisaran Harga Pasaran:</span>
-                      <span className="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30 font-bold">
+                      <span className="text-[11px] text-slate-500 uppercase font-mono block">Kisaran Harga Pasaran:</span>
+                      <span className="text-[10px] text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 font-bold">
                         TUKAR TAMBAH OK
                       </span>
                     </div>
-                    <span className="font-extrabold text-base sm:text-lg text-white font-display block">
+                    <span className="font-extrabold text-base sm:text-lg text-slate-900 font-display block">
                       Estimasi Rp {(product.minPrice || 800000).toLocaleString('id-ID')} - {(product.maxPrice || 950000).toLocaleString('id-ID')}
                     </span>
-                    <p className="text-[10px] text-zinc-400 leading-tight pt-1">
+                    <p className="text-[10px] text-slate-500 leading-tight pt-1">
                       *Harga bervariasi tergantung lokasi &amp; partner teknisi terdekat
                     </p>
                   </div>
@@ -231,12 +231,12 @@ export const Catalog: React.FC = () => {
             ))}
           </div>
         ) : (
-          <div className="text-center py-16 bg-[#1A1A1D] rounded-2xl border border-zinc-800 space-y-4">
-            <Zap className="w-12 h-12 text-[#D91E2B] mx-auto opacity-50" />
-            <h3 className="text-xl font-bold text-white font-display uppercase">
+          <div className="text-center py-16 bg-white rounded-2xl border border-gray-200 shadow-sm space-y-4">
+            <Zap className="w-12 h-12 text-[#DC2626] mx-auto opacity-50" />
+            <h3 className="text-xl font-bold text-slate-900 font-display uppercase">
               Aki Untuk Mobil Anda Tidak Ditemukan
             </h3>
-            <p className="text-zinc-400 text-sm max-w-md mx-auto">
+            <p className="text-slate-600 text-sm max-w-md mx-auto">
               Konsultasikan merk dan tipe mobil Anda langsung ke customer support 24 jam kami via WhatsApp.
             </p>
             <a href={WhatsAppService.buildConsultationUrl()} target="_blank" rel="noopener noreferrer">

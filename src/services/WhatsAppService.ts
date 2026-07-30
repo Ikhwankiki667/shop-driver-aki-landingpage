@@ -14,8 +14,9 @@ export class WhatsAppService {
    * Build direct emergency help call link with pre-filled SOS message
    */
   public static buildEmergencyCallUrl(userLocation?: string): string {
-    const locationText = userLocation ? ` di area ${userLocation}` : '';
-    const message = `Halo ShopDriveAki, Mobil saya mogok/aki tekor${locationText}. Mohon kirim teknisi ganti aki 24 Jam Terdekat.`;
+    const message = userLocation
+      ? `Halo ShopDrive 24H, saya butuh bantuan ganti aki di area ${userLocation}. Mohon infokan ketersediaan teknisi.`
+      : `Halo ShopDrive 24H, mobil saya mogok/aki tekor. Mohon kirim teknisi ganti aki terdekat.`;
     return `${this.BASE_URL}${this.PHONE}?text=${encodeURIComponent(message)}`;
   }
 

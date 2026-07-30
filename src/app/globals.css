@@ -7,8 +7,8 @@
   }
 
   body {
-    background-color: #0D0D0F;
-    color: #FFFFFF;
+    background-color: #F8FAFC;
+    color: #0F172A;
     font-family: var(--font-body);
     overflow-x: hidden;
   }
@@ -24,21 +24,21 @@
   }
 }
 
-/* Custom Scrollbar for Industrial Emergency Red Feel */
+/* Custom Light Scrollbar with Emergency Red Accent */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0D0D0F;
+  background: #F1F5F9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1A1A1D;
+  background: #CBD5E1;
   border-radius: 4px;
-  border: 1px solid rgba(217, 30, 43, 0.4);
+  border: 1px solid #E2E8F0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #D91E2B;
+  background: #DC2626;
 }

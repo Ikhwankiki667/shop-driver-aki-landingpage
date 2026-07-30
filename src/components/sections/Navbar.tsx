@@ -1,9 +1,12 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Zap, PhoneCall, MessageSquare, Menu, X } from 'lucide-react';
+import logoImg from '../../../public/Logo.svg';
 import { WhatsAppService } from '../../services/WhatsAppService';
 import { Button } from '../ui/Button';
+import { WhatsAppIcon } from '../ui/WhatsAppIcon';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,8 +31,8 @@ export const Navbar: React.FC = () => {
     const sectionIds = navLinks.map((link) => link.sectionId);
     const observerOptions = {
       root: null,
-      rootMargin: '-20% 0px -60% 0px',
-      threshold: 0,
+      rootMargin: '-15% 0px -45% 0px',
+      threshold: 0.1,
     };
 
     const handleIntersect: IntersectionObserverCallback = (entries) => {
@@ -56,23 +59,9 @@ export const Navbar: React.FC = () => {
   // Section-dependent adaptive navbar background styles
   const getAdaptiveNavbarStyle = () => {
     if (!isScrolled) {
-      return 'bg-gradient-to-b from-[#0D0D0F] via-[#0D0D0F]/90 to-transparent border-b border-transparent';
+      return 'bg-white/80 backdrop-blur-md border-b border-gray-200/60';
     }
-
-    switch (activeSection) {
-      case 'hero':
-        return 'bg-[#0D0D0F]/95 backdrop-blur-md border-b border-[#D91E2B]/30 shadow-[0_10px_30px_rgba(0,0,0,0.9)]';
-      case 'how-it-works':
-        return 'bg-[#0D0D0F]/95 backdrop-blur-md border-b border-[#D91E2B]/50 shadow-[0_10px_30px_rgba(217,30,43,0.15)]';
-      case 'coverage':
-        return 'bg-[#131315]/95 backdrop-blur-md border-b border-[#FF9500]/40 shadow-[0_10px_30px_rgba(255,149,0,0.15)]';
-      case 'testimonials':
-        return 'bg-[#131315]/95 backdrop-blur-md border-b border-[#D91E2B]/30 shadow-[0_10px_30px_rgba(0,0,0,0.9)]';
-      case 'faq':
-        return 'bg-[#0D0D0F]/95 backdrop-blur-md border-b border-[#D91E2B]/50 shadow-[0_10px_30px_rgba(217,30,43,0.15)]';
-      default:
-        return 'bg-[#0D0D0F]/95 backdrop-blur-md border-b border-[#D91E2B]/30 shadow-[0_10px_30px_rgba(0,0,0,0.9)]';
-    }
+    return 'bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm';
   };
 
   return (
@@ -81,25 +70,27 @@ export const Navbar: React.FC = () => {
     >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
         
-        {/* Brand Logo inside White Badge Container & Title */}
+        {/* Brand Logo inside Container */}
         <a href="#hero" className="flex items-center gap-3 group focus:outline-none shrink-0">
-          <div className="bg-white rounded-lg px-2 py-1 shadow-md inline-flex items-center justify-center border border-gray-200 group-hover:scale-105 transition-transform shrink-0">
-            <img
-              src="/logoputih.jpeg"
+          <div className="bg-white rounded-xl px-2.5 py-1.5 shadow-sm inline-flex items-center justify-center border border-gray-200 group-hover:scale-105 transition-transform shrink-0">
+            <Image
+              src={logoImg}
               alt="ShopDrive Logo"
+              height={32}
+              priority
               className="h-7 sm:h-8 w-auto object-contain"
             />
           </div>
           <div className="flex flex-col">
             <div className="flex items-center gap-1.5">
-              <span className="font-extrabold text-xl sm:text-2xl tracking-wider text-white font-display uppercase leading-none">
-                SHOP<span className="text-[#D91E2B]">DRIVE</span>
+              <span className="font-extrabold text-xl sm:text-2xl tracking-wider text-slate-900 font-display uppercase leading-none">
+                SHOP<span className="text-[#DC2626]">DRIVE</span>
               </span>
-              <span className="bg-[#D91E2B] text-white text-[10px] font-bold px-1.5 py-0.5 rounded animate-pulse">
+              <span className="bg-[#DC2626] text-white text-[10px] font-bold px-1.5 py-0.5 rounded animate-pulse">
                 24H
               </span>
             </div>
-            <span className="text-[10px] text-zinc-400 tracking-widest uppercase font-semibold mt-0.5 hidden sm:block">
+            <span className="text-[10px] text-slate-500 tracking-widest uppercase font-semibold mt-0.5 hidden sm:block">
               24-Hour Battery Rescue
             </span>
           </div>
@@ -113,10 +104,11 @@ export const Navbar: React.FC = () => {
               <a
                 key={link.href}
                 href={link.href}
+                onClick={() => setActiveSection(link.sectionId)}
                 className={`relative whitespace-nowrap text-xs font-bold tracking-wider uppercase transition-colors py-1 ${
                   isActive
-                    ? 'text-[#D91E2B] after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-[2px] after:bg-[#D91E2B] after:shadow-[0_0_8px_#D91E2B]'
-                    : 'text-zinc-300 hover:text-[#D91E2B]'
+                    ? 'text-[#DC2626] after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-[2px] after:bg-[#DC2626] after:shadow-[0_0_8px_rgba(220,38,38,0.5)]'
+                    : 'text-slate-700 hover:text-[#DC2626]'
                 }`}
               >
                 {link.label}
@@ -131,7 +123,7 @@ export const Navbar: React.FC = () => {
             <Button
               variant="primary"
               size="sm"
-              className="px-5 py-2.5 text-xs font-bold rounded-full shadow-[0_0_20px_rgba(217,30,43,0.5)]"
+              className="px-5 py-2.5 text-xs font-bold rounded-full shadow-md shadow-red-500/20"
               leftIcon={<PhoneCall className="w-4 h-4 fill-white text-white" />}
               beaconGlow
             >
@@ -143,7 +135,7 @@ export const Navbar: React.FC = () => {
         {/* Mobile Hamburger Menu Toggle Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden p-2 rounded-lg text-zinc-300 hover:text-[#D91E2B] hover:bg-[#1A1A1D] focus:outline-none ml-auto"
+          className="md:hidden p-2 rounded-lg text-slate-700 hover:text-[#DC2626] hover:bg-slate-100 focus:outline-none ml-auto"
           aria-label="Toggle Navigation Menu"
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -153,7 +145,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Navigation Drawer */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-[#0D0D0F] border-b border-[#D91E2B]/40 px-4 pt-3 pb-6 space-y-2 animate-in slide-in-from-top-2 shadow-2xl">
+        <div className="md:hidden bg-white border-b border-gray-200 px-4 pt-3 pb-6 space-y-2 animate-in slide-in-from-top-2 shadow-xl">
           {navLinks.map((link) => {
             const isActive = activeSection === link.sectionId;
             return (
@@ -163,17 +155,17 @@ export const Navbar: React.FC = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`block px-4 py-2.5 rounded-lg text-sm font-bold uppercase tracking-wider transition-colors ${
                   isActive
-                    ? 'text-[#D91E2B] bg-[#1A1A1D] border-l-4 border-[#D91E2B]'
-                    : 'text-gray-200 hover:text-[#D91E2B] hover:bg-[#1A1A1D]'
+                    ? 'text-[#DC2626] bg-red-50 border-l-4 border-[#DC2626]'
+                    : 'text-slate-700 hover:text-[#DC2626] hover:bg-slate-50'
                 }`}
               >
                 {link.label}
               </a>
             );
           })}
-          <div className="pt-4 border-t border-zinc-800 grid grid-cols-2 gap-3">
+          <div className="pt-4 border-t border-gray-200 grid grid-cols-2 gap-3">
             <a href={WhatsAppService.buildEmergencyCallUrl()} target="_blank" rel="noopener noreferrer">
-              <Button variant="secondary" size="sm" fullWidth className="px-3 py-2.5 text-xs font-bold" leftIcon={<MessageSquare className="w-4 h-4 text-[#FF9500]" />}>
+              <Button variant="secondary" size="sm" fullWidth className="px-3 py-2.5 text-xs font-bold" leftIcon={<WhatsAppIcon className="w-4 h-4 text-emerald-600" />}>
                 WhatsApp
               </Button>
             </a>

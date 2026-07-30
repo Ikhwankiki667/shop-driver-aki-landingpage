@@ -1,30 +1,35 @@
 import React from 'react';
+import Image from 'next/image';
 import { Zap, PhoneCall, ShieldCheck, Globe, Share2, MessageCircle } from 'lucide-react';
+import logoImg from '../../../public/Logo.svg';
 import { siteConfig } from '../../config/siteConfig';
+import { WhatsAppIcon } from '../ui/WhatsAppIcon';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#0A0A0C] border-t border-zinc-800 text-zinc-400 text-sm py-16">
+    <footer className="bg-slate-900 border-t border-slate-800 text-slate-300 text-sm py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Top Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           
-          {/* Brand Info with White Logo Container */}
+          {/* Brand Info with Logo Container */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="bg-white rounded-lg px-2 py-1 shadow-md inline-flex items-center justify-center border border-gray-200 shrink-0">
-                <img
-                  src="/logoputih.jpeg"
+              <div className="bg-white rounded-xl px-2.5 py-1.5 shadow-md inline-flex items-center justify-center border border-gray-200 shrink-0">
+                <Image
+                  src={logoImg}
                   alt="ShopDrive Logo"
+                  height={24}
+                  loading="lazy"
                   className="h-6 w-auto object-contain"
                 />
               </div>
               <span className="font-extrabold text-2xl tracking-wider text-white font-display uppercase">
-                SHOP<span className="text-[#D91E2B]">DRIVE</span>
+                SHOP<span className="text-[#DC2626]">DRIVE</span>
               </span>
             </div>
-            <p className="text-zinc-400 text-xs leading-relaxed">
+            <p className="text-slate-400 text-xs leading-relaxed">
               Pusat layanan penggantian aki mobil darurat 24 Jam antar pasang lokasi terdepan di Indonesia. Teknisi bersertifikat, garansi resmi hingga 2 tahun, 100% Bebas Ongkir &amp; Pemasangan.
             </p>
             <div className="flex items-center gap-3 pt-2">
@@ -33,7 +38,7 @@ export const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram ShopDrive"
-                className="w-8 h-8 rounded-lg bg-[#1A1A1D] border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-[#D91E2B] hover:border-[#D91E2B] transition-all"
+                className="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-[#DC2626] hover:border-[#DC2626] transition-all"
               >
                 <Globe className="w-4 h-4" />
               </a>
@@ -42,7 +47,7 @@ export const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook ShopDrive"
-                className="w-8 h-8 rounded-lg bg-[#1A1A1D] border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-[#D91E2B] hover:border-[#D91E2B] transition-all"
+                className="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-[#DC2626] hover:border-[#DC2626] transition-all"
               >
                 <Share2 className="w-4 h-4" />
               </a>
@@ -51,7 +56,7 @@ export const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="TikTok ShopDrive"
-                className="w-8 h-8 rounded-lg bg-[#1A1A1D] border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-[#D91E2B] hover:border-[#D91E2B] transition-all"
+                className="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-[#DC2626] hover:border-[#DC2626] transition-all"
               >
                 <MessageCircle className="w-4 h-4" />
               </a>
@@ -64,11 +69,11 @@ export const Footer: React.FC = () => {
               Layanan Utama
             </h4>
             <ul className="space-y-2 text-xs">
-              <li><a href="#hero" className="hover:text-[#D91E2B] transition-colors">Ganti Aki Mobil 24 Jam</a></li>
-              <li><a href="#coverage" className="hover:text-[#D91E2B] transition-colors">Layanan Antar Pasang Lokasi</a></li>
-              <li><a href="#how-it-works" className="hover:text-[#D91E2B] transition-colors">Tes Pengecekan Kelistrikan</a></li>
-              <li><a href="#coverage" className="hover:text-[#D91E2B] transition-colors">Layanan Jumpstart / Jamper Aki</a></li>
-              <li><a href="#hero" className="hover:text-[#D91E2B] transition-colors">Tukar Tambah Aki Bekas</a></li>
+              <li><a href="#hero" className="hover:text-[#DC2626] transition-colors">Ganti Aki Mobil 24 Jam</a></li>
+              <li><a href="#coverage" className="hover:text-[#DC2626] transition-colors">Layanan Antar Pasang Lokasi</a></li>
+              <li><a href="#how-it-works" className="hover:text-[#DC2626] transition-colors">Tes Pengecekan Kelistrikan</a></li>
+              <li><a href="#coverage" className="hover:text-[#DC2626] transition-colors">Layanan Jumpstart / Jamper Aki</a></li>
+              <li><a href="#hero" className="hover:text-[#DC2626] transition-colors">Tukar Tambah Aki Bekas</a></li>
             </ul>
           </div>
 
@@ -77,27 +82,27 @@ export const Footer: React.FC = () => {
             <h4 className="font-extrabold text-white font-display uppercase tracking-wider text-base">
               Jam Operasional
             </h4>
-            <div className="p-3 rounded-lg bg-[#1A1A1D] border border-zinc-800 space-y-1 text-xs">
+            <div className="p-3 rounded-lg bg-slate-800/80 border border-slate-700 space-y-1 text-xs">
               <div className="font-bold text-emerald-400 uppercase">🟢 Buka 24 Jam Setiap Hari</div>
-              <div className="text-zinc-400">Senin - Minggu (Termasuk Hari Libur)</div>
+              <div className="text-slate-400">Senin - Minggu (Termasuk Hari Libur)</div>
             </div>
             <h4 className="font-extrabold text-white font-display uppercase tracking-wider text-base pt-2">
               Area Siaga Utama
             </h4>
-            <p className="text-xs text-zinc-400 leading-relaxed">
+            <p className="text-xs text-slate-400 leading-relaxed">
               Jabodetabek (Jakarta, Bogor, Depok, Tangerang, Bekasi), Bandung, Semarang, Surabaya, Bali, Medan.
             </p>
           </div>
 
           {/* Emergency Phone & WhatsApp Box */}
-          <div className="space-y-4 bg-[#1A1A1D] p-5 rounded-xl border border-[#D91E2B]/40 shadow-[0_0_20px_rgba(217,30,43,0.15)]">
-            <div className="flex items-center gap-2 text-[#D91E2B] text-xs font-bold uppercase tracking-wider">
+          <div className="space-y-4 bg-slate-800/90 p-5 rounded-xl border border-red-500/40 shadow-lg">
+            <div className="flex items-center gap-2 text-[#DC2626] text-xs font-bold uppercase tracking-wider">
               <PhoneCall className="w-4 h-4 animate-bounce" />
               <span>PANGGILAN EMERGENCY 24H</span>
             </div>
             <a
               href={`tel:${siteConfig.brand.emergencyPhone}`}
-              className="block text-2xl font-extrabold text-white font-mono hover:text-[#D91E2B] transition-colors tracking-tight"
+              className="block text-2xl font-extrabold text-white font-mono hover:text-[#DC2626] transition-colors tracking-tight"
             >
               {siteConfig.brand.emergencyPhoneDisplay}
             </a>
@@ -107,7 +112,7 @@ export const Footer: React.FC = () => {
               rel="noopener noreferrer"
               className="w-full py-2.5 px-4 rounded-lg bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all"
             >
-              <MessageCircle className="w-4 h-4" />
+              <WhatsAppIcon className="w-4 h-4 text-white" />
               <span>Chat WhatsApp 24 Jam</span>
             </a>
             <div className="pt-1">
@@ -120,16 +125,16 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar & Copyright */}
-        <div className="pt-8 border-t border-zinc-800/80 text-center sm:flex sm:items-center sm:justify-between text-xs text-zinc-500">
+        <div className="pt-8 border-t border-slate-800 text-center sm:flex sm:items-center sm:justify-between text-xs text-slate-400">
           <div>
             &copy; {new Date().getFullYear()} {siteConfig.brand.name} ({siteConfig.brand.domain}). All rights reserved.
           </div>
           <div className="mt-2 sm:mt-0 space-x-4">
-            <a href="#hero" className="hover:text-zinc-300">Privacy Policy</a>
+            <a href="#hero" className="hover:text-white">Privacy Policy</a>
             <span>•</span>
-            <a href="#hero" className="hover:text-zinc-300">Terms of Service</a>
+            <a href="#hero" className="hover:text-white">Terms of Service</a>
             <span>•</span>
-            <a href="#hero" className="hover:text-zinc-300">Sitemap</a>
+            <a href="#hero" className="hover:text-white">Sitemap</a>
           </div>
         </div>
 

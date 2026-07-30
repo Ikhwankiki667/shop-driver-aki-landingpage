@@ -34,22 +34,22 @@ export const Button: React.FC<ButtonProps> = ({
   const variantStyles = {
     // Primary Emergency Red Action
     primary:
-      'bg-[#D91E2B] hover:bg-[#C01824] text-white shadow-[0_0_20px_rgba(217,30,43,0.4)] hover:shadow-[0_0_30px_rgba(217,30,43,0.6)] border border-[#D91E2B] active:scale-95',
+      'bg-[#DC2626] hover:bg-[#B91C1C] text-white shadow-md shadow-red-500/25 border border-[#DC2626] active:scale-95',
     // Emergency SOS Red Action
     emergency:
-      'bg-[#D91E2B] hover:bg-[#C01824] text-white shadow-[0_0_20px_rgba(217,30,43,0.5)] hover:shadow-[0_0_30px_rgba(217,30,43,0.7)] border border-[#D91E2B] active:scale-95',
-    // Metallic Dark Secondary with Red or Amber Accent
+      'bg-[#DC2626] hover:bg-[#B91C1C] text-white shadow-md shadow-red-500/30 border border-[#DC2626] active:scale-95',
+    // Light Card Secondary
     secondary:
-      'bg-[#1A1A1D] hover:bg-[#242428] text-white border border-[rgba(217,30,43,0.35)] hover:border-[#FF9500] hover:text-[#FF9500] hover:shadow-[0_0_15px_rgba(255,149,0,0.25)] active:scale-95',
-    // Amber Secondary Accent Outline Button
+      'bg-white hover:bg-slate-100 text-slate-900 border border-gray-300 shadow-sm active:scale-95',
+    // Amber Secondary Accent Button
     amberOutline:
-      'bg-transparent hover:bg-[#FF9500]/10 text-[#FF9500] border border-[#FF9500]/70 hover:border-[#FF9500] hover:shadow-[0_0_15px_rgba(255,149,0,0.3)] active:scale-95',
+      'bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-300 shadow-sm active:scale-95',
     // Outline Emergency Red
     outline:
-      'bg-transparent hover:bg-[#D91E2B]/10 text-white hover:text-white border border-[#D91E2B]/60 hover:border-[#D91E2B] hover:shadow-[0_0_15px_rgba(217,30,43,0.3)] active:scale-95',
+      'bg-white hover:bg-red-50 text-[#DC2626] border border-red-300 shadow-sm active:scale-95',
     // Ghost Minimal
     ghost:
-      'bg-transparent hover:bg-white/10 text-zinc-300 hover:text-white',
+      'bg-transparent hover:bg-slate-100 text-slate-700 hover:text-slate-900',
   };
 
   const beaconClass = beaconGlow
