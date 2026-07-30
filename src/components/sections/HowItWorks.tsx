@@ -47,40 +47,40 @@ export const HowItWorks: React.FC = () => {
         </div>
 
         {/* 4 Steps Checklist Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-6">
           {steps.map((step) => (
             <div
               key={step.stepNumber}
-              className="relative p-3.5 sm:p-6 rounded-2xl bg-white border border-gray-200 hover:border-red-400 transition-all duration-300 group flex flex-col justify-between shadow-sm hover:shadow-md text-slate-900"
+              className="relative p-3 sm:p-6 rounded-2xl bg-white border border-gray-200 hover:border-red-400 transition-all duration-300 group flex flex-col justify-between shadow-sm hover:shadow-md text-slate-900"
             >
               {/* Step Header with Mechanical Box & Number */}
               <div>
-                <div className="flex items-center justify-between mb-3 sm:mb-5">
-                  <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-xl bg-red-50 border border-red-200 flex items-center justify-center group-hover:border-red-400 transition-colors shrink-0">
+                <div className="flex items-center justify-between mb-2 sm:mb-5">
+                  <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-xl bg-red-50 border border-red-200 flex items-center justify-center group-hover:border-red-400 transition-colors shrink-0">
                     {step.icon}
                   </div>
-                  <div className="flex items-center gap-1 font-mono font-black text-xl sm:text-2xl text-red-600">
+                  <div className="flex items-center gap-1 font-mono font-black text-lg sm:text-2xl text-red-600">
                     <span>0{step.stepNumber}</span>
                   </div>
                 </div>
 
                 {/* Title & Description */}
-                <div className="space-y-1.5 sm:space-y-2">
-                  <div className="flex items-center gap-2 text-red-600 text-[10px] sm:text-xs font-bold font-mono uppercase tracking-wider">
+                <div className="space-y-1 sm:space-y-2">
+                  <div className="flex items-center gap-1 text-red-600 text-[9px] sm:text-xs font-bold font-mono uppercase tracking-wider">
                     <span>✓ STEP 0{step.stepNumber}</span>
                   </div>
-                  <h3 className="font-extrabold text-base sm:text-lg text-slate-900 font-display uppercase tracking-wide group-hover:text-red-600 transition-colors">
+                  <h3 className="font-bold text-xs sm:text-base text-slate-900 font-display uppercase tracking-wide group-hover:text-red-600 transition-colors leading-tight">
                     {step.title}
                   </h3>
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed pt-0.5 sm:pt-1">
+                  <p className="text-[11px] sm:text-sm text-slate-500 leading-snug pt-0.5">
                     {step.description}
                   </p>
                 </div>
               </div>
 
               {/* Step Corner Accent */}
-              <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-gray-100 flex items-center justify-end text-[10px] sm:text-[11px] font-mono">
-                <span className="bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded font-bold">READY 24 JAM</span>
+              <div className="mt-3 sm:mt-6 pt-2 sm:pt-4 border-t border-gray-100 flex items-center justify-end text-[9px] sm:text-[11px] font-mono">
+                <span className="bg-emerald-50 text-emerald-700 border border-emerald-200 px-1.5 py-0.5 rounded font-bold">READY 24 JAM</span>
               </div>
             </div>
           ))}

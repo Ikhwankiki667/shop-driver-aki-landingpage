@@ -60,29 +60,29 @@ export const Hero: React.FC = () => {
             
             {/* Urgency Badge */}
             <div className="inline-flex items-center">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-50 border border-red-200 text-[#DC2626] text-xs font-extrabold uppercase tracking-wider shadow-sm">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#DC2626] shrink-0" />
+              <div className="inline-flex items-center gap-1.5 py-1 px-2.5 text-[10px] sm:text-xs max-w-fit mx-auto sm:mx-0 rounded-full bg-red-50 border border-red-200 text-[#DC2626] font-extrabold uppercase tracking-wider shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-[#DC2626] shrink-0" />
                 <span>SIAGA 24 JAM • BANTUAN DARURAT AKI MOBIL</span>
               </div>
             </div>
 
             {/* Industrial Headline */}
-            <div className="space-y-4">
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase text-slate-900 tracking-tight font-display leading-[1.1]">
+            <div className="space-y-2 sm:space-y-4">
+              <h1 className="text-2xl sm:text-5xl lg:text-6xl font-black uppercase text-slate-900 tracking-tight font-display leading-tight">
                 Mobil Mogok Karena <br />
                 <span className="text-red-600 drop-shadow-sm">
                   Aki Tekor?
                 </span>
               </h1>
 
-              <p className="text-slate-600 text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl">
+              <p className="text-xs sm:text-base text-slate-600 leading-relaxed max-w-2xl line-clamp-3 sm:line-clamp-none">
                 Solusi cepat saat mobil mogok karena aki tekor. Tim <strong className="text-slate-900 font-bold">ShopDrive</strong> siap menghubungkan Anda dengan jaringan teknisi partner terdekat untuk antar dan pasang aki original bergaransi resmi langsung di lokasi Anda.
               </p>
             </div>
 
             {/* Two Action Buttons */}
-            <div className="space-y-3 pt-2">
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <div className="space-y-3 pt-1 sm:pt-2">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                 <div className="w-full sm:w-auto">
                   <Button
                     variant="primary"
@@ -90,8 +90,8 @@ export const Hero: React.FC = () => {
                     fullWidth
                     beaconGlow
                     onClick={() => WhatsAppService.openEmergencyWhatsAppWithGPS()}
-                    className="rounded-xl font-black"
-                    leftIcon={<PhoneCall className="w-6 h-6 fill-white text-white" />}
+                    className="rounded-xl font-black text-sm sm:text-base py-2.5 sm:py-4"
+                    leftIcon={<PhoneCall className="w-5 h-5 sm:w-6 sm:h-6 fill-white text-white" />}
                   >
                     PANGGIL BANTUAN SEKARANG
                   </Button>
@@ -102,8 +102,8 @@ export const Hero: React.FC = () => {
                     variant="amberOutline"
                     size="xl"
                     fullWidth
-                    className="rounded-xl font-bold"
-                    leftIcon={<MapPin className="w-5 h-5 text-amber-600" />}
+                    className="rounded-xl font-bold text-sm sm:text-base py-2.5 sm:py-4"
+                    leftIcon={<MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600" />}
                   >
                     CEK AREA LAYANAN
                   </Button>
@@ -111,24 +111,24 @@ export const Hero: React.FC = () => {
               </div>
 
               {/* GPS Auto-Location Feature & Low Bandwidth Direct Phone Fallback */}
-              <div className="p-3 bg-slate-100/80 rounded-xl border border-slate-200 space-y-2">
+              <div className="p-2.5 sm:p-3 bg-slate-100/80 rounded-xl border border-slate-200 space-y-1.5 sm:space-y-2">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <button
                     onClick={handleDetectGPS}
                     disabled={locationStatus === 'locating'}
-                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white border border-gray-300 text-slate-800 text-xs font-bold shadow-sm hover:bg-slate-50 transition-colors disabled:opacity-50"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg bg-white border border-gray-300 text-slate-800 text-[11px] sm:text-xs font-bold shadow-sm hover:bg-slate-50 transition-colors disabled:opacity-50"
                   >
-                    <MapPin className="w-4 h-4 text-[#DC2626] animate-bounce" />
+                    <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#DC2626] animate-bounce" />
                     <span>
                       {locationStatus === 'locating'
-                        ? 'Mendeteksi lokasi GPS Anda...'
+                        ? 'Mendeteksi lokasi GPS...'
                         : locationStatus === 'success'
                         ? '✓ Lokasi Terdeteksi! Panggil WA'
                         : '📍 Auto-Detect Lokasi Saya (GPS)'}
                     </span>
                   </button>
 
-                  <div className="text-[11px] text-slate-500 font-mono">
+                  <div className="text-[10px] sm:text-[11px] text-slate-500 font-mono">
                     {locationStatus === 'success' && 'Tersambung dengan Google Maps'}
                     {locationStatus === 'denied' && 'Izin lokasi ditolak, tetap bisa panggil WA'}
                     {locationStatus === 'idle' && 'Bantu teknisi menemukan Anda cepat'}
@@ -136,11 +136,11 @@ export const Hero: React.FC = () => {
                 </div>
 
                 {/* Raw HTML Tap-to-Call Direct Link (Works even if JS is slow/fails) */}
-                <div className="flex items-center gap-2 text-xs text-slate-700 pt-1 border-t border-slate-200/80">
+                <div className="flex items-center gap-2 text-[11px] sm:text-xs text-slate-700 pt-1 border-t border-slate-200/80">
                   <span className="font-semibold">Sinyal Lemah? Dial Langsung:</span>
                   <a
                     href={`tel:${siteConfig.brand.emergencyPhone}`}
-                    className="text-[#DC2626] font-extrabold hover:underline font-mono text-sm tracking-wider"
+                    className="text-[#DC2626] font-extrabold hover:underline font-mono text-xs sm:text-sm tracking-wider"
                   >
                     {siteConfig.brand.emergencyPhoneDisplay}
                   </a>
@@ -150,34 +150,34 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Trust Badges Row */}
-            <div className="pt-6 border-t border-gray-200 grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
-              <div className="flex items-center gap-3 p-3 rounded-lg bg-white border border-gray-200 shadow-sm">
-                <div className="w-9 h-9 rounded-lg bg-red-50 border border-red-200 flex items-center justify-center text-[#DC2626] shrink-0">
-                  <Award className="w-5 h-5 text-[#DC2626]" />
+            <div className="pt-4 sm:pt-6 border-t border-gray-200 grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 text-left">
+              <div className="flex items-center gap-2.5 p-2.5 sm:p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+                <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-red-50 border border-red-200 flex items-center justify-center text-[#DC2626] shrink-0">
+                  <Award className="w-4 h-4 sm:w-5 sm:h-5 text-[#DC2626]" />
                 </div>
                 <div>
-                  <div className="text-slate-900 font-bold text-xs sm:text-sm font-display uppercase tracking-wider">Aki GS Astra Original</div>
-                  <div className="text-slate-500 text-[11px]">100% Segel Pabrik</div>
+                  <div className="text-slate-900 font-bold text-xs font-display uppercase tracking-wider">Aki GS Astra Original</div>
+                  <div className="text-slate-500 text-[10px]">100% Segel Pabrik</div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-3 rounded-lg bg-white border border-gray-200 shadow-sm">
-                <div className="w-9 h-9 rounded-lg bg-red-50 border border-red-200 flex items-center justify-center text-[#DC2626] shrink-0">
-                  <ShieldCheck className="w-5 h-5 text-[#DC2626]" />
+              <div className="flex items-center gap-2.5 p-2.5 sm:p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+                <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-red-50 border border-red-200 flex items-center justify-center text-[#DC2626] shrink-0">
+                  <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-[#DC2626]" />
                 </div>
                 <div>
-                  <div className="text-slate-900 font-bold text-xs sm:text-sm font-display uppercase tracking-wider">Garansi Resmi s/d 2 Tahun</div>
-                  <div className="text-slate-500 text-[11px]">Claim Mudah 24 Jam</div>
+                  <div className="text-slate-900 font-bold text-xs font-display uppercase tracking-wider">Garansi Resmi s/d 2 Tahun</div>
+                  <div className="text-slate-500 text-[10px]">Claim Mudah 24 Jam</div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-3 rounded-lg bg-white border border-gray-200 shadow-sm">
-                <div className="w-9 h-9 rounded-lg bg-red-50 border border-red-200 flex items-center justify-center text-[#DC2626] shrink-0">
-                  <Clock className="w-5 h-5 text-[#DC2626]" />
+              <div className="flex items-center gap-2.5 p-2.5 sm:p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+                <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-red-50 border border-red-200 flex items-center justify-center text-[#DC2626] shrink-0">
+                  <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-[#DC2626]" />
                 </div>
                 <div>
-                  <div className="text-slate-900 font-bold text-xs sm:text-sm font-display uppercase tracking-wider">Bayar Setelah Terpasang</div>
-                  <div className="text-slate-500 text-[11px]">Cash / QRIS / Transfer</div>
+                  <div className="text-slate-900 font-bold text-xs font-display uppercase tracking-wider">Bayar Setelah Terpasang</div>
+                  <div className="text-slate-500 text-[10px]">Cash / QRIS / Transfer</div>
                 </div>
               </div>
             </div>
@@ -186,21 +186,21 @@ export const Hero: React.FC = () => {
 
           {/* Right Column: Prominent Real Field Photo Card */}
           <div className="lg:col-span-5 relative">
-            <div className="relative rounded-2xl bg-white p-5 sm:p-6 border border-gray-200 shadow-xl">
+            <div className="relative rounded-2xl bg-white p-3.5 sm:p-6 border border-gray-200 shadow-xl">
               
               {/* Card Header Status */}
-              <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-gray-100">
+              <div className="flex items-center justify-between pb-2.5 sm:pb-3.5 mb-3 sm:mb-4 border-b border-gray-100">
                 <div className="flex items-center gap-2">
                   <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0" />
-                  <span className="text-xs font-bold font-mono uppercase tracking-wider text-emerald-700">
+                  <span className="text-[10px] sm:text-xs font-bold font-mono uppercase tracking-wider text-emerald-700">
                     TEKNISI PARTNER SIAGA LOKASI
                   </span>
                 </div>
                 <Badge variant="red">SIAGA 24 JAM</Badge>
               </div>
 
-              {/* Prominent Full-Opacity Real Field Photo Frame */}
-              <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden border-2 border-red-500/20 shadow-md group mb-4">
+              {/* Prominent Full-Opacity Real Field Photo Frame (h-40 on mobile) */}
+              <div className="relative h-40 sm:h-64 w-full rounded-xl overflow-hidden border-2 border-red-500/20 shadow-md group mb-3">
                 <Image
                   src={heroBg}
                   alt="ShopDrive Real Field Rescue"
@@ -211,37 +211,37 @@ export const Hero: React.FC = () => {
                 />
                 
                 {/* Photo Badge Overlay */}
-                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-slate-900/90 text-white text-xs font-extrabold flex items-center gap-1.5 shadow-md pointer-events-none border border-slate-700">
-                  <span className="w-2 h-2 rounded-full bg-red-500 shrink-0" />
+                <div className="absolute top-2.5 left-2.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-slate-900/90 text-white text-[10px] sm:text-xs font-extrabold flex items-center gap-1 shadow-md pointer-events-none border border-slate-700">
+                  <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
                   <span>DOKUMENTASI ASLI ON-SITE</span>
                 </div>
 
                 {/* Bottom Photo Caption Banner */}
-                <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-slate-900/90 via-slate-900/60 to-transparent text-white">
-                  <div className="text-xs font-bold font-display uppercase tracking-wide">
+                <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-3 bg-gradient-to-t from-slate-900/90 via-slate-900/60 to-transparent text-white">
+                  <div className="text-[11px] sm:text-xs font-bold font-display uppercase tracking-wide">
                     Jeep Wrangler Rubicon
                   </div>
-                  <div className="text-[11px] text-red-300 font-mono">
+                  <div className="text-[10px] sm:text-[11px] text-red-300 font-mono">
                     Pemasangan Aki Bosch Mega Power di Lokasi Kustomer
                   </div>
                 </div>
               </div>
 
               {/* Quick Value Proposition Features List */}
-              <div className="space-y-2.5 text-xs sm:text-sm text-slate-700">
-                <div className="flex items-center gap-2.5 py-1.5 border-b border-gray-100">
+              <div className="space-y-1.5 text-xs sm:text-sm text-slate-700">
+                <div className="flex items-center gap-2 py-1 border-b border-gray-100">
                   <span className="text-emerald-600 font-bold">✓</span>
                   <span className="font-semibold text-slate-900">Aki GS Astra Original 100% Segel Pabrik</span>
                 </div>
-                <div className="flex items-center gap-2.5 py-1.5 border-b border-gray-100">
+                <div className="flex items-center gap-2 py-1 border-b border-gray-100">
                   <span className="text-emerald-600 font-bold">✓</span>
                   <span className="font-semibold text-slate-900">Bebas Biaya Antar &amp; Pasang di Tempat</span>
                 </div>
-                <div className="flex items-center gap-2.5 py-1.5 border-b border-gray-100">
+                <div className="flex items-center gap-2 py-1 border-b border-gray-100">
                   <span className="text-emerald-600 font-bold">✓</span>
                   <span className="font-semibold text-slate-900">Gratis Pengecekan Kelistrikan &amp; Alternator</span>
                 </div>
-                <div className="flex items-center gap-2.5 py-1.5">
+                <div className="flex items-center gap-2 py-1">
                   <span className="text-emerald-600 font-bold">✓</span>
                   <span className="font-semibold text-slate-900">Garansi Resmi Hingga 2 Tahun</span>
                 </div>
