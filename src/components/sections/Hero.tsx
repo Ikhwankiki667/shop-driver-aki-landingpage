@@ -35,8 +35,8 @@ export const Hero: React.FC = () => {
   };
 
   const getEmergencyWaUrl = () => {
-    const locStr = detectedMapsUrl || '[Ketik Alamat/Patokan Anda]';
-    const msg = `Halo ShopDriveAki 24 Jam, mobil saya mogok/aki tekor. Lokasi GPS saya: ${locStr}. Mohon kirim teknisi ganti aki terdekat`;
+    const locStr = detectedMapsUrl ? `${detectedMapsUrl} .` : '[Isi Lokasi Manual]';
+    const msg = `Halo ShopDriveAki 24 Jam, mobil saya mogok/aki tekor. Lokasi GPS saya: ${locStr} Mohon kirim teknisi ganti aki terdekat`;
     return `https://wa.me/${siteConfig.brand.whatsAppNumber}?text=${encodeURIComponent(msg)}`;
   };
 
@@ -68,9 +68,9 @@ export const Hero: React.FC = () => {
 
             {/* Industrial Headline */}
             <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase text-slate-900 tracking-wide font-display leading-[1.1]">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase text-slate-900 tracking-tight font-display leading-[1.1]">
                 Mobil Mogok Karena <br />
-                <span className="text-[#DC2626]">
+                <span className="text-red-600 drop-shadow-sm">
                   Aki Tekor?
                 </span>
               </h1>
@@ -83,21 +83,19 @@ export const Hero: React.FC = () => {
             {/* Two Action Buttons */}
             <div className="space-y-3 pt-2">
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                <button
-                  onClick={() => WhatsAppService.openEmergencyWhatsAppWithGPS()}
-                  className="w-full sm:w-auto text-left cursor-pointer"
-                >
+                <div className="w-full sm:w-auto">
                   <Button
                     variant="primary"
                     size="xl"
                     fullWidth
                     beaconGlow
+                    onClick={() => WhatsAppService.openEmergencyWhatsAppWithGPS()}
                     className="rounded-xl font-black"
                     leftIcon={<PhoneCall className="w-6 h-6 fill-white text-white" />}
                   >
                     PANGGIL BANTUAN SEKARANG
                   </Button>
-                </button>
+                </div>
 
                 <a href="#coverage" className="w-full sm:w-auto">
                   <Button

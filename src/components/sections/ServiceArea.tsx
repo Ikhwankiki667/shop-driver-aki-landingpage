@@ -56,7 +56,7 @@ export const ServiceArea: React.FC = () => {
               <span>JARINGAN TEKNISI NASIONAL 24/7</span>
             </div>
           </div>
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase text-slate-900 tracking-wide font-display leading-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold uppercase text-slate-900 tracking-tight font-display leading-tight">
             Hadir di Seluruh Indonesia <br className="hidden sm:block" />
             <span className="text-red-600">Di Mana Pun Anda Mogok, Kami Siap Meluncur</span>
           </h2>
@@ -230,14 +230,17 @@ export const ServiceArea: React.FC = () => {
               Kami punya jaringan partner independen di seluruh pelosok Indonesia. Cukup bagikan lokasi Anda.
             </p>
           </div>
-          <button
-            onClick={() => WhatsAppService.openEmergencyWhatsAppWithGPS(activeMapCity.name)}
-            className="shrink-0 w-full sm:w-auto text-left cursor-pointer"
-          >
-            <Button variant="primary" size="md" className="px-5 py-2.5 text-xs sm:text-sm font-extrabold rounded-xl w-full sm:w-auto shadow-md" leftIcon={<WhatsAppIcon className="w-5 h-5 text-white" />}>
+          <div className="shrink-0 w-full sm:w-auto">
+            <Button
+              variant="primary"
+              size="md"
+              onClick={() => WhatsAppService.openEmergencyWhatsAppWithGPS(activeMapCity.name)}
+              className="px-5 py-2.5 text-xs sm:text-sm font-extrabold rounded-xl w-full sm:w-auto shadow-md"
+              leftIcon={<WhatsAppIcon className="w-5 h-5 text-white" />}
+            >
               SHARE LOCATION VIA WHATSAPP
             </Button>
-          </button>
+          </div>
         </div>
 
       </div>

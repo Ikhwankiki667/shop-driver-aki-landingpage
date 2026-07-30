@@ -74,7 +74,7 @@ export const Documentation: React.FC = () => {
             <span>DOKUMENTASI LAPANGAN</span>
           </div>
 
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-slate-900 uppercase tracking-wide font-display leading-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 uppercase tracking-tight font-display leading-tight">
             Bukti Nyata <span className="text-red-600">Pemasangan Aki</span> di Lokasi
           </h2>
 

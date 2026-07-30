@@ -1,19 +1,19 @@
 import type { Metadata } from 'next';
-import { Barlow_Condensed, Inter } from 'next/font/google';
+import { Plus_Jakarta_Sans, Red_Hat_Display } from 'next/font/google';
 import './globals.css';
 import { siteConfig } from '../config/siteConfig';
 
-const barlowCondensed = Barlow_Condensed({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  weight: ['400', '600', '700', '800', '900'],
-  variable: '--font-display',
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-sans',
   display: 'swap',
 });
 
-const inter = Inter({
+const redHat = Red_Hat_Display({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-body',
+  weight: ['700', '800', '900'],
+  variable: '--font-display',
   display: 'swap',
 });
 
@@ -53,12 +53,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={`scroll-smooth ${barlowCondensed.variable} ${inter.variable}`}>
+    <html lang="id" className={`scroll-smooth ${plusJakarta.variable} ${redHat.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="font-body bg-slate-50 text-slate-900 antialiased">
+      <body className="font-sans bg-slate-50 text-slate-900 antialiased">
         {children}
       </body>
     </html>

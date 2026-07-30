@@ -15,26 +15,27 @@ export class WhatsAppService {
    */
   public static buildEmergencyCallUrl(userLocation?: string): string {
     const areaText = userLocation ? ` di area ${userLocation}` : '';
-    const message = `Halo ShopDriveAki 24 Jam, mobil saya mogok/aki tekor${areaText}. Lokasi GPS saya: [Ketik Alamat/Patokan Anda]. Mohon kirim teknisi ganti aki terdekat`;
+    const message = `Halo ShopDriveAki 24 Jam, mobil saya mogok/aki tekor${areaText}. Lokasi GPS saya: [Isi Lokasi Manual]. Mohon kirim teknisi ganti aki terdekat`;
     return `${this.BASE_URL}${this.PHONE}?text=${encodeURIComponent(message)}`;
   }
 
   /**
    * Seamlessly triggers GPS Geolocation detection on click before launching WhatsApp.
-   * If GPS is granted within 3 seconds, appends Google Maps link automatically.
-   * If denied/failed/timed out, launches WhatsApp with explicit fallback prompt message.
+   * Gives users a full 20 seconds timeout to accept the browser location prompt.
+   * If GPS is granted, appends Google Maps link automatically.
+   * If denied/failed/timed out (20s), launches WhatsApp with explicit manual location prompt.
    */
   public static async openEmergencyWhatsAppWithGPS(locationName?: string): Promise<void> {
     const phone = this.PHONE;
 
     const launchUrl = (locationData?: string) => {
       let message = '';
-      const gpsLocationStr = locationData || '[Ketik Alamat/Patokan Anda]';
+      const gpsLocationStr = locationData ? `${locationData} .` : '[Isi Lokasi Manual]';
       
       if (locationName) {
-        message = `Halo ShopDriveAki 24 Jam, mobil saya mogok/aki tekor di area ${locationName}. Lokasi GPS saya: ${gpsLocationStr}. Mohon kirim teknisi ganti aki terdekat`;
+        message = `Halo ShopDriveAki 24 Jam, mobil saya mogok/aki tekor di area ${locationName}. Lokasi GPS saya: ${gpsLocationStr} Mohon kirim teknisi ganti aki terdekat`;
       } else {
-        message = `Halo ShopDriveAki 24 Jam, mobil saya mogok/aki tekor. Lokasi GPS saya: ${gpsLocationStr}. Mohon kirim teknisi ganti aki terdekat`;
+        message = `Halo ShopDriveAki 24 Jam, mobil saya mogok/aki tekor. Lokasi GPS saya: ${gpsLocationStr} Mohon kirim teknisi ganti aki terdekat`;
       }
 
       const finalUrl = `${this.BASE_URL}${phone}?text=${encodeURIComponent(message)}`;
@@ -48,8 +49,8 @@ export class WhatsAppService {
         const position = await new Promise<GeolocationPosition>((resolve, reject) => {
           navigator.geolocation.getCurrentPosition(resolve, reject, {
             enableHighAccuracy: true,
-            timeout: 3000,
-            maximumAge: 60000,
+            timeout: 20000, // 20 detik agar pengguna sempat mengklik 'Izinkan' di HP
+            maximumAge: 0,
           });
         });
         const { latitude, longitude } = position.coords;
@@ -57,7 +58,7 @@ export class WhatsAppService {
         launchUrl(mapsUrl);
         return;
       } catch (err) {
-        console.warn('GPS detection skipped or denied:', err);
+        console.warn('GPS detection skipped, denied, or timed out:', err);
       }
     }
 

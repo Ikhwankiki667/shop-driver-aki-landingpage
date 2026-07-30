@@ -18,7 +18,7 @@ export const FAQ: React.FC = () => {
             <HelpCircle className="w-3.5 h-3.5" />
             <span>PERTANYAAN POPULER</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase text-slate-900 tracking-wide font-display">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold uppercase text-slate-900 tracking-tight font-display">
             Pertanyaan Sering <span className="text-red-600">Diajukan</span>
           </h2>
           <p className="text-slate-600 text-xs sm:text-lg">
@@ -37,11 +37,15 @@ export const FAQ: React.FC = () => {
           <p className="text-slate-600 text-xs sm:text-sm max-w-md mx-auto">
             Tim customer support dan konsultan teknis ShopDrive siap membantu melayani pertanyaan Anda 24 jam nonstop.
           </p>
-          <button onClick={() => WhatsAppService.openEmergencyWhatsAppWithGPS()} className="inline-block cursor-pointer">
-            <Button variant="outline" size="md">
+          <div className="inline-block">
+            <Button
+              variant="outline"
+              size="md"
+              onClick={() => WhatsAppService.openEmergencyWhatsAppWithGPS()}
+            >
               Tanyakan via WhatsApp CS 24 Jam
             </Button>
-          </button>
+          </div>
         </div>
 
       </div>

@@ -164,11 +164,18 @@ export const Navbar: React.FC = () => {
             );
           })}
           <div className="pt-4 border-t border-gray-200 grid grid-cols-2 gap-3">
-            <button onClick={() => WhatsAppService.openEmergencyWhatsAppWithGPS()} className="w-full text-left cursor-pointer">
-              <Button variant="secondary" size="sm" fullWidth className="px-3 py-2.5 text-xs font-bold" leftIcon={<WhatsAppIcon className="w-4 h-4 text-emerald-600" />}>
+            <div className="w-full">
+              <Button
+                variant="secondary"
+                size="sm"
+                fullWidth
+                onClick={() => WhatsAppService.openEmergencyWhatsAppWithGPS()}
+                className="px-3 py-2.5 text-xs font-bold"
+                leftIcon={<WhatsAppIcon className="w-4 h-4 text-emerald-600" />}
+              >
                 WhatsApp
               </Button>
-            </button>
+            </div>
             <a href={WhatsAppService.buildPhoneCallUrl()}>
               <Button variant="primary" size="sm" fullWidth className="px-3 py-2.5 text-xs font-bold" leftIcon={<PhoneCall className="w-4 h-4 fill-white text-white" />}>
                 Panggil SOS
