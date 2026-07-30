@@ -41,20 +41,20 @@ export const BrandLogos: React.FC = () => {
         </div>
 
         {/* Responsive 4-Column Brand Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-4 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4 max-w-7xl mx-auto">
           {brandList.map((brand, index) => (
             <div
               key={index}
-              className="p-3 sm:p-5 rounded-2xl bg-white border border-gray-200 shadow-sm hover:border-red-400 transition-all duration-300 flex items-center justify-center sm:justify-start gap-2.5 sm:gap-3.5 group hover:shadow-md cursor-pointer text-slate-900"
+              className="p-3 sm:p-4 rounded-2xl bg-white border border-gray-200 shadow-sm hover:border-red-400 transition-all duration-300 flex flex-col items-center text-center sm:flex-row sm:items-center sm:text-left gap-1.5 sm:gap-3 group hover:shadow-md cursor-pointer text-slate-900"
             >
-              <div className="p-2 sm:p-2.5 rounded-xl bg-red-50 border border-red-200 group-hover:border-red-400 transition-colors shrink-0">
-                <BatteryCharging className="w-4 h-4 sm:w-6 sm:h-6 text-red-600 group-hover:scale-110 transition-transform" />
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-red-50 text-red-600 border border-red-200 flex items-center justify-center shrink-0 group-hover:border-red-400 transition-colors">
+                <BatteryCharging className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 group-hover:scale-110 transition-transform" />
               </div>
-              <div className="min-w-0 text-center sm:text-left">
-                <h3 className="font-bold text-slate-900 text-xs sm:text-lg tracking-wide group-hover:text-red-600 transition-colors truncate">
+              <div className="min-w-0 w-full">
+                <h3 className="text-xs sm:text-sm font-bold text-slate-900 leading-tight whitespace-normal break-words group-hover:text-red-600 transition-colors">
                   {brand.name}
                 </h3>
-                <p className="text-[11px] text-slate-500 truncate hidden sm:block">
+                <p className="text-[10px] sm:text-xs text-slate-500 leading-tight mt-0.5 whitespace-normal break-words">
                   {brand.type}
                 </p>
               </div>
