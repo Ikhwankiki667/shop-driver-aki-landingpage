@@ -142,7 +142,7 @@ export const mockTestimonials: ITestimonial[] = [
     carModel: 'Toyota Fortuner 2.4 Diesel',
     city: 'Jakarta Selatan',
     rating: 5,
-    reviewText: 'Mobil mogok pas jam 2 malam di tol Dalam Kota. Panggil ShopDrive via WA, cuma 12 menit teknisi Mas Budi sampai bawa aki GS Astra ori. Tukar tambah juga dihargai tinggi. Penyelamat banget!',
+    reviewText: 'Mobil mogok pas jam 2 malam di tol Dalam Kota. Panggil ShopDrive Aki via WA, cuma 12 menit teknisi Mas Budi sampai bawa aki GS Astra ori. Tukar tambah juga dihargai tinggi. Penyelamat banget!',
     date: 'Kemarin, 02.15 WIB',
     verifiedPurchase: true,
   },
@@ -152,7 +152,7 @@ export const mockTestimonials: ITestimonial[] = [
     carModel: 'Honda HR-V Prestige',
     city: 'Tangerang Selatan',
     rating: 5,
-    reviewText: 'Mau berangkat rapat jam 7 pagi aki tiba-tiba mati total. Untung dapet kontak ShopDrive. Teknisi datang cepat, sopan, langsung riset kelistrikan dan pasang aki Amaron. Garansi 2 tahun terjamin!',
+    reviewText: 'Mau berangkat rapat jam 7 pagi aki tiba-tiba mati total. Untung dapet kontak ShopDrive Aki. Teknisi datang cepat, sopan, langsung riset kelistrikan dan pasang aki Amaron. Garansi 2 tahun terjamin!',
     date: '3 Hari Yang Lalu',
     verifiedPurchase: true,
   },
@@ -171,20 +171,20 @@ export const mockTestimonials: ITestimonial[] = [
 export const mockFAQs: IFAQItem[] = [
   {
     id: 'faq-0',
-    question: 'ShopDrive itu sebenarnya berperan sebagai apa?',
-    answer: 'ShopDrive adalah platform perantara (marketplace) layanan darurat aki yang menghubungkan Anda dengan jaringan teknisi partner independen bersertifikat di berbagai kota. Karena ditangani oleh partner lokal terdekat, harga dan ketersediaan stok dapat menyesuaikan dengan ketentuan partner di masing-masing area.',
+    question: 'ShopDrive Aki itu sebenarnya berperan sebagai apa?',
+    answer: 'ShopDrive Aki adalah platform perantara (marketplace) layanan darurat aki yang menghubungkan Anda dengan jaringan teknisi partner independen bersertifikat di berbagai kota. Karena ditangani oleh partner lokal terdekat, harga dan ketersediaan stok dapat menyesuaikan dengan ketentuan partner di masing-masing area.',
     category: 'PEMESANAN',
   },
   {
     id: 'faq-1',
     question: 'Berapa lama estimasi waktu tunggu kedatangan teknisi ke lokasi saya?',
-    answer: 'Rata-rata kedatangan teknisi ShopDrive adalah 20 hingga 25 menit untuk seluruh wilayah perkotaan utama. Armada teknisi siaga kami disebar di berbagai titik strategis agar respon sangat cepat.',
+    answer: 'Rata-rata kedatangan teknisi ShopDrive Aki adalah 20 hingga 25 menit untuk seluruh wilayah perkotaan utama. Armada teknisi siaga kami disebar di berbagai titik strategis agar respon sangat cepat.',
     category: 'WAKTU TUNGGU',
   },
   {
     id: 'faq-2',
-    question: 'Apakah ShopDrive melayani panggilan penggantian aki di malam atau dini hari?',
-    answer: 'YA, 100% SIAGA 24 JAM NONSTOP! Layanan darurat ShopDrive beroperasi 24 jam sehari, 7 hari seminggu, termasuk tengah malam, dini hari, dan hari libur nasional.',
+    question: 'Apakah ShopDrive Aki melayani panggilan penggantian aki di malam atau dini hari?',
+    answer: 'YA, 100% SIAGA 24 JAM NONSTOP! Layanan darurat ShopDrive Aki beroperasi 24 jam sehari, 7 hari seminggu, termasuk tengah malam, dini hari, dan hari libur nasional.',
     category: 'LAYANAN 24 JAM',
   },
   {
@@ -196,13 +196,13 @@ export const mockFAQs: IFAQItem[] = [
   {
     id: 'faq-4',
     question: 'Bagaimana proses dan syarat klaim garansi resmi aki?',
-    answer: 'Garansi resmi ShopDrive berlaku hingga 24 bulan (tergantung tipe aki). Klaim garansi sangat mudah: cukup hubungi WA CS kami dengan menginfokan nomor garansi digital / pelat nomor kendaraan, teknisi kami akan datang melakukan pengecekan / penggantian unit baru.',
+    answer: 'Garansi resmi ShopDrive Aki berlaku hingga 24 bulan (tergantung tipe aki). Klaim garansi sangat mudah: cukup hubungi WA CS kami dengan menginfokan nomor garansi digital / pelat nomor kendaraan, teknisi kami akan datang melakukan pengecekan / penggantian unit baru.',
     category: 'KLAIM GARANSI',
   },
   {
     id: 'faq-5',
     question: 'Cakupan jenis dan merek mobil apa saja yang bisa ditangani?',
-    answer: 'ShopDrive melayani 99% jenis kendaraan roda empat: City Car, Hatchback, Sedan, SUV, MPV, Mobil Mewah / Eropa (DIN Spec & Start-Stop EFB/AGM), hingga Kendaraan Diesel Commercial & Truck.',
+    answer: 'ShopDrive Aki melayani 99% jenis kendaraan roda empat: City Car, Hatchback, Sedan, SUV, MPV, Mobil Mewah / Eropa (DIN Spec & Start-Stop EFB/AGM), hingga Kendaraan Diesel Commercial & Truck.',
     category: 'CAKUPAN MOBIL',
   },
 ];

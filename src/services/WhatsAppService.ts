@@ -15,7 +15,7 @@ export class WhatsAppService {
    */
   public static buildEmergencyCallUrl(userLocation?: string): string {
     const areaText = userLocation ? ` di area ${userLocation}` : '';
-    const message = `Halo ShopDriveAki 24 Jam, mobil saya mogok/aki tekor${areaText}. Lokasi GPS saya: [Isi Lokasi Manual]. Mohon kirim teknisi ganti aki terdekat`;
+    const message = `Halo ShopDrive Aki 24 Jam, mobil saya mogok/aki tekor${areaText}. Lokasi GPS saya: [Isi Lokasi Manual]. Mohon kirim teknisi ganti aki terdekat`;
     return `${this.BASE_URL}${this.PHONE}?text=${encodeURIComponent(message)}`;
   }
 
@@ -33,9 +33,9 @@ export class WhatsAppService {
       const gpsLocationStr = locationData ? `${locationData} .` : '[Isi Lokasi Manual]';
       
       if (locationName) {
-        message = `Halo ShopDriveAki 24 Jam, mobil saya mogok/aki tekor di area ${locationName}. Lokasi GPS saya: ${gpsLocationStr} Mohon kirim teknisi ganti aki terdekat`;
+        message = `Halo ShopDrive Aki 24 Jam, mobil saya mogok/aki tekor di area ${locationName}. Lokasi GPS saya: ${gpsLocationStr} Mohon kirim teknisi ganti aki terdekat`;
       } else {
-        message = `Halo ShopDriveAki 24 Jam, mobil saya mogok/aki tekor. Lokasi GPS saya: ${gpsLocationStr} Mohon kirim teknisi ganti aki terdekat`;
+        message = `Halo ShopDrive Aki 24 Jam, mobil saya mogok/aki tekor. Lokasi GPS saya: ${gpsLocationStr} Mohon kirim teknisi ganti aki terdekat`;
       }
 
       const finalUrl = `${this.BASE_URL}${phone}?text=${encodeURIComponent(message)}`;
@@ -88,6 +88,14 @@ export class WhatsAppService {
    */
   public static buildConsultationUrl(topic: string = 'Tukar Tambah Aki'): string {
     const message = `Halo ${siteConfig.brand.name}, saya ingin bertanya tentang ${topic} dan cek kecocokan aki mobil saya.`;
+    return `${this.BASE_URL}${this.PHONE}?text=${encodeURIComponent(message)}`;
+  }
+
+  /**
+   * Build general FAQ consultation inquiry link (No GPS required)
+   */
+  public static buildFaqConsultationUrl(): string {
+    const message = 'Halo ShopDrive Aki 24 Jam, saya mau bertanya / konsultasi mengenai layanan aki mobil: [Tulis Pertanyaan Anda di Sini]';
     return `${this.BASE_URL}${this.PHONE}?text=${encodeURIComponent(message)}`;
   }
 

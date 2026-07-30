@@ -39,7 +39,7 @@ export const HowItWorks: React.FC = () => {
             <span>PROSES PENANGANAN MEKANIK</span>
           </div>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold uppercase text-slate-900 tracking-tight font-display">
-            Cara Kerja <span className="text-red-600">ShopDrive</span>
+            Cara Kerja <span className="text-red-600">ShopDrive Aki</span>
           </h2>
           <p className="text-slate-600 text-xs sm:text-lg">
             Sistem pengiriman &amp; pemasangan darurat 4 langkah presisi tanpa ribet.

@@ -71,22 +71,22 @@ export const Navbar: React.FC = () => {
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
         
         {/* Brand Logo inside Container */}
-        <a href="#hero" className="flex items-center gap-3 group focus:outline-none shrink-0">
-          <div className="bg-white rounded-xl px-2.5 py-1.5 shadow-sm inline-flex items-center justify-center border border-gray-200 group-hover:scale-105 transition-transform shrink-0">
+        <a href="#hero" className="flex items-center gap-2 sm:gap-3 group focus:outline-none shrink-0">
+          <div className="bg-white rounded-xl px-2 py-1 sm:px-2.5 sm:py-1.5 shadow-sm inline-flex items-center justify-center border border-gray-200 group-hover:scale-105 transition-transform shrink-0">
             <Image
               src={logoImg}
-              alt="ShopDrive Logo"
+              alt="ShopDrive Aki Logo"
               height={32}
               priority
-              className="h-7 sm:h-8 w-auto object-contain"
+              className="h-6 sm:h-8 w-auto object-contain"
             />
           </div>
           <div className="flex flex-col">
-            <div className="flex items-center gap-1.5">
-              <span className="font-extrabold text-xl sm:text-2xl tracking-wider text-slate-900 font-display uppercase leading-none">
-                SHOP<span className="text-[#DC2626]">DRIVE</span>
+            <div className="flex items-center gap-1 sm:gap-1.5">
+              <span className="font-black text-sm sm:text-xl lg:text-2xl tracking-tight text-slate-900 font-display uppercase leading-none">
+                SHOP<span className="text-[#DC2626]">DRIVE</span> <span className="text-[#DC2626]">AKI</span>
               </span>
-              <span className="bg-[#DC2626] text-white text-[10px] font-bold px-1.5 py-0.5 rounded">
+              <span className="bg-[#DC2626] text-white text-[9px] sm:text-[10px] font-bold px-1 sm:px-1.5 py-0.5 rounded shrink-0">
                 24 JAM
               </span>
             </div>

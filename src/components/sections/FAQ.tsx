@@ -22,7 +22,7 @@ export const FAQ: React.FC = () => {
             Pertanyaan Sering <span className="text-red-600">Diajukan</span>
           </h2>
           <p className="text-slate-600 text-xs sm:text-lg">
-            Segala hal yang perlu Anda ketahui mengenai pemesanan, layanan darurat 24 jam, dan klaim garansi resmi ShopDrive.
+            Segala hal yang perlu Anda ketahui mengenai pemesanan, layanan darurat 24 jam, dan klaim garansi resmi ShopDrive Aki.
           </p>
         </div>
 
@@ -35,17 +35,21 @@ export const FAQ: React.FC = () => {
             Punya Pertanyaan Lain Yang Belum Terjawab?
           </h3>
           <p className="text-slate-600 text-xs sm:text-sm max-w-md mx-auto">
-            Tim customer support dan konsultan teknis ShopDrive siap membantu melayani pertanyaan Anda 24 jam nonstop.
+            Tim customer support dan konsultan teknis ShopDrive Aki siap membantu melayani pertanyaan Anda 24 jam nonstop.
           </p>
-          <div className="inline-block">
+          <a
+            href={WhatsAppService.buildFaqConsultationUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block"
+          >
             <Button
               variant="outline"
               size="md"
-              onClick={() => WhatsAppService.openEmergencyWhatsAppWithGPS()}
             >
               Tanyakan via WhatsApp CS 24 Jam
             </Button>
-          </div>
+          </a>
         </div>
 
       </div>

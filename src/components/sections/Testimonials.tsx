@@ -26,7 +26,7 @@ export const Testimonials: React.FC = () => {
             <span>KATA PENGENDARA</span>
           </div>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold uppercase text-slate-900 tracking-tight font-display">
-            Pengalaman Pengendara <span className="text-red-600">ShopDrive</span>
+            Pengalaman Pengendara <span className="text-red-600">ShopDrive Aki</span>
           </h2>
           <p className="text-slate-600 text-xs sm:text-lg">
             Dipercaya oleh 150.000+ pengendara mobil yang terselamatkan saat situasi darurat di jalan.

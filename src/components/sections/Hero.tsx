@@ -36,7 +36,7 @@ export const Hero: React.FC = () => {
 
   const getEmergencyWaUrl = () => {
     const locStr = detectedMapsUrl ? `${detectedMapsUrl} .` : '[Isi Lokasi Manual]';
-    const msg = `Halo ShopDriveAki 24 Jam, mobil saya mogok/aki tekor. Lokasi GPS saya: ${locStr} Mohon kirim teknisi ganti aki terdekat`;
+    const msg = `Halo ShopDrive Aki 24 Jam, mobil saya mogok/aki tekor. Lokasi GPS saya: ${locStr} Mohon kirim teknisi ganti aki terdekat`;
     return `https://wa.me/${siteConfig.brand.whatsAppNumber}?text=${encodeURIComponent(msg)}`;
   };
 
@@ -56,15 +56,7 @@ export const Hero: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Column: Copywriting & Actions */}
-          <div className="lg:col-span-7 space-y-8">
-            
-            {/* Urgency Badge */}
-            <div className="inline-flex items-center">
-              <div className="inline-flex items-center gap-1.5 py-1 px-2.5 text-[10px] sm:text-xs max-w-fit mx-auto sm:mx-0 rounded-full bg-red-50 border border-red-200 text-[#DC2626] font-extrabold uppercase tracking-wider shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-[#DC2626] shrink-0" />
-                <span>SIAGA 24 JAM • BANTUAN DARURAT AKI MOBIL</span>
-              </div>
-            </div>
+          <div className="lg:col-span-7 space-y-6 sm:space-y-8">
 
             {/* Industrial Headline */}
             <div className="space-y-2 sm:space-y-4">
@@ -76,7 +68,7 @@ export const Hero: React.FC = () => {
               </h1>
 
               <p className="text-xs sm:text-base text-slate-600 leading-relaxed max-w-2xl line-clamp-3 sm:line-clamp-none">
-                Solusi cepat saat mobil mogok karena aki tekor. Tim <strong className="text-slate-900 font-bold">ShopDrive</strong> siap menghubungkan Anda dengan jaringan teknisi partner terdekat untuk antar dan pasang aki original bergaransi resmi langsung di lokasi Anda.
+                Solusi cepat saat mobil mogok karena aki tekor. Tim <strong className="text-slate-900 font-bold">ShopDrive Aki</strong> siap menghubungkan Anda dengan jaringan teknisi partner terdekat untuk antar dan pasang aki original bergaransi resmi langsung di lokasi Anda.
               </p>
             </div>
 
@@ -203,7 +195,7 @@ export const Hero: React.FC = () => {
               <div className="relative h-40 sm:h-64 w-full rounded-xl overflow-hidden border-2 border-red-500/20 shadow-md group mb-3">
                 <Image
                   src={heroBg}
-                  alt="ShopDrive Real Field Rescue"
+                  alt="ShopDrive Aki Real Field Rescue"
                   fill
                   priority
                   sizes="(max-width: 768px) 100vw, 450px"

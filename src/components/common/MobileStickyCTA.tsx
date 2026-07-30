@@ -14,7 +14,7 @@ export const MobileStickyCTA: React.FC = () => {
         <a
           href={WhatsAppService.buildPhoneCallUrl()}
           className="flex items-center justify-center gap-1.5 min-h-[42px] py-2 px-2.5 rounded-xl bg-[#DC2626] active:bg-[#B91C1C] text-white font-extrabold text-xs uppercase tracking-wider shadow-md active:scale-[0.98] transition-all"
-          aria-label="Panggil Telepon Darurat ShopDrive"
+          aria-label="Panggil Telepon Darurat ShopDrive Aki"
         >
           <PhoneCall className="w-4 h-4 fill-white text-white shrink-0" />
           <span className="truncate font-display">SOS TELEPON</span>
@@ -24,7 +24,7 @@ export const MobileStickyCTA: React.FC = () => {
         <button
           onClick={() => WhatsAppService.openEmergencyWhatsAppWithGPS()}
           className="flex items-center justify-center gap-1.5 min-h-[42px] py-2 px-2.5 rounded-xl bg-[#25D366] active:bg-[#20bd5a] text-white font-extrabold text-xs uppercase tracking-wider shadow-md active:scale-[0.98] transition-all cursor-pointer"
-          aria-label="Chat WhatsApp Darurat ShopDrive"
+          aria-label="Chat WhatsApp Darurat ShopDrive Aki"
         >
           <WhatsAppIcon className="w-4 h-4 text-white shrink-0" />
           <span className="truncate font-display">CHAT WHATSAPP</span>

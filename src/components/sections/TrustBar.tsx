@@ -5,7 +5,7 @@ export const TrustBar: React.FC = () => {
   const trustItems = [
     {
       icon: <Clock className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-[#DC2626]" />,
-      title: "Respon <20 Menit",
+      title: "Respon <5 Menit",
       description: "Armada teknisi siaga meluncur ke lokasi Anda dengan cepat.",
     },
     {
