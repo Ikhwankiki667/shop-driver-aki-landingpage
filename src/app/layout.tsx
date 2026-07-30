@@ -18,37 +18,41 @@ const redHat = Red_Hat_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'ShopDrive Aki 24 Jam - Bantuan Darurat Aki Mobil & Home Service Terdekat',
+  metadataBase: new URL('https://www.shopdriveaki.com'),
+  title: 'ShopDrive Aki 24 Jam | Layanan Antar Pasang Aki Mobil Terdekat',
   description:
-    'Layanan ganti aki mobil darurat 24 jam terdekat. Antar & pasang di lokasi Anda, garansi resmi hingga 2 tahun, stok aki original GS Astra, Yuasa, Amaron, Bosch, FB & Incoe.',
-  keywords: [
-    'ganti aki mobil 24 jam',
-    'aki mobil terdekat',
-    'shopdrive aki',
-    'bantuan aki tekor',
-    'home service aki mobil',
-    'aki gs astra original',
-  ],
-  authors: [{ name: 'ShopDrive Aki 24 Jam' }],
-  openGraph: {
-    title: 'ShopDrive Aki 24 Jam - Bantuan Darurat Aki Mobil & Home Service Terdekat',
-    description:
-      'Layanan ganti aki mobil darurat 24 jam terdekat. Antar & pasang di lokasi Anda, garansi resmi hingga 2 tahun, stok aki original GS Astra, Yuasa, Amaron, Bosch, FB & Incoe.',
-    url: 'https://shopdriveaki.com',
-    siteName: 'ShopDrive Aki 24 Jam',
-    locale: 'id_ID',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'ShopDrive Aki 24 Jam - Bantuan Darurat Aki Mobil & Home Service Terdekat',
-    description:
-      'Layanan ganti aki mobil darurat 24 jam terdekat. Antar & pasang di lokasi Anda, garansi resmi hingga 2 tahun, stok aki original GS Astra, Yuasa, Amaron, Bosch, FB & Incoe.',
-  },
+    'ShopDrive Aki menyediakan layanan penggantian aki mobil 24 jam, antar dan pasang aki original bergaransi resmi langsung di lokasi Anda.',
+  applicationName: 'ShopDrive Aki',
+  authors: [{ name: 'ShopDrive Aki' }],
+  keywords: ['shopdrive aki', 'ganti aki mobil', 'toko aki terdekat', 'layanan aki 24 jam'],
   icons: {
     icon: '/icon.png',
     shortcut: '/icon.png',
     apple: '/icon.png',
+  },
+  openGraph: {
+    title: 'ShopDrive Aki 24 Jam | Layanan Antar Pasang Aki Mobil Terdekat',
+    description:
+      'ShopDrive Aki menyediakan layanan penggantian aki mobil 24 jam, antar dan pasang aki original bergaransi resmi langsung di lokasi Anda.',
+    url: 'https://www.shopdriveaki.com',
+    siteName: 'ShopDrive Aki 24 Jam',
+    locale: 'id_ID',
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'ShopDrive Aki 24 Jam',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ShopDrive Aki 24 Jam | Layanan Antar Pasang Aki Mobil Terdekat',
+    description:
+      'ShopDrive Aki menyediakan layanan penggantian aki mobil 24 jam, antar dan pasang aki original bergaransi resmi langsung di lokasi Anda.',
+    images: ['/og-image.png'],
   },
 };
 
