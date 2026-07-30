@@ -67,7 +67,7 @@ export const Hero: React.FC = () => {
                 </span>
               </h1>
 
-              <p className="text-xs sm:text-base text-slate-600 leading-relaxed max-w-2xl line-clamp-3 sm:line-clamp-none">
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl">
                 Solusi cepat saat mobil mogok karena aki tekor. Tim <strong className="text-slate-900 font-bold">ShopDrive Aki</strong> siap menghubungkan Anda dengan jaringan teknisi partner terdekat untuk antar dan pasang aki original bergaransi resmi langsung di lokasi Anda.
               </p>
             </div>
