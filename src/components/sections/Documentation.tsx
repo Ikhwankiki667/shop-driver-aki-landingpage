@@ -103,7 +103,7 @@ export const Documentation: React.FC = () => {
                 />
                 
                 {/* Photo Badge Overlay */}
-                <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-slate-900/75 backdrop-blur-md text-white text-[11px] font-bold flex items-center gap-1 shadow-md pointer-events-none">
+                <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-slate-900/90 text-white text-[11px] font-bold flex items-center gap-1 shadow-md pointer-events-none border border-slate-700">
                   <Camera className="w-3 h-3 text-red-400" />
                   <span>Foto Asli</span>
                 </div>

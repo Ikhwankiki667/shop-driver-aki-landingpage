@@ -75,16 +75,16 @@ export const ServiceArea: React.FC = () => {
               
               {/* Top Floating Badges */}
               <div className="absolute top-4 left-4 right-4 z-20 flex flex-wrap items-center justify-between gap-2 pointer-events-none">
-                <div className="px-3.5 py-1.5 rounded-lg bg-white/90 backdrop-blur-md border border-emerald-200 text-emerald-700 text-xs font-bold shadow-md flex items-center gap-2 pointer-events-auto">
+                <div className="px-3.5 py-1.5 rounded-lg bg-white/98 border border-emerald-200 text-emerald-700 text-xs font-bold shadow-md flex items-center gap-2 pointer-events-auto">
                   <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0" />
                   <span>LIVE DISPATCH NETWORK • SELURUH INDONESIA</span>
                 </div>
                 <div className="flex items-center gap-2 pointer-events-auto">
-                  <div className="bg-white/90 backdrop-blur-md border border-gray-200 text-slate-800 text-xs font-semibold px-3 py-1.5 rounded-lg flex items-center gap-1.5 shadow-md">
+                  <div className="bg-white/98 border border-gray-200 text-slate-800 text-xs font-semibold px-3 py-1.5 rounded-lg flex items-center gap-1.5 shadow-md">
                     <Zap className="w-3.5 h-3.5 text-amber-500" />
                     <span>350+ Armada Siaga</span>
                   </div>
-                  <div className="bg-white/90 backdrop-blur-md border border-gray-200 text-slate-800 text-xs font-semibold px-3 py-1.5 rounded-lg flex items-center gap-1.5 shadow-md">
+                  <div className="bg-white/98 border border-gray-200 text-slate-800 text-xs font-semibold px-3 py-1.5 rounded-lg flex items-center gap-1.5 shadow-md">
                     <MapPin className="w-3.5 h-3.5 text-red-600" />
                     <span>45+ Kota Terdaftar</span>
                   </div>

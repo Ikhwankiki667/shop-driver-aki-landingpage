@@ -59,9 +59,9 @@ export const Navbar: React.FC = () => {
   // Section-dependent adaptive navbar background styles
   const getAdaptiveNavbarStyle = () => {
     if (!isScrolled) {
-      return 'bg-white/80 backdrop-blur-md border-b border-gray-200/60';
+      return 'bg-white border-b border-gray-200/60 gpu-layer';
     }
-    return 'bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm';
+    return 'bg-white border-b border-gray-200 shadow-sm gpu-layer';
   };
 
   return (

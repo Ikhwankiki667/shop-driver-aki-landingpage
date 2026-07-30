@@ -217,7 +217,7 @@ export const Hero: React.FC = () => {
                 />
                 
                 {/* Photo Badge Overlay */}
-                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-md text-white text-xs font-extrabold flex items-center gap-1.5 shadow-md pointer-events-none border border-white/20">
+                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-slate-900/90 text-white text-xs font-extrabold flex items-center gap-1.5 shadow-md pointer-events-none border border-slate-700">
                   <span className="w-2 h-2 rounded-full bg-red-500 shrink-0" />
                   <span>DOKUMENTASI ASLI ON-SITE</span>
                 </div>

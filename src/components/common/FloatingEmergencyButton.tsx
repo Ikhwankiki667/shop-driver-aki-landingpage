@@ -4,7 +4,7 @@ import { WhatsAppIcon } from '../ui/WhatsAppIcon';
 
 export const FloatingEmergencyButton: React.FC = () => {
   return (
-    <div className="hidden sm:block fixed bottom-8 right-8 z-50">
+    <div className="hidden sm:block fixed bottom-8 right-8 z-50 gpu-layer">
       <a
         href={WhatsAppService.buildEmergencyCallUrl()}
         target="_blank"

@@ -53,7 +53,7 @@ export const Button: React.FC<ButtonProps> = ({
   };
 
   const beaconClass = beaconGlow
-    ? 'relative overflow-hidden before:absolute before:inset-0 before:rounded-lg before:bg-white/20 before:animate-ping before:opacity-75'
+    ? 'relative shadow-[0_0_15px_rgba(220,38,38,0.35)] transition-shadow duration-300'
     : '';
 
   const widthClass = fullWidth ? 'w-full' : '';
