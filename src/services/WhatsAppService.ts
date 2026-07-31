@@ -25,44 +25,38 @@ export class WhatsAppService {
    * If GPS is granted, appends Google Maps link automatically.
    * If denied/failed/timed out (20s), launches WhatsApp with explicit manual location prompt.
    */
-  public static async openEmergencyWhatsAppWithGPS(locationName?: string): Promise<void> {
+  /**
+   * Directly opens WhatsApp emergency inquiry URL with instant click response.
+   * If userLocation / userMapsUrl is provided, it attaches the Google Maps GPS URL.
+   * Otherwise falls back safely to '(share loc)'.
+   */
+  public static openEmergencyWhatsApp(locationName?: string, userMapsUrl?: string): void {
     const phone = this.PHONE;
-
-    const launchUrl = (locationData?: string) => {
-      let message = '';
-      const gpsLocationStr = locationData || '(share loc)';
-      
-      if (locationName) {
-        message = `Halo ShopDriveAki, saya butuh ganti aki di area ${locationName}. Lokasi GPS saya : ${gpsLocationStr}\n\nApakah ada teknisi yang bisa meluncur sekarang?`;
-      } else {
-        message = `Halo ShopDriveAki, saya butuh ganti aki. Lokasi GPS saya : ${gpsLocationStr}\n\nApakah ada teknisi yang bisa meluncur sekarang?`;
-      }
-
-      const finalUrl = `${this.BASE_URL}${phone}?text=${encodeURIComponent(message)}`;
-      if (typeof window !== 'undefined') {
-        window.open(finalUrl, '_blank', 'noopener,noreferrer');
-      }
-    };
-
-    if (typeof window !== 'undefined' && 'geolocation' in navigator) {
-      try {
-        const position = await new Promise<GeolocationPosition>((resolve, reject) => {
-          navigator.geolocation.getCurrentPosition(resolve, reject, {
-            enableHighAccuracy: true,
-            timeout: 20000, // 20 detik agar pengguna sempat mengklik 'Izinkan' di HP
-            maximumAge: 0,
-          });
-        });
-        const { latitude, longitude } = position.coords;
-        const mapsUrl = `https://maps.google.com/?q=${latitude.toFixed(5)},${longitude.toFixed(5)}`;
-        launchUrl(mapsUrl);
-        return;
-      } catch (err) {
-        console.warn('GPS detection skipped, denied, or timed out:', err);
-      }
+    const gpsLocationStr = userMapsUrl || '(share loc)';
+    let message = '';
+    
+    if (locationName) {
+      message = `Halo ShopDriveAki, saya butuh ganti aki di area ${locationName}. Lokasi GPS saya : ${gpsLocationStr}\n\nApakah ada teknisi yang bisa meluncur sekarang?`;
+    } else {
+      message = `Halo ShopDriveAki, saya butuh ganti aki. Lokasi GPS saya : ${gpsLocationStr}\n\nApakah ada teknisi yang bisa meluncur sekarang?`;
     }
 
-    launchUrl();
+    const finalUrl = `${this.BASE_URL}${phone}?text=${encodeURIComponent(message)}`;
+    if (typeof window !== 'undefined') {
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      if (isMobile) {
+        window.location.href = finalUrl;
+      } else {
+        window.open(finalUrl, '_blank', 'noopener,noreferrer');
+      }
+    }
+  }
+
+  /**
+   * Backwards compatible instant launcher
+   */
+  public static async openEmergencyWhatsAppWithGPS(locationName?: string): Promise<void> {
+    this.openEmergencyWhatsApp(locationName);
   }
 
   /**

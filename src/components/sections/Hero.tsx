@@ -10,11 +10,81 @@ import { Button } from '../ui/Button';
 import { Badge } from '../ui/Badge';
 
 export const Hero: React.FC = () => {
+  const [isConnecting, setIsConnecting] = React.useState(false);
   const [locationStatus, setLocationStatus] = React.useState<'idle' | 'locating' | 'success' | 'denied'>('idle');
   const [detectedMapsUrl, setDetectedMapsUrl] = React.useState<string | null>(null);
 
-  const handleDetectGPS = () => {
-    if (typeof window === 'undefined' || !navigator.geolocation) {
+  const redirectToWhatsApp = React.useCallback((coords?: { lat: number; lng: number }) => {
+    const phone = siteConfig.brand.whatsAppNumber;
+    let message = '';
+
+    if (coords) {
+      const mapsUrl = `https://maps.google.com/?q=${coords.lat.toFixed(5)},${coords.lng.toFixed(5)}`;
+      message = `Halo ShopDriveAki, saya butuh ganti aki. Lokasi GPS saya : ${mapsUrl}\n\nApakah ada teknisi yang bisa meluncur sekarang?`;
+    } else if (detectedMapsUrl) {
+      message = `Halo ShopDriveAki, saya butuh ganti aki. Lokasi GPS saya : ${detectedMapsUrl}\n\nApakah ada teknisi yang bisa meluncur sekarang?`;
+    } else {
+      message = `Halo ShopDrive Aki, saya butuh bantuan ganti aki mobil. Mohon infokan lokasinya.`;
+    }
+
+    const finalUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    if (typeof window !== 'undefined') {
+      window.location.href = finalUrl;
+    }
+  }, [detectedMapsUrl]);
+
+  const handleMainCTAClick = (e?: React.MouseEvent) => {
+    if (e) e.preventDefault();
+    if (isConnecting) return;
+
+    setIsConnecting(true);
+
+    if (detectedMapsUrl) {
+      redirectToWhatsApp();
+      return;
+    }
+
+    if (typeof window === 'undefined' || !navigator || !navigator.geolocation) {
+      redirectToWhatsApp();
+      return;
+    }
+
+    let hasRedirected = false;
+    const safeRedirectOnce = (coords?: { lat: number; lng: number }) => {
+      if (hasRedirected) return;
+      hasRedirected = true;
+      redirectToWhatsApp(coords);
+    };
+
+    const safetyTimer = setTimeout(() => {
+      safeRedirectOnce();
+    }, 3000);
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        clearTimeout(safetyTimer);
+        const { latitude, longitude } = position.coords;
+        const mapsUrl = `https://maps.google.com/?q=${latitude.toFixed(5)},${longitude.toFixed(5)}`;
+        setDetectedMapsUrl(mapsUrl);
+        setLocationStatus('success');
+        safeRedirectOnce({ lat: latitude, lng: longitude });
+      },
+      (error) => {
+        clearTimeout(safetyTimer);
+        console.warn('Geolocation fallback:', error.message || error);
+        setLocationStatus('denied');
+        safeRedirectOnce();
+      },
+      {
+        enableHighAccuracy: false,
+        timeout: 3000,
+        maximumAge: 60000,
+      }
+    );
+  };
+
+  const handleDetectGPSOnly = () => {
+    if (typeof window === 'undefined' || !navigator || !navigator.geolocation) {
       setLocationStatus('denied');
       return;
     }
@@ -27,17 +97,15 @@ export const Hero: React.FC = () => {
         setLocationStatus('success');
       },
       (error) => {
-        console.warn('Geolocation denied or failed:', error);
+        console.warn('Geolocation detect only fallback:', error.message || error);
         setLocationStatus('denied');
       },
-      { timeout: 8000, enableHighAccuracy: true }
+      {
+        enableHighAccuracy: false,
+        timeout: 3000,
+        maximumAge: 60000,
+      }
     );
-  };
-
-  const getEmergencyWaUrl = () => {
-    const locStr = detectedMapsUrl || '(share loc)';
-    const msg = `Halo ShopDriveAki, saya butuh ganti aki. Lokasi GPS saya : ${locStr}\n\nApakah ada teknisi yang bisa meluncur sekarang?`;
-    return `https://wa.me/${siteConfig.brand.whatsAppNumber}?text=${encodeURIComponent(msg)}`;
   };
 
   return (
@@ -60,7 +128,7 @@ export const Hero: React.FC = () => {
 
             {/* Industrial Headline */}
             <div className="space-y-2 sm:space-y-4">
-              <h1 className="text-2xl sm:text-5xl lg:text-6xl font-black uppercase text-slate-900 tracking-tight font-display leading-tight">
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-black uppercase text-slate-900 tracking-tight font-display leading-[1.05]">
                 Mobil Mogok Karena <br />
                 <span className="text-red-600 drop-shadow-sm">
                   Aki Tekor?
@@ -75,21 +143,25 @@ export const Hero: React.FC = () => {
             {/* Two Action Buttons */}
             <div className="space-y-3 pt-1 sm:pt-2">
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
-                <div className="w-full sm:w-auto">
+                <a
+                  href={`https://wa.me/${siteConfig.brand.whatsAppNumber}?text=${encodeURIComponent('Halo ShopDrive Aki, saya butuh bantuan ganti aki mobil. Mohon infokan lokasinya.')}`}
+                  onClick={handleMainCTAClick}
+                  className="w-full sm:w-auto"
+                >
                   <Button
                     variant="primary"
                     size="xl"
                     fullWidth
                     beaconGlow
-                    onClick={() => WhatsAppService.openEmergencyWhatsAppWithGPS()}
-                    className="rounded-xl font-black text-sm sm:text-base py-2.5 sm:py-4"
+                    disabled={isConnecting}
+                    className="rounded-xl font-black text-sm sm:text-base py-2.5 sm:py-4 disabled:opacity-80"
                     leftIcon={<PhoneCall className="w-5 h-5 sm:w-6 sm:h-6 fill-white text-white" />}
                   >
-                    PANGGIL BANTUAN SEKARANG
+                    {isConnecting ? 'MENGHUBUNGKAN KE WHATSAPP...' : 'PANGGIL BANTUAN SEKARANG'}
                   </Button>
-                </div>
+                </a>
 
-                <a href="#coverage" className="w-full sm:w-auto">
+                <a href="#area-layanan" className="w-full sm:w-auto">
                   <Button
                     variant="amberOutline"
                     size="xl"
@@ -106,24 +178,27 @@ export const Hero: React.FC = () => {
               <div className="p-2.5 sm:p-3 bg-slate-100/80 rounded-xl border border-slate-200 space-y-1.5 sm:space-y-2">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <button
-                    onClick={handleDetectGPS}
+                    onClick={handleDetectGPSOnly}
                     disabled={locationStatus === 'locating'}
-                    className="inline-flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg bg-white border border-gray-300 text-slate-800 text-[11px] sm:text-xs font-bold shadow-sm hover:bg-slate-50 transition-colors disabled:opacity-50"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg bg-white border border-gray-300 text-slate-800 text-[11px] sm:text-xs font-bold shadow-sm hover:bg-slate-50 transition-colors disabled:opacity-50 cursor-pointer"
                   >
                     <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#DC2626] animate-bounce" />
                     <span>
                       {locationStatus === 'locating'
                         ? 'Mendeteksi lokasi GPS...'
                         : locationStatus === 'success'
-                        ? '✓ Lokasi Terdeteksi! Panggil WA'
+                        ? '✓ Lokasi Terdeteksi'
+                        : locationStatus === 'denied'
+                        ? '⚠️ Lokasi Tidak Aktif'
                         : '📍 Auto-Detect Lokasi Saya (GPS)'}
                     </span>
                   </button>
 
                   <div className="text-[10px] sm:text-[11px] text-slate-500 font-mono">
                     {locationStatus === 'success' && 'Tersambung dengan Google Maps'}
-                    {locationStatus === 'denied' && 'Izin lokasi ditolak, tetap bisa panggil WA'}
+                    {locationStatus === 'denied' && 'Lokasi tidak aktif - Klik untuk panggil WA'}
                     {locationStatus === 'idle' && 'Bantu teknisi menemukan Anda cepat'}
+                    {locationStatus === 'locating' && 'Meminta akses lokasi dari browser...'}
                   </div>
                 </div>
 

@@ -46,6 +46,7 @@ export const ServiceArea: React.FC = () => {
 
   return (
     <section id="coverage" className="py-10 sm:py-20 bg-white relative overflow-hidden border-b border-gray-200">
+      <div id="area-layanan" className="absolute -top-24 left-0 w-0 h-0 pointer-events-none" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
