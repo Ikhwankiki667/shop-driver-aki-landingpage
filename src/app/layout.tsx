@@ -8,6 +8,7 @@ const plusJakarta = Plus_Jakarta_Sans({
   weight: ['400', '500', '600', '700', '800'],
   variable: '--font-sans',
   display: 'swap',
+  preload: true,
 });
 
 const redHat = Red_Hat_Display({
@@ -15,6 +16,7 @@ const redHat = Red_Hat_Display({
   weight: ['700', '800', '900'],
   variable: '--font-display',
   display: 'swap',
+  preload: true,
 });
 
 export const metadata: Metadata = {

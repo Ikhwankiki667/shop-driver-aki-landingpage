@@ -279,8 +279,9 @@ export const Hero: React.FC = () => {
                   src={heroBg}
                   alt="ShopDrive Aki Real Field Rescue"
                   fill
-                  priority
-                  sizes="(max-width: 768px) 100vw, 450px"
+                  priority={true}
+                  loading="eager"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 
