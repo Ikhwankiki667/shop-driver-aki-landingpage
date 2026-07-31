@@ -128,7 +128,7 @@ export const Hero: React.FC = () => {
 
             {/* Industrial Headline */}
             <div className="space-y-2 sm:space-y-4">
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-black uppercase text-slate-900 tracking-tight font-display leading-[1.05]">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase text-slate-900 tracking-tight font-display leading-[1.1]">
                 Mobil Mogok Karena <br />
                 <span className="text-red-600 drop-shadow-sm">
                   Aki Tekor?
