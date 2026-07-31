@@ -15,16 +15,76 @@ export class WhatsAppService {
    */
   public static buildEmergencyCallUrl(userLocation?: string): string {
     const areaText = userLocation ? ` di area ${userLocation}` : '';
-    const message = `Halo ShopDriveAki, saya butuh ganti aki${areaText}. Lokasi GPS saya : (share loc)\n\nApakah ada teknisi yang bisa meluncur sekarang?`;
+    const message = `Halo ShopDrive Aki, mobil saya mogok dan butuh ganti aki darurat${areaText}. Lokasi saya ada di: `;
     return `${this.BASE_URL}${this.PHONE}?text=${encodeURIComponent(message)}`;
   }
 
   /**
-   * Seamlessly triggers GPS Geolocation detection on click before launching WhatsApp.
-   * Gives users a full 20 seconds timeout to accept the browser location prompt.
-   * If GPS is granted, appends Google Maps link automatically.
-   * If denied/failed/timed out (20s), launches WhatsApp with explicit manual location prompt.
+   * Triggers fast-fallback Auto-GPS Geolocation detection (timeout 3s, enableHighAccuracy: false)
+   * before launching WhatsApp.
+   * If GPS succeeds <3s: Launches WhatsApp with Google Maps URL.
+   * If GPS fails/denied/timeout: Launches WhatsApp immediately with emergency template without coordinates.
    */
+  public static triggerAutoGPSWhatsApp(locationName?: string): void {
+    const phone = this.PHONE;
+
+    const launchWhatsApp = (coords?: { lat: number; lng: number }) => {
+      let message = '';
+      if (coords) {
+        const mapsUrl = `https://maps.google.com/?q=${coords.lat.toFixed(5)},${coords.lng.toFixed(5)}`;
+        const areaText = locationName ? ` di area ${locationName}` : '';
+        message = `Halo ShopDriveAki, saya butuh ganti aki${areaText}. Lokasi GPS saya : ${mapsUrl}\n\nApakah ada teknisi yang bisa meluncur sekarang?`;
+      } else {
+        const areaText = locationName ? ` di area ${locationName}` : '';
+        message = `Halo ShopDrive Aki, mobil saya mogok dan butuh ganti aki darurat${areaText}. Lokasi saya ada di: `;
+      }
+
+      const finalUrl = `${this.BASE_URL}${phone}?text=${encodeURIComponent(message)}`;
+      if (typeof window !== 'undefined') {
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        if (isMobile) {
+          window.location.href = finalUrl;
+        } else {
+          window.open(finalUrl, '_blank', 'noopener,noreferrer');
+        }
+      }
+    };
+
+    if (typeof window === 'undefined' || !navigator || !navigator.geolocation) {
+      launchWhatsApp();
+      return;
+    }
+
+    let hasRedirected = false;
+    const safeRedirectOnce = (coords?: { lat: number; lng: number }) => {
+      if (hasRedirected) return;
+      hasRedirected = true;
+      launchWhatsApp(coords);
+    };
+
+    const safetyTimer = setTimeout(() => {
+      safeRedirectOnce();
+    }, 3000);
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        clearTimeout(safetyTimer);
+        const { latitude, longitude } = position.coords;
+        safeRedirectOnce({ lat: latitude, lng: longitude });
+      },
+      (error) => {
+        clearTimeout(safetyTimer);
+        console.warn('Geolocation fallback:', error.message || error);
+        safeRedirectOnce();
+      },
+      {
+        enableHighAccuracy: false,
+        timeout: 3000,
+        maximumAge: 60000,
+      }
+    );
+  }
+
   /**
    * Directly opens WhatsApp emergency inquiry URL with instant click response.
    * If userLocation / userMapsUrl is provided, it attaches the Google Maps GPS URL.
@@ -56,7 +116,7 @@ export class WhatsAppService {
    * Backwards compatible instant launcher
    */
   public static async openEmergencyWhatsAppWithGPS(locationName?: string): Promise<void> {
-    this.openEmergencyWhatsApp(locationName);
+    this.triggerAutoGPSWhatsApp(locationName);
   }
 
   /**
@@ -89,7 +149,7 @@ export class WhatsAppService {
    * Build general FAQ consultation inquiry link (No GPS required)
    */
   public static buildFaqConsultationUrl(): string {
-    const message = 'Halo ShopDrive Aki 24 Jam, saya mau bertanya / konsultasi mengenai layanan aki mobil: [Tulis Pertanyaan Anda di Sini]';
+    const message = 'Halo ShopDrive Aki, mau tanya-tanya dulu seputar pilihan aki, harga, dan garansinya dong.';
     return `${this.BASE_URL}${this.PHONE}?text=${encodeURIComponent(message)}`;
   }
 

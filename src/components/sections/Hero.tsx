@@ -14,6 +14,16 @@ export const Hero: React.FC = () => {
   const [locationStatus, setLocationStatus] = React.useState<'idle' | 'locating' | 'success' | 'denied'>('idle');
   const [detectedMapsUrl, setDetectedMapsUrl] = React.useState<string | null>(null);
 
+  React.useEffect(() => {
+    const handleReset = () => setIsConnecting(false);
+    window.addEventListener('focus', handleReset);
+    window.addEventListener('pageshow', handleReset);
+    return () => {
+      window.removeEventListener('focus', handleReset);
+      window.removeEventListener('pageshow', handleReset);
+    };
+  }, []);
+
   const redirectToWhatsApp = React.useCallback((coords?: { lat: number; lng: number }) => {
     const phone = siteConfig.brand.whatsAppNumber;
     let message = '';
@@ -24,12 +34,15 @@ export const Hero: React.FC = () => {
     } else if (detectedMapsUrl) {
       message = `Halo ShopDriveAki, saya butuh ganti aki. Lokasi GPS saya : ${detectedMapsUrl}\n\nApakah ada teknisi yang bisa meluncur sekarang?`;
     } else {
-      message = `Halo ShopDrive Aki, saya butuh bantuan ganti aki mobil. Mohon infokan lokasinya.`;
+      message = `Halo ShopDrive Aki, mobil saya mogok dan butuh ganti aki darurat. Lokasi saya ada di: `;
     }
 
     const finalUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     if (typeof window !== 'undefined') {
       window.location.href = finalUrl;
+      setTimeout(() => {
+        setIsConnecting(false);
+      }, 2500);
     }
   }, [detectedMapsUrl]);
 
@@ -145,7 +158,7 @@ export const Hero: React.FC = () => {
             <div className="space-y-3 pt-1 sm:pt-2">
               <div className="w-full max-w-md lg:max-w-xl mx-auto lg:mx-0">
                 <a
-                  href={`https://wa.me/${siteConfig.brand.whatsAppNumber}?text=${encodeURIComponent('Halo ShopDrive Aki, saya butuh bantuan ganti aki mobil. Mohon infokan lokasinya.')}`}
+                  href={`https://wa.me/${siteConfig.brand.whatsAppNumber}?text=${encodeURIComponent('Halo ShopDrive Aki, mobil saya mogok dan butuh ganti aki darurat. Lokasi saya ada di: ')}`}
                   onClick={handleMainCTAClick}
                   className="block w-full"
                 >
