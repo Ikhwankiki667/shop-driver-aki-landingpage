@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.shopdriveaki.com'),
   title: 'ShopDrive Aki 24 Jam | Layanan Antar Pasang Aki Mobil Terdekat',
   description:
-    'ShopDrive Aki menyediakan layanan penggantian aki mobil 24 jam, antar dan pasang aki original bergaransi resmi langsung di lokasi Anda.',
+    'Mobil mogok karena aki tekor? Layanan ganti aki 24 jam siap meluncur ke lokasi Anda! Aki 100% original, gratis antar pasang, garansi resmi. Panggil sekarang!',
   applicationName: 'ShopDrive Aki',
   authors: [{ name: 'ShopDrive Aki' }],
   keywords: ['shopdrive aki', 'ganti aki mobil', 'toko aki terdekat', 'layanan aki 24 jam'],
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'ShopDrive Aki 24 Jam | Layanan Antar Pasang Aki Mobil Terdekat',
     description:
-      'ShopDrive Aki menyediakan layanan penggantian aki mobil 24 jam, antar dan pasang aki original bergaransi resmi langsung di lokasi Anda.',
+      'Mobil mogok karena aki tekor? Layanan ganti aki 24 jam siap meluncur ke lokasi Anda! Aki 100% original, gratis antar pasang, garansi resmi. Panggil sekarang!',
     url: 'https://www.shopdriveaki.com',
     siteName: 'ShopDrive Aki 24 Jam',
     locale: 'id_ID',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ShopDrive Aki 24 Jam | Layanan Antar Pasang Aki Mobil Terdekat',
     description:
-      'ShopDrive Aki menyediakan layanan penggantian aki mobil 24 jam, antar dan pasang aki original bergaransi resmi langsung di lokasi Anda.',
+      'Mobil mogok karena aki tekor? Layanan ganti aki 24 jam siap meluncur ke lokasi Anda! Aki 100% original, gratis antar pasang, garansi resmi. Panggil sekarang!',
     images: ['/og-image.png'],
   },
 };

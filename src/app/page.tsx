@@ -17,7 +17,7 @@ export default function Home() {
     '@context': 'https://schema.org',
     '@type': 'AutomotiveBusiness',
     name: 'ShopDrive Aki 24 Jam Battery Rescue',
-    description: 'Layanan Antar Pasang Aki Mobil Darurat 24 Jam',
+    description: 'Mobil mogok karena aki tekor? Layanan ganti aki 24 jam siap meluncur ke lokasi Anda! Aki 100% original, gratis antar pasang, garansi resmi. Panggil sekarang!',
     url: 'https://shopdriveaki.com',
     priceRange: '$$',
     openingHours: 'Mo-Su 00:00-23:59',
