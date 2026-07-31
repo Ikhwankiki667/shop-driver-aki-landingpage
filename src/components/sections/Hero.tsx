@@ -140,13 +140,13 @@ export const Hero: React.FC = () => {
               </p>
             </div>
 
-            {/* Two Action Buttons */}
+            {/* Single Primary Action Button */}
             <div className="space-y-3 pt-1 sm:pt-2">
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+              <div className="w-full max-w-lg">
                 <a
                   href={`https://wa.me/${siteConfig.brand.whatsAppNumber}?text=${encodeURIComponent('Halo ShopDrive Aki, saya butuh bantuan ganti aki mobil. Mohon infokan lokasinya.')}`}
                   onClick={handleMainCTAClick}
-                  className="w-full sm:w-auto"
+                  className="block w-full"
                 >
                   <Button
                     variant="primary"
@@ -154,24 +154,17 @@ export const Hero: React.FC = () => {
                     fullWidth
                     beaconGlow
                     disabled={isConnecting}
-                    className="rounded-xl font-black text-sm sm:text-base py-2.5 sm:py-4 disabled:opacity-80"
+                    className="rounded-xl font-black text-sm sm:text-base py-3.5 sm:py-4 disabled:opacity-80 shadow-lg shadow-red-500/25"
                     leftIcon={<PhoneCall className="w-5 h-5 sm:w-6 sm:h-6 fill-white text-white" />}
                   >
                     {isConnecting ? 'MENGHUBUNGKAN KE WHATSAPP...' : 'PANGGIL BANTUAN SEKARANG'}
                   </Button>
                 </a>
 
-                <a href="#area-layanan" className="w-full sm:w-auto">
-                  <Button
-                    variant="amberOutline"
-                    size="xl"
-                    fullWidth
-                    className="rounded-xl font-bold text-sm sm:text-base py-2.5 sm:py-4"
-                    leftIcon={<MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600" />}
-                  >
-                    CEK AREA LAYANAN
-                  </Button>
-                </a>
+                {/* Micro-copy text */}
+                <p className="text-xs text-slate-500 font-medium text-center mt-2">
+                  ✓ Melayani Seluruh Indonesia • Respon Cepat 24 Jam
+                </p>
               </div>
 
               {/* GPS Auto-Location Feature & Low Bandwidth Direct Phone Fallback */}
