@@ -38,9 +38,9 @@ export const TrustBar: React.FC = () => {
                 <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-xl bg-red-50 border border-red-200 flex items-center justify-center mb-2 sm:mb-4 group-hover:scale-105 transition-transform shrink-0">
                   {item.icon}
                 </div>
-                <h3 className="font-bold text-xs sm:text-base text-slate-900 font-display uppercase tracking-wide mb-1 sm:mb-2 group-hover:text-[#DC2626] transition-colors leading-snug">
+                <p className="font-bold text-xs sm:text-base text-slate-900 font-display uppercase tracking-wide mb-1 sm:mb-2 group-hover:text-[#DC2626] transition-colors leading-snug">
                   {item.title}
-                </h3>
+                </p>
                 <p className="text-[11px] sm:text-sm text-slate-500 leading-snug">
                   {item.description}
                 </p>

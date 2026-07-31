@@ -66,9 +66,9 @@ export const Testimonials: React.FC = () => {
                       <User className="w-5 h-5 text-[#DC2626]" />
                     </div>
                     <div>
-                      <h4 className="font-extrabold text-sm text-slate-900 font-display uppercase tracking-wide">
+                      <p className="font-extrabold text-sm text-slate-900 font-display uppercase tracking-wide">
                         {item.customerName}
-                      </h4>
+                      </p>
                       <p className="text-xs text-slate-500 font-mono mt-0.5">
                         {item.carModel} • <span className="text-[#DC2626]">{item.city}</span>
                       </p>
@@ -107,9 +107,9 @@ export const Testimonials: React.FC = () => {
                     <User className="w-4 h-4 text-[#DC2626]" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-xs text-slate-900 font-display uppercase">
+                    <p className="font-bold text-xs text-slate-900 font-display uppercase">
                       {mockTestimonials[currentIndex].customerName}
-                    </h4>
+                    </p>
                     <p className="text-[11px] text-slate-500 font-mono">
                       {mockTestimonials[currentIndex].carModel} • <span className="text-[#DC2626]">{mockTestimonials[currentIndex].city}</span>
                     </p>
@@ -122,22 +122,26 @@ export const Testimonials: React.FC = () => {
             <div className="flex items-center justify-between mt-4">
               <button
                 onClick={prevSlide}
-                className="p-2.5 rounded-lg bg-white border border-gray-200 text-slate-700 hover:border-[#DC2626] transition-colors shadow-sm"
+                className="p-2.5 rounded-lg bg-white border border-gray-200 text-slate-700 hover:border-[#DC2626] transition-colors shadow-sm cursor-pointer"
                 aria-label="Previous Testimonial"
               >
                 <ChevronLeft className="w-5 h-5 text-[#DC2626]" />
               </button>
               
-              <div className="flex gap-1.5">
+              <div className="flex items-center gap-0.5">
                 {mockTestimonials.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => setCurrentIndex(idx)}
-                    className={`h-2 rounded-full transition-all ${
-                      currentIndex === idx ? 'w-6 bg-[#DC2626]' : 'w-2 bg-gray-300'
-                    }`}
+                    className="p-2 min-w-[44px] min-h-[44px] flex items-center justify-center cursor-pointer focus:outline-none"
                     aria-label={`Go to slide ${idx + 1}`}
-                  />
+                  >
+                    <span
+                      className={`h-2 rounded-full transition-all block ${
+                        currentIndex === idx ? 'w-6 bg-[#DC2626]' : 'w-2 bg-gray-300'
+                      }`}
+                    />
+                  </button>
                 ))}
               </div>
 
