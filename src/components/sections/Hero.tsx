@@ -128,8 +128,9 @@ export const Hero: React.FC = () => {
 
             {/* Industrial Headline */}
             <div className="space-y-2 sm:space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase text-slate-900 tracking-tight font-display leading-[1.1]">
-                Mobil Mogok Karena <br />
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black uppercase text-slate-900 tracking-tight font-display leading-[1.03]">
+                Mobil Mogok <br className="sm:hidden" />
+                Karena <br />
                 <span className="text-red-600 drop-shadow-sm">
                   Aki Tekor?
                 </span>
@@ -142,7 +143,7 @@ export const Hero: React.FC = () => {
 
             {/* Single Primary Action Button */}
             <div className="space-y-3 pt-1 sm:pt-2">
-              <div className="w-full max-w-lg">
+              <div className="w-full max-w-md lg:max-w-xl mx-auto lg:mx-0">
                 <a
                   href={`https://wa.me/${siteConfig.brand.whatsAppNumber}?text=${encodeURIComponent('Halo ShopDrive Aki, saya butuh bantuan ganti aki mobil. Mohon infokan lokasinya.')}`}
                   onClick={handleMainCTAClick}
@@ -150,25 +151,25 @@ export const Hero: React.FC = () => {
                 >
                   <Button
                     variant="primary"
-                    size="xl"
+                    size="lg"
                     fullWidth
                     beaconGlow
                     disabled={isConnecting}
-                    className="rounded-xl font-black text-sm sm:text-base py-3.5 sm:py-4 disabled:opacity-80 shadow-lg shadow-red-500/25"
-                    leftIcon={<PhoneCall className="w-5 h-5 sm:w-6 sm:h-6 fill-white text-white" />}
+                    className="rounded-xl font-extrabold text-sm sm:text-base py-3 sm:py-3.5 px-5 disabled:opacity-80 shadow-lg shadow-red-500/25 active:scale-95"
+                    leftIcon={<PhoneCall className="w-5 h-5 fill-white text-white" />}
                   >
                     {isConnecting ? 'MENGHUBUNGKAN KE WHATSAPP...' : 'PANGGIL BANTUAN SEKARANG'}
                   </Button>
                 </a>
 
                 {/* Micro-copy text */}
-                <p className="text-xs text-slate-500 font-medium text-center mt-2">
-                  ✓ Melayani Seluruh Indonesia • Respon Cepat 24 Jam
+                <p className="text-xs sm:text-sm text-slate-500 font-medium text-center mt-2">
+                  Melayani Seluruh Indonesia • Respon Cepat 24 Jam
                 </p>
               </div>
 
               {/* GPS Auto-Location Feature & Low Bandwidth Direct Phone Fallback */}
-              <div className="p-2.5 sm:p-3 bg-slate-100/80 rounded-xl border border-slate-200 space-y-1.5 sm:space-y-2">
+              <div className="w-full max-w-md lg:max-w-xl mx-auto lg:mx-0 p-2.5 sm:p-3 bg-slate-100/80 rounded-xl border border-slate-200 space-y-1.5 sm:space-y-2">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <button
                     onClick={handleDetectGPSOnly}
@@ -183,7 +184,7 @@ export const Hero: React.FC = () => {
                         ? '✓ Lokasi Terdeteksi'
                         : locationStatus === 'denied'
                         ? '⚠️ Lokasi Tidak Aktif'
-                        : '📍 Auto-Detect Lokasi Saya (GPS)'}
+                        : '📍 Deteksi Lokasi Saya (GPS)'}
                     </span>
                   </button>
 
@@ -196,8 +197,8 @@ export const Hero: React.FC = () => {
                 </div>
 
                 {/* Raw HTML Tap-to-Call Direct Link (Works even if JS is slow/fails) */}
-                <div className="flex items-center gap-2 text-[11px] sm:text-xs text-slate-700 pt-1 border-t border-slate-200/80">
-                  <span className="font-semibold">Sinyal Lemah? Dial Langsung:</span>
+                <div className="flex items-center justify-center sm:justify-start gap-2 text-[11px] sm:text-xs text-slate-700 pt-1 border-t border-slate-200/80">
+                  <span className="font-semibold">Atau Telepon Langsung:</span>
                   <a
                     href={`tel:${siteConfig.brand.emergencyPhone}`}
                     className="text-[#DC2626] font-extrabold hover:underline font-mono text-xs sm:text-sm tracking-wider"
