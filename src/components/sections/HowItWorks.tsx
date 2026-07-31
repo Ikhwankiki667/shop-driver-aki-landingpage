@@ -88,7 +88,7 @@ export const HowItWorks: React.FC = () => {
 
         {/* Bottom Note */}
         <div className="mt-6 sm:mt-10 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full bg-white border border-gray-200 text-[11px] sm:text-xs text-slate-700 font-mono shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full bg-white border border-gray-200 text-xs md:text-sm font-medium text-slate-700 shadow-sm">
             <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse shrink-0" />
             <span>Garansi resmi langsung aktif setelah pemasangan &amp; tes kelistrikan selesai.</span>
           </div>
