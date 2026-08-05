@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { PhoneCall, MapPin, Zap, ShieldCheck, Clock, Award, Star, MessageSquare, CreditCard } from 'lucide-react';
-import heroBg from '../../image/Dokumentasi/IMG_20260729_225759.jpg.webp';
+import fotoHero from '../../image/Mobil/FotoUntuk.webp';
 import { siteConfig } from '../../config/siteConfig';
 import { WhatsAppService } from '../../services/WhatsAppService';
 import { Button } from '../ui/Button';
@@ -276,28 +276,28 @@ export const Hero: React.FC = () => {
               {/* Prominent Full-Opacity Real Field Photo Frame (h-40 on mobile) */}
               <div className="relative h-40 sm:h-64 w-full rounded-xl overflow-hidden border-2 border-red-500/20 shadow-md group mb-3">
                 <Image
-                  src={heroBg}
-                  alt="ShopDrive Aki Real Field Rescue"
+                  src={fotoHero}
+                  alt="Dokumentasi Layanan Home Service ShopDrive Aki"
                   fill
                   priority={true}
                   loading="eager"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 
                 {/* Photo Badge Overlay */}
                 <div className="absolute top-2.5 left-2.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-slate-900/90 text-white text-[10px] sm:text-xs font-extrabold flex items-center gap-1 shadow-md pointer-events-none border border-slate-700">
                   <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
-                  <span>DOKUMENTASI ASLI ON-SITE</span>
+                  <span>DOKUMENTASI LAYANAN ON-SITE</span>
                 </div>
 
                 {/* Bottom Photo Caption Banner */}
                 <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-3 bg-gradient-to-t from-slate-900/90 via-slate-900/60 to-transparent text-white">
                   <div className="text-[11px] sm:text-xs font-bold font-display uppercase tracking-wide">
-                    Jeep Wrangler Rubicon
+                    LAYANAN HOME SERVICE 24 JAM
                   </div>
                   <div className="text-[10px] sm:text-[11px] text-red-300 font-mono">
-                    Pemasangan Aki Bosch Mega Power di Lokasi Kustomer
+                    Penggantian & Pemasangan Aki di Lokasi Kustomer
                   </div>
                 </div>
               </div>

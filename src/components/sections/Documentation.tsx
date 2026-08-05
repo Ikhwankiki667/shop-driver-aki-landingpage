@@ -1,19 +1,19 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { Camera, MapPin, ZoomIn, X } from 'lucide-react';
 
-import img1 from '../../image/Dokumentasi/IMG_20260729_225423.jpg.webp';
-import img2 from '../../image/Dokumentasi/IMG_20260729_225447.jpg.webp';
-import img3 from '../../image/Dokumentasi/IMG_20260729_225513.jpg.webp';
-import img4 from '../../image/Dokumentasi/IMG_20260729_225556.jpg.webp';
-import img5 from '../../image/Dokumentasi/IMG_20260729_225759.jpg.webp';
-import img6 from '../../image/Dokumentasi/IMG_20260729_225811.jpg.webp';
+import mobil1 from '../../image/Mobil/Mobil1.webp';
+import mobil2 from '../../image/Mobil/Mobil2.webp';
+import mobil3 from '../../image/Mobil/Mobil3.webp';
+import mobil4 from '../../image/Mobil/Mobil4.webp';
+import mobil5 from '../../image/Mobil/Mobil5.webp';
+import mobil6 from '../../image/Mobil/Mobil6.webp';
 
 interface DocumentationItem {
   id: number;
-  image: any;
+  image: StaticImageData | string;
   title: string;
   battery: string;
   tag: string;
@@ -22,45 +22,45 @@ interface DocumentationItem {
 const documentationList: DocumentationItem[] = [
   {
     id: 1,
-    image: img1,
-    title: 'Toyota Vellfire / Alphard',
-    battery: 'Aki Amaron Hi-Life',
-    tag: 'Parkiran Basement Mall',
+    image: mobil1,
+    title: 'Pemeriksaan Sistem Kelistrikan',
+    battery: 'Aki Maintenance Free (MF)',
+    tag: 'Pemeriksaan Digital Voltmeter',
   },
   {
     id: 2,
-    image: img2,
-    title: 'Mercedes-Benz S-Class',
+    image: mobil2,
+    title: 'Pemasangan Aki Mobil Harian',
     battery: 'Aki European DIN Spec',
-    tag: 'Garasi Rumah Kustomer',
+    tag: 'Home Service Terjadwal',
   },
   {
     id: 3,
-    image: img3,
-    title: 'Honda Brio RS',
-    battery: 'Aki GS Astra Maintenance Free',
-    tag: 'Area Parkir Outing',
+    image: mobil3,
+    title: 'Layanan Darurat Aki Mogok',
+    battery: 'Aki GS Astra Original',
+    tag: 'Bantuan Darurat Jalanan',
   },
   {
     id: 4,
-    image: img4,
-    title: 'Toyota Rush / Terios',
-    battery: 'Aki GS Astra Hybrid',
-    tag: 'Pemasangan On-Site',
+    image: mobil4,
+    title: 'Penggantian Aki Heavy Duty',
+    battery: 'Aki Hybrid Heavy Duty',
+    tag: 'Pemasangan Presisi On-Site',
   },
   {
     id: 5,
-    image: img5,
-    title: 'Jeep Wrangler Rubicon',
+    image: mobil5,
+    title: 'Layanan Home Service 24 Jam',
     battery: 'Aki Bosch Mega Power',
-    tag: 'Home Service Premium',
+    tag: 'Garasi Rumah Kustomer',
   },
   {
     id: 6,
-    image: img6,
-    title: 'Toyota Alphard Executive',
-    battery: 'Aki Bosch SM Mega Power',
-    tag: 'Emergency Replacement',
+    image: mobil6,
+    title: 'Penanganan Darurat Dini Hari',
+    battery: 'Aki High Ampere Spec',
+    tag: 'Respon Siaga 24 Jam',
   },
 ];
 
@@ -102,7 +102,7 @@ export const Documentation: React.FC = () => {
           </div>
 
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 uppercase tracking-tight font-display leading-tight">
-            Bukti Nyata <span className="text-red-600">Pemasangan Aki</span> di Lokasi
+            BUKTI NYATA <span className="text-red-600">PEMASANGAN AKI</span> DI LOKASI
           </h2>
 
           <p className="text-slate-600 max-w-2xl mx-auto text-xs sm:text-lg leading-relaxed">
@@ -111,29 +111,29 @@ export const Documentation: React.FC = () => {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6 max-w-7xl mx-auto mt-6 sm:mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6 max-w-7xl mx-auto mt-6 sm:mt-12">
           {documentationList.map((item) => (
             <div
               key={item.id}
               onClick={() => setSelectedDoc(item)}
               className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-red-400 transition-all duration-300 group flex flex-col justify-between cursor-pointer"
             >
-              {/* Image Container with Object-Contain Framing */}
+              {/* Image Container */}
               <div className="relative aspect-[4/3] w-full bg-slate-100 rounded-t-2xl overflow-hidden flex items-center justify-center">
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   loading="lazy"
                   decoding="async"
-                  className="object-contain w-full h-full p-2.5 transition-transform duration-300 group-hover:scale-105"
+                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                 />
                 
                 {/* Compact Photo Badge Overlay */}
                 <div className="absolute top-3 right-3 z-10 px-2 py-0.5 rounded-full bg-slate-900/90 text-white text-[10px] font-bold flex items-center gap-1 shadow-md pointer-events-none border border-slate-700">
                   <Camera className="w-3 h-3 text-red-400" />
-                  <span>Foto Asli</span>
+                  <span>Foto Dokumentasi Asli</span>
                 </div>
 
                 {/* Hover Zoom Overlay Hint */}
