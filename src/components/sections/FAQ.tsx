@@ -22,7 +22,7 @@ export const FAQ: React.FC = () => {
             Pertanyaan Yang Sering <span className="text-red-600">Diajukan</span>
           </h2>
           <p className="text-slate-600 text-xs sm:text-lg">
-            Segala hal yang perlu Anda ketahui mengenai pemesanan, layanan darurat 24 jam, dan klaim garansi resmi ShopDrive Aki.
+            Segala hal yang perlu Anda ketahui mengenai pemesanan, layanan darurat 24 jam, dan klaim garansi resmi Shop Drive Aki.
           </p>
         </div>
 
@@ -35,7 +35,7 @@ export const FAQ: React.FC = () => {
             Punya Pertanyaan Lain Yang Belum Terjawab?
           </h3>
           <p className="text-slate-600 text-xs sm:text-sm max-w-md mx-auto">
-            Tim customer support dan konsultan teknis ShopDrive Aki siap membantu melayani pertanyaan Anda 24 jam nonstop.
+            Tim customer support dan konsultan teknis Shop Drive Aki siap membantu melayani pertanyaan Anda 24 jam nonstop.
           </p>
           <a
             href={WhatsAppService.buildFaqConsultationUrl()}

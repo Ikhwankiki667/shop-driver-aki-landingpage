@@ -16,7 +16,7 @@ export default function Home() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'AutomotiveBusiness',
-    name: 'ShopDrive Aki 24 Jam Battery Rescue',
+    name: 'Shop Drive Aki 24 Jam Battery Rescue',
     description: 'Mobil mogok karena aki tekor? Layanan ganti aki 24 jam siap meluncur ke lokasi Anda! Aki 100% original, gratis antar pasang, garansi resmi. Panggil sekarang!',
     url: 'https://shopdriveaki.com',
     priceRange: '$$',

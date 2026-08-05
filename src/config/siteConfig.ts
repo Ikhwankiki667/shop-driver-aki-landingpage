@@ -6,14 +6,14 @@
 
 export const siteConfig = {
   brand: {
-    name: "ShopDrive Aki",
+    name: "Shop Drive Aki",
     tagline: "Layanan Ganti Aki Mobil 24 Jam Antar & Pasang Lokasi",
     domain: "shopdriveaki.com",
     establishedYear: 2018,
     emergencyPhone: "+6281585564232",
     emergencyPhoneDisplay: "0815-8556-4232",
     whatsAppNumber: "6281585564232",
-    defaultWhatsAppMessage: "Halo ShopDriveAki, saya butuh ganti aki. Lokasi GPS saya : (share loc)\n\nApakah ada teknisi yang bisa meluncur sekarang?",
+    defaultWhatsAppMessage: "Halo Shop Drive Aki, saya butuh ganti aki. Lokasi GPS saya : (share loc)\n\nApakah ada teknisi yang bisa meluncur sekarang?",
     operationalHours: "24 Jam Nonstop (365 Hari)",
     averageArrivalMinutes: 5,
     warrantyMonthsDefault: 24,

@@ -30,11 +30,11 @@ export const Hero: React.FC = () => {
 
     if (coords) {
       const mapsUrl = `https://maps.google.com/?q=${coords.lat.toFixed(5)},${coords.lng.toFixed(5)}`;
-      message = `Halo ShopDriveAki, saya butuh ganti aki. Lokasi GPS saya : ${mapsUrl}\n\nApakah ada teknisi yang bisa meluncur sekarang?`;
+      message = `Halo Shop Drive Aki, saya butuh ganti aki. Lokasi GPS saya : ${mapsUrl}\n\nApakah ada teknisi yang bisa meluncur sekarang?`;
     } else if (detectedMapsUrl) {
-      message = `Halo ShopDriveAki, saya butuh ganti aki. Lokasi GPS saya : ${detectedMapsUrl}\n\nApakah ada teknisi yang bisa meluncur sekarang?`;
+      message = `Halo Shop Drive Aki, saya butuh ganti aki. Lokasi GPS saya : ${detectedMapsUrl}\n\nApakah ada teknisi yang bisa meluncur sekarang?`;
     } else {
-      message = `Halo ShopDrive Aki, mobil saya mogok dan butuh ganti aki darurat. Lokasi saya ada di: `;
+      message = `Halo Shop Drive Aki, mobil saya mogok dan butuh ganti aki darurat. Lokasi saya ada di: `;
     }
 
     const finalUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
@@ -150,7 +150,7 @@ export const Hero: React.FC = () => {
               </h1>
 
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl">
-                Solusi cepat saat mobil mogok karena aki tekor. Tim <strong className="text-slate-900 font-bold">ShopDrive Aki</strong> siap menghubungkan Anda dengan jaringan teknisi partner terdekat untuk antar dan pasang aki original bergaransi resmi langsung di lokasi Anda.
+                Solusi cepat saat mobil mogok karena aki tekor. Tim <strong className="text-slate-900 font-bold">Shop Drive Aki</strong> siap menghubungkan Anda dengan jaringan teknisi partner terdekat untuk antar dan pasang aki original bergaransi resmi langsung di lokasi Anda.
               </p>
             </div>
 
@@ -158,7 +158,7 @@ export const Hero: React.FC = () => {
             <div className="space-y-3 pt-1 sm:pt-2">
               <div className="w-full max-w-md lg:max-w-xl mx-auto lg:mx-0">
                 <a
-                  href={`https://wa.me/${siteConfig.brand.whatsAppNumber}?text=${encodeURIComponent('Halo ShopDrive Aki, mobil saya mogok dan butuh ganti aki darurat. Lokasi saya ada di: ')}`}
+                  href={`https://wa.me/${siteConfig.brand.whatsAppNumber}?text=${encodeURIComponent('Halo Shop Drive Aki, mobil saya mogok dan butuh ganti aki darurat. Lokasi saya ada di: ')}`}
                   onClick={handleMainCTAClick}
                   className="block w-full"
                 >
@@ -277,7 +277,7 @@ export const Hero: React.FC = () => {
               <div className="relative h-40 sm:h-64 w-full rounded-xl overflow-hidden border-2 border-red-500/20 shadow-md group mb-3">
                 <Image
                   src={fotoHero}
-                  alt="Dokumentasi Layanan Home Service ShopDrive Aki"
+                  alt="Dokumentasi Layanan Home Service Shop Drive Aki"
                   fill
                   priority={true}
                   loading="eager"

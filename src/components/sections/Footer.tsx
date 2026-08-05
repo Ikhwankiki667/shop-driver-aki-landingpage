@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Zap, PhoneCall, ShieldCheck, Globe, Share2, MessageCircle } from 'lucide-react';
-import logoImg from '../../../public/Logo.svg';
+import logoImg from '@/image/Logo.png';
 import { siteConfig } from '../../config/siteConfig';
 import { WhatsAppService } from '../../services/WhatsAppService';
 import { WhatsAppIcon } from '../ui/WhatsAppIcon';
@@ -22,14 +22,14 @@ export const Footer: React.FC = () => {
               <div className="bg-white rounded-xl px-2.5 py-1.5 shadow-md inline-flex items-center justify-center border border-gray-200 shrink-0">
                 <Image
                   src={logoImg}
-                  alt="ShopDrive Aki Logo"
+                  alt="Shop Drive Aki - Layanan Ganti Aki Mobil 24 Jam"
                   height={24}
                   loading="lazy"
                   className="h-6 w-auto object-contain"
                 />
               </div>
               <span className="font-extrabold text-2xl tracking-wider text-white font-display uppercase">
-                SHOP<span className="text-[#DC2626]">DRIVE AKI</span>
+                SHOP <span className="text-[#DC2626]">DRIVE AKI</span>
               </span>
             </div>
             <p className="text-slate-400 text-xs leading-relaxed">
@@ -40,7 +40,7 @@ export const Footer: React.FC = () => {
                 href={siteConfig.socialLinks.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Instagram ShopDrive Aki"
+                aria-label="Instagram Shop Drive Aki"
                 className="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-[#DC2626] hover:border-[#DC2626] transition-all"
               >
                 <Globe className="w-4 h-4" />
@@ -49,7 +49,7 @@ export const Footer: React.FC = () => {
                 href={siteConfig.socialLinks.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Facebook ShopDrive Aki"
+                aria-label="Facebook Shop Drive Aki"
                 className="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-[#DC2626] hover:border-[#DC2626] transition-all"
               >
                 <Share2 className="w-4 h-4" />
@@ -58,7 +58,7 @@ export const Footer: React.FC = () => {
                 href={siteConfig.socialLinks.tiktok}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="TikTok ShopDrive Aki"
+                aria-label="TikTok Shop Drive Aki"
                 className="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-[#DC2626] hover:border-[#DC2626] transition-all"
               >
                 <MessageCircle className="w-4 h-4" />

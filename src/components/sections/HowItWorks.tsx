@@ -38,8 +38,8 @@ export const HowItWorks: React.FC = () => {
           <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-red-50 border border-red-200 text-red-600 text-[10px] sm:text-xs font-bold uppercase tracking-wider shadow-sm">
             <span>PROSES PENANGANAN MEKANIK</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold uppercase text-slate-900 tracking-tight font-display">
-            Cara Kerja <span className="text-red-600">ShopDrive Aki</span>
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 uppercase tracking-tight font-display">
+            Cara Kerja <span className="text-red-600">Shop Drive Aki</span>
           </h2>
           <p className="text-slate-600 text-xs sm:text-lg">
             Sistem pengiriman &amp; pemasangan darurat 4 langkah presisi tanpa ribet.

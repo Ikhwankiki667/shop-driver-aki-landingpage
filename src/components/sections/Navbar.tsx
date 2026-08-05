@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Zap, PhoneCall, MessageSquare, Menu, X } from 'lucide-react';
-import logoImg from '../../../public/Logo.svg';
+import logoImg from '@/image/Logo.png';
 import { WhatsAppService } from '../../services/WhatsAppService';
 import { Button } from '../ui/Button';
 import { WhatsAppIcon } from '../ui/WhatsAppIcon';
@@ -75,7 +75,7 @@ export const Navbar: React.FC = () => {
           <div className="bg-white rounded-xl px-2 py-1 sm:px-2.5 sm:py-1.5 shadow-sm inline-flex items-center justify-center border border-gray-200 group-hover:scale-105 transition-transform shrink-0">
             <Image
               src={logoImg}
-              alt="ShopDrive Aki Logo"
+              alt="Shop Drive Aki - Layanan Ganti Aki Mobil 24 Jam"
               height={32}
               priority
               className="h-6 sm:h-8 w-auto object-contain"
@@ -84,7 +84,7 @@ export const Navbar: React.FC = () => {
           <div className="flex flex-col">
             <div className="flex items-center gap-1 sm:gap-1.5">
               <span className="font-black text-sm sm:text-xl lg:text-2xl tracking-tight text-slate-900 font-display uppercase leading-none">
-                SHOP<span className="text-[#DC2626]">DRIVE</span> <span className="text-[#DC2626]">AKI</span>
+                SHOP <span className="text-[#DC2626]">DRIVE AKI</span>
               </span>
               <span className="bg-[#DC2626] text-white text-[9px] sm:text-[10px] font-bold px-1 sm:px-1.5 py-0.5 rounded shrink-0">
                 24 JAM

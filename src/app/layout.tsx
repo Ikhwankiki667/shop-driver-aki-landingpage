@@ -21,23 +21,23 @@ const redHat = Red_Hat_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.shopdriveaki.com'),
-  title: 'ShopDrive Aki 24 Jam | Layanan Antar Pasang Aki Mobil Terdekat',
+  title: 'Shop Drive Aki 24 Jam | Layanan Antar Pasang Aki Mobil Terdekat',
   description:
     'Mobil mogok karena aki tekor? Layanan ganti aki 24 jam siap meluncur ke lokasi Anda! Aki 100% original, gratis antar pasang, garansi resmi. Panggil sekarang!',
-  applicationName: 'ShopDrive Aki',
-  authors: [{ name: 'ShopDrive Aki' }],
-  keywords: ['shopdrive aki', 'ganti aki mobil', 'toko aki terdekat', 'layanan aki 24 jam'],
+  applicationName: 'Shop Drive Aki',
+  authors: [{ name: 'Shop Drive Aki' }],
+  keywords: ['shop drive aki', 'ganti aki mobil', 'toko aki terdekat', 'layanan aki 24 jam'],
   icons: {
-    icon: '/icon.png',
-    shortcut: '/icon.png',
-    apple: '/icon.png',
+    icon: '/Logo.png',
+    shortcut: '/Logo.png',
+    apple: '/Logo.png',
   },
   openGraph: {
-    title: 'ShopDrive Aki 24 Jam | Layanan Antar Pasang Aki Mobil Terdekat',
+    title: 'Shop Drive Aki 24 Jam | Layanan Antar Pasang Aki Mobil Terdekat',
     description:
       'Mobil mogok karena aki tekor? Layanan ganti aki 24 jam siap meluncur ke lokasi Anda! Aki 100% original, gratis antar pasang, garansi resmi. Panggil sekarang!',
     url: 'https://www.shopdriveaki.com',
-    siteName: 'ShopDrive Aki 24 Jam',
+    siteName: 'Shop Drive Aki 24 Jam',
     locale: 'id_ID',
     type: 'website',
     images: [
@@ -45,13 +45,13 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'ShopDrive Aki 24 Jam',
+        alt: 'Shop Drive Aki 24 Jam',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ShopDrive Aki 24 Jam | Layanan Antar Pasang Aki Mobil Terdekat',
+    title: 'Shop Drive Aki 24 Jam | Layanan Antar Pasang Aki Mobil Terdekat',
     description:
       'Mobil mogok karena aki tekor? Layanan ganti aki 24 jam siap meluncur ke lokasi Anda! Aki 100% original, gratis antar pasang, garansi resmi. Panggil sekarang!',
     images: ['/og-image.png'],

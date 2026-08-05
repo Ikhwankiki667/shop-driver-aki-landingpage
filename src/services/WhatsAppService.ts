@@ -15,7 +15,7 @@ export class WhatsAppService {
    */
   public static buildEmergencyCallUrl(userLocation?: string): string {
     const areaText = userLocation ? ` di area ${userLocation}` : '';
-    const message = `Halo ShopDrive Aki, mobil saya mogok dan butuh ganti aki darurat${areaText}. Lokasi saya ada di: `;
+    const message = `Halo Shop Drive Aki, mobil saya mogok dan butuh ganti aki darurat${areaText}. Lokasi saya ada di: `;
     return `${this.BASE_URL}${this.PHONE}?text=${encodeURIComponent(message)}`;
   }
 
@@ -33,10 +33,10 @@ export class WhatsAppService {
       if (coords) {
         const mapsUrl = `https://maps.google.com/?q=${coords.lat.toFixed(5)},${coords.lng.toFixed(5)}`;
         const areaText = locationName ? ` di area ${locationName}` : '';
-        message = `Halo ShopDriveAki, saya butuh ganti aki${areaText}. Lokasi GPS saya : ${mapsUrl}\n\nApakah ada teknisi yang bisa meluncur sekarang?`;
+        message = `Halo Shop Drive Aki, saya butuh ganti aki${areaText}. Lokasi GPS saya : ${mapsUrl}\n\nApakah ada teknisi yang bisa meluncur sekarang?`;
       } else {
         const areaText = locationName ? ` di area ${locationName}` : '';
-        message = `Halo ShopDrive Aki, mobil saya mogok dan butuh ganti aki darurat${areaText}. Lokasi saya ada di: `;
+        message = `Halo Shop Drive Aki, mobil saya mogok dan butuh ganti aki darurat${areaText}. Lokasi saya ada di: `;
       }
 
       const finalUrl = `${this.BASE_URL}${phone}?text=${encodeURIComponent(message)}`;
@@ -96,9 +96,9 @@ export class WhatsAppService {
     let message = '';
     
     if (locationName) {
-      message = `Halo ShopDriveAki, saya butuh ganti aki di area ${locationName}. Lokasi GPS saya : ${gpsLocationStr}\n\nApakah ada teknisi yang bisa meluncur sekarang?`;
+      message = `Halo Shop Drive Aki, saya butuh ganti aki di area ${locationName}. Lokasi GPS saya : ${gpsLocationStr}\n\nApakah ada teknisi yang bisa meluncur sekarang?`;
     } else {
-      message = `Halo ShopDriveAki, saya butuh ganti aki. Lokasi GPS saya : ${gpsLocationStr}\n\nApakah ada teknisi yang bisa meluncur sekarang?`;
+      message = `Halo Shop Drive Aki, saya butuh ganti aki. Lokasi GPS saya : ${gpsLocationStr}\n\nApakah ada teknisi yang bisa meluncur sekarang?`;
     }
 
     const finalUrl = `${this.BASE_URL}${phone}?text=${encodeURIComponent(message)}`;
@@ -149,7 +149,7 @@ export class WhatsAppService {
    * Build general FAQ consultation inquiry link (No GPS required)
    */
   public static buildFaqConsultationUrl(): string {
-    const message = 'Halo ShopDrive Aki, mau tanya-tanya dulu seputar pilihan aki, harga, dan garansinya dong.';
+    const message = 'Halo Shop Drive Aki, mau tanya-tanya dulu seputar pilihan aki, harga, dan garansinya dong.';
     return `${this.BASE_URL}${this.PHONE}?text=${encodeURIComponent(message)}`;
   }
 

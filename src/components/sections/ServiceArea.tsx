@@ -62,7 +62,7 @@ export const ServiceArea: React.FC = () => {
             <span className="text-red-600">Di Mana Pun Anda Mogok, Kami Siap Meluncur</span>
           </h2>
           <p className="text-slate-600 text-xs sm:text-lg leading-relaxed max-w-2xl mx-auto">
-            Jaringan mitra &amp; teknisi partner ShopDrive Aki tersebar di pulau Jawa, Sumatera, Kalimantan, Sulawesi, Bali, hingga wilayah lainnya di seluruh Indonesia.
+            Jaringan mitra &amp; teknisi partner Shop Drive Aki tersebar di pulau Jawa, Sumatera, Kalimantan, Sulawesi, Bali, hingga wilayah lainnya di seluruh Indonesia.
           </p>
         </div>
 
@@ -93,7 +93,7 @@ export const ServiceArea: React.FC = () => {
 
               {/* Embedded Google Maps iFrame */}
               <iframe
-                title={`ShopDrive Aki Google Map ${activeMapCity.name}`}
+                title={`Shop Drive Aki Google Map ${activeMapCity.name}`}
                 width="100%"
                 height="100%"
                 style={{

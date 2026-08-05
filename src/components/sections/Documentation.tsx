@@ -106,7 +106,7 @@ export const Documentation: React.FC = () => {
           </h2>
 
           <p className="text-slate-600 max-w-2xl mx-auto text-xs sm:text-lg leading-relaxed">
-            Dokumentasi pengerjaan langsung oleh teknisi profesional ShopDrive Aki di rumah, kantor, parkiran, hingga darurat di jalanan.
+            Dokumentasi pengerjaan langsung oleh teknisi profesional Shop Drive Aki di rumah, kantor, parkiran, hingga darurat di jalanan.
           </p>
         </div>
 
