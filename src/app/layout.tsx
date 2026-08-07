@@ -20,7 +20,7 @@ const redHat = Red_Hat_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.shopdriveaki.com'),
+  metadataBase: new URL('https://www.shopdriveaki.id'),
   title: 'Shop Drive Aki 24 Jam | Layanan Antar Pasang Aki Mobil Terdekat',
   description:
     'Mobil mogok karena aki tekor? Layanan ganti aki 24 jam siap meluncur ke lokasi Anda! Aki 100% original, gratis antar pasang, garansi resmi. Panggil sekarang!',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: 'Shop Drive Aki 24 Jam | Layanan Antar Pasang Aki Mobil Terdekat',
     description:
       'Mobil mogok karena aki tekor? Layanan ganti aki 24 jam siap meluncur ke lokasi Anda! Aki 100% original, gratis antar pasang, garansi resmi. Panggil sekarang!',
-    url: 'https://www.shopdriveaki.com',
+    url: 'https://www.shopdriveaki.id',
     siteName: 'Shop Drive Aki 24 Jam',
     locale: 'id_ID',
     type: 'website',

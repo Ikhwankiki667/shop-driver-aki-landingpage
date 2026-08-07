@@ -8,7 +8,7 @@ export const siteConfig = {
   brand: {
     name: "Shop Drive Aki",
     tagline: "Layanan Ganti Aki Mobil 24 Jam Antar & Pasang Lokasi",
-    domain: "shopdriveaki.com",
+    domain: "shopdriveaki.id",
     establishedYear: 2018,
     emergencyPhone: "+6281585564232",
     emergencyPhoneDisplay: "0815-8556-4232",

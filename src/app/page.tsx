@@ -18,7 +18,7 @@ export default function Home() {
     '@type': 'AutomotiveBusiness',
     name: 'Shop Drive Aki 24 Jam Battery Rescue',
     description: 'Mobil mogok karena aki tekor? Layanan ganti aki 24 jam siap meluncur ke lokasi Anda! Aki 100% original, gratis antar pasang, garansi resmi. Panggil sekarang!',
-    url: 'https://shopdriveaki.com',
+    url: 'https://shopdriveaki.id',
     priceRange: '$$',
     openingHours: 'Mo-Su 00:00-23:59',
     areaServed: 'Indonesia',
