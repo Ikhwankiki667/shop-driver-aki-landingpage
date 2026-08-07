@@ -127,8 +127,8 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar & Copyright */}
         <div className="pt-8 border-t border-slate-800 text-center sm:flex sm:items-center sm:justify-between text-xs text-slate-400">
-          <div>
-            Shop Drive Aki
+          <div className="inline-flex items-center gap-1">
+            Shop Drive Aki <span className="text-red-500 font-bold">❤️</span>
           </div>
           <div className="mt-2 sm:mt-0 space-x-4">
             <a href="#hero" className="hover:text-white">Privacy Policy</a>
