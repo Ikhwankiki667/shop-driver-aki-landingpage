@@ -140,18 +140,29 @@ export const Hero: React.FC = () => {
           <div className="lg:col-span-7 space-y-6 sm:space-y-8">
 
             {/* Industrial Headline */}
-            <div className="space-y-2 sm:space-y-4">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black uppercase text-slate-900 tracking-tight font-display leading-[1.03]">
-                Mobil Mogok <br className="sm:hidden" />
-                Karena <br />
+            <div className="space-y-3 sm:space-y-4">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase text-slate-900 tracking-tight font-display leading-[1.05]">
+                GANTI AKI MOBIL <br />
                 <span className="text-red-600 drop-shadow-sm">
-                  Aki Tekor?
+                  24 JAM
                 </span>
               </h1>
 
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl">
                 Solusi cepat saat mobil mogok karena aki tekor. Tim <strong className="text-slate-900 font-bold">Shop Drive Aki</strong> siap menghubungkan Anda dengan jaringan teknisi partner terdekat untuk antar dan pasang aki original bergaransi resmi langsung di lokasi Anda.
               </p>
+
+              {/* Key Value Proposition Badges */}
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3 pt-1">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-50 border border-red-200 text-red-700 text-xs sm:text-sm font-extrabold shadow-sm">
+                  <Clock className="w-4 h-4 text-red-600 shrink-0" />
+                  <span>Teknisi Datang 15–25 Menit</span>
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs sm:text-sm font-extrabold shadow-sm">
+                  <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <span>Bayar Setelah Terpasang</span>
+                </span>
+              </div>
             </div>
 
             {/* Single Primary Action Button */}

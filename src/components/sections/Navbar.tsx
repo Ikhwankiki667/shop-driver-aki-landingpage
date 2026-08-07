@@ -123,11 +123,11 @@ export const Navbar: React.FC = () => {
             <Button
               variant="primary"
               size="sm"
-              className="px-5 py-2.5 text-xs font-bold rounded-full shadow-md shadow-red-500/20"
+              className="px-4 sm:px-5 py-2.5 text-xs font-extrabold uppercase tracking-wide rounded-full shadow-md shadow-red-500/20"
               leftIcon={<PhoneCall className="w-4 h-4 fill-white text-white" />}
               beaconGlow
             >
-              Panggil Sekarang
+              PANGGIL BANTUAN SEKARANG
             </Button>
           </a>
         </div>
