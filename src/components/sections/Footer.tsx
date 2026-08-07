@@ -128,7 +128,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar & Copyright */}
         <div className="pt-8 border-t border-slate-800 text-center sm:flex sm:items-center sm:justify-between text-xs text-slate-400">
           <div>
-            &copy; {new Date().getFullYear()} {siteConfig.brand.name} ({siteConfig.brand.domain}). All rights reserved.
+            Shop Drive Aki
           </div>
           <div className="mt-2 sm:mt-0 space-x-4">
             <a href="#hero" className="hover:text-white">Privacy Policy</a>
